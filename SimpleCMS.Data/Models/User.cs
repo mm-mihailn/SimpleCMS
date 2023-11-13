@@ -9,6 +9,6 @@ namespace SimpleCMS.Data.Models
 {
     public class User : IdentityUser
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 }
