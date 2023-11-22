@@ -236,6 +236,7 @@ namespace SimpleCMS.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
         }
 
         /// <inheritdoc />
