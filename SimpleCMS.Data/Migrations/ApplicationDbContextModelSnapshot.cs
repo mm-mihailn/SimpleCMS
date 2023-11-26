@@ -22,6 +22,21 @@ namespace SimpleCMS.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ArticlesFiles", b =>
+                {
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FileId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ArticleId", "FileId");
+
+                    b.HasIndex("FileId");
+
+                    b.ToTable("ArticlesFiles");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -51,7 +66,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a48d5b89-e3d1-45e4-8c54-f3e63f22a301",
+                            Id = "2022f47d-4bb6-4367-afa7-b9da0a8b77a6",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -148,8 +163,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "cb8719fc-fa56-4fc7-87eb-af260df197c5",
-                            RoleId = "a48d5b89-e3d1-45e4-8c54-f3e63f22a301"
+                            UserId = "e871b0fe-cb0b-4693-b954-50ac7137c607",
+                            RoleId = "2022f47d-4bb6-4367-afa7-b9da0a8b77a6"
                         });
                 });
 
@@ -172,6 +187,79 @@ namespace SimpleCMS.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("SimpleCMS.Data.Models.Article", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("SubTitle")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.ToTable("Articles", (string)null);
+                });
+
+            modelBuilder.Entity("SimpleCMS.Data.Models.File", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("MimeType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Files");
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.MenuItem", b =>
@@ -231,7 +319,8 @@ namespace SimpleCMS.Data.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -275,22 +364,39 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cb8719fc-fa56-4fc7-87eb-af260df197c5",
+                            Id = "e871b0fe-cb0b-4693-b954-50ac7137c607",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "941f048d-72c6-4119-8fe7-963149a60b63",
+                            ConcurrencyStamp = "5c339925-e950-4768-947f-82823367d0ea",
                             Email = "admin@simplecms.net",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "John Smith",
                             NormalizedEmail = "ADMIN@SIMPLECMS.NET",
                             NormalizedUserName = "ADMIN@SIMPLECMS.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJsb5IbTGlAEsnmi0viWJEoz0rfEny2MVsJoydkDcUf5G1Lr4LVpXALO+qATmGwu5Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMXPFQ+Zjm3l18Z7P/huWB2mRwN3ur+mb1HuriWGjgyqBvb2BirhsSTgjqGLJJDa7w==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "054aaa3a-acc8-4ac6-8e32-4cf80eebbea6",
+                            SecurityStamp = "43ca81af-6020-4f05-9b06-eaab8a55ba74",
                             TwoFactorEnabled = false,
                             UserName = "admin@simplecms.net"
                         });
+                });
+
+            modelBuilder.Entity("ArticlesFiles", b =>
+                {
+                    b.HasOne("SimpleCMS.Data.Models.Article", null)
+                        .WithMany()
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_ArticlesFiles_Articles_ArticleId");
+
+                    b.HasOne("SimpleCMS.Data.Models.File", null)
+                        .WithMany()
+                        .HasForeignKey("FileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_ArticlesFiles_Files_FileId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -342,6 +448,17 @@ namespace SimpleCMS.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SimpleCMS.Data.Models.Article", b =>
+                {
+                    b.HasOne("SimpleCMS.Data.Models.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.MenuItem", b =>
