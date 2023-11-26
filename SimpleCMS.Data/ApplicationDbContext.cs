@@ -15,19 +15,14 @@ namespace SimpleCMS.Data
         }
 
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
-        public DbSet<Article>Articles { get; set; }
-        public DbSet<Files> Files { get; set; }
-        public DbSet<ArticleFiles> ArticleFiles { get; set; }
-
+        public DbSet<Article> Articles => Set<Article>();
+        public DbSet<Models.File> Files => Set<Models.File>();
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<User>().ToTable("Users");
-            builder.Entity<Article>().ToTable("Article");
-            builder.Entity<ArticleFiles>().ToTable("ArticleFiles");
-            builder.Entity<MenuItem>().ToTable("MenuItems");
-            builder.Entity<Files>().ToTable("Files");
+            // Rename Identity tables
             builder.Entity<IdentityRole>().ToTable(name: "Roles");
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
@@ -35,7 +30,9 @@ namespace SimpleCMS.Data
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
 
+            builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new MenuItemConfiguration());
+            builder.ApplyConfiguration(new ArticleConfigurations());
 
             SeedInitialData(builder);
         }

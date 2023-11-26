@@ -9,6 +9,14 @@ namespace SimpleCMS.Data.Models
 {
     public class MenuItem
     {
+        public MenuItem()
+        {
+            Title = Title = Guid.NewGuid().ToString();
+            Link = String.Empty;
+            SubMenuItems = new List<MenuItem>();
+            Published = false;
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Link { get; set; }
