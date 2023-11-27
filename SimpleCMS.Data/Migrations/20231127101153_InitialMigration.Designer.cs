@@ -12,7 +12,7 @@ using SimpleCMS.Data;
 namespace SimpleCMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231126215425_InitialMigration")]
+    [Migration("20231127101153_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -69,7 +69,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2022f47d-4bb6-4367-afa7-b9da0a8b77a6",
+                            Id = "9ba28c4d-fe1c-4f8b-a7ef-c1081c9823a9",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -166,8 +166,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "e871b0fe-cb0b-4693-b954-50ac7137c607",
-                            RoleId = "2022f47d-4bb6-4367-afa7-b9da0a8b77a6"
+                            UserId = "83651fd9-a992-4644-9dff-437dfe02c30d",
+                            RoleId = "9ba28c4d-fe1c-4f8b-a7ef-c1081c9823a9"
                         });
                 });
 
@@ -251,18 +251,21 @@ namespace SimpleCMS.Data.Migrations
 
                     b.Property<string>("MimeType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Path")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Files");
+                    b.ToTable("Files", (string)null);
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.MenuItem", b =>
@@ -367,19 +370,19 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e871b0fe-cb0b-4693-b954-50ac7137c607",
+                            Id = "83651fd9-a992-4644-9dff-437dfe02c30d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5c339925-e950-4768-947f-82823367d0ea",
+                            ConcurrencyStamp = "af78c873-8e03-4d8a-a253-ed7360621de7",
                             Email = "admin@simplecms.net",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "John Smith",
                             NormalizedEmail = "ADMIN@SIMPLECMS.NET",
                             NormalizedUserName = "ADMIN@SIMPLECMS.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMXPFQ+Zjm3l18Z7P/huWB2mRwN3ur+mb1HuriWGjgyqBvb2BirhsSTgjqGLJJDa7w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIJhfl2KX5bys8RJqsLvWIfcx/HqkuiqXcX2o+DiqVsf7HPnw/GSei8CkjNEVsBzJQ==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "43ca81af-6020-4f05-9b06-eaab8a55ba74",
+                            SecurityStamp = "a46c8ea8-8155-4309-9870-00c5e78c0236",
                             TwoFactorEnabled = false,
                             UserName = "admin@simplecms.net"
                         });

@@ -33,6 +33,7 @@ namespace SimpleCMS.Data
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new MenuItemConfiguration());
             builder.ApplyConfiguration(new ArticleConfigurations());
+            builder.ApplyConfiguration(new FileConfigurations());
 
             SeedInitialData(builder);
         }
