@@ -1,20 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleCMS.Admin.Models;
 using System.Diagnostics;
+using SimpleCMS.Business.Services.Interfaces;
 
 namespace SimpleCMS.Admin.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IUsersService _usersService;
+        
+        public HomeController(ILogger<HomeController> logger, IUsersService usersService)
         {
             _logger = logger;
+            _usersService = usersService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var users = await _usersService.GetUsersAsync();
+            // Todo - map to UserViewModel and pass it the view
             return View();
         }
 

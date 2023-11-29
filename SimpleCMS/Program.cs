@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SimpleCMS.Business.Services;
+using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data;
 using SimpleCMS.Data.Models;
+using SimpleCMS.Data.Repositories.Interfaces;
+using SimpleCMS.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
