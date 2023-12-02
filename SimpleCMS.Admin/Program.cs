@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SimpleCMS.Business.Services.Interfaces;
+using SimpleCMS.Business.Services;
 using SimpleCMS.Data;
 using SimpleCMS.Data.Models;
+using SimpleCMS.Data.Repositories;
+using SimpleCMS.Data.Repositories.Interfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUsersService, UsersService>();
 
 var app = builder.Build();
 
