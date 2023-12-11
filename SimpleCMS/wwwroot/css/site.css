@@ -18,5 +18,246 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin: 0px;
+  background-color:rgb(200,228,247);
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.container{
+  margin: 0px;
+  width: 1536px;
+  scrollbar-width: thin;
+}
+#Header{
+  background-color: rgba(249, 241, 163, 1);
+  width: 1540px;
+  height: 50px;
+  
+}
+#email,#phone,#search {
+  margin-top:7px;
+}
+.col-9{
+  width: 1050px;
+}
+#navigation{
+  margin:0px;
+}
+.col-10{
+  padding: 0%;
+}
+
+#Welcome-container{
+  padding:0px;
+}
+#Welcome-photo{
+  margin: 0;
+  width: 1560px;
+  height: 700.82px;
+  opacity:0.75;
+}
+#navi{
+  margin: 0px;
+  width: 1367px;
+  height: 162px;
+  border-radius: 20px;
+  position: absolute;
+  top: 2%;
+  left:5.5%;
+  background-color: rgba(255, 255, 255, 1);
+  
+  
+}
+
+#logo{
+  width: 120px;
+  height: 130px;
+  margin-top: 2.5%;
+  margin-left: 5%;
+
+}
+#navButtonsPlace{
+  margin-right: 20px;
+}
+
+#NavButton{
+  cursor: pointer;
+  padding-left:5px;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 65px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-decoration-line: underline;
+}
+#WelcomeTextPlace{
+  width: 853px;
+  height: 155px;
+  position: absolute;
+  top: 337px;
+  left:267px;
+  background-color:rgba(92, 173, 255, 0.7);
+  border-radius: 20px;
+}
+#WelcomeText{
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+#yellowLine{
+  height:8px;
+  width: 300px;
+  height:8px;
+}
+#NewsText{
+  text-align: left;
+}
+#yellowLine1{
+  width: 400px;
+  height:8px;
+  position: absolute;
+  bottom: 520px;
+}
+#NewsContainer{
+  margin-top: 200px;
+}
+#News{
+  margin-top: 50px;
+  height: 420px;
+}
+.NewsPhotos{
+  margin-left: 27px;
+  border-radius: 20px
+}
+.NewsTitel{
+  margin-left: 44px;
+  font-weight: bold;
+}
+h4{
+  margin-left: 135px;
+}
+#AllNewsButton{
+  box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+  -moz-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+  width: 227px;
+  height: 67px;
+  border:none;
+  border-radius: 50px;
+  background-color: yellow;
+  font-weight: bold;
+}
+#SpecialitiesContainer{
+  margin-top: 76px;
+}
+#Specialty{
+  height: 586px;
+}
+#SpceialtyPhoto{
+  width: 325.45px;
+  height: 400px;
+  border-radius: 20px;
+  margin-left: 17px;
+}
+#SpecialitiesPlaces{
+  margin-top: 40px;
+}
+#SpecialtyButton{
+  box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+-webkit-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+-moz-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+  padding:none;
+  margin-left: 17px;
+  margin-top: 10px;
+  border:none;
+  width: 325.45px;
+  height: 64px;
+  border-radius: 20px;
+  background-color: rgba(65, 154, 215, 1);
+  font-weight: bold;
+}
+#WelcomeTextPlace:hover{
+  background-color:rgba(65, 154, 215, 0.9);
+  cursor: pointer;
+}
+#ContainerForStudents{
+  margin-top: 150px;
+}
+#ForStudentsPlace2{
+  margin-top: 40px;
+}
+#ForStudentsThing{
+  margin-left: 34px;
+  width: 480px;
+  height: 402px;
+ 
+}
+#ForStudentsPhoto{
+  box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+-webkit-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+-moz-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
+  border-radius: 10px;
+  width: 426px;
+  height: 382px;
+}
+
+#ButtonForEpaper,#ButtonForРeception,#ButtonForTimetable{
+  position: relative;
+  border: none;
+ bottom: 220px;
+  height: 102px;
+  width: 426px;
+  background-color: #258cfb;
+  text-align: center;
+  border-radius: 20px;
+}
+#ButtonForРeception{
+  background:rgb(34,88,158);
+}
+#ButtonForTimetable{
+  background:rgb(84,186,191);
+}
+#ButtonForEpaper{
+  background: rgba(219, 219, 238, 1);
+
+}
+#ButtonForEpaper:hover,#ButtonForРeception:hover,#ButtonForTimetable:hover{
+  background: rgba(255, 255, 255,0.6);
+}
+#ContainerForFooter{
+  margin-top: 200px;
+}
+#ContainerForFooter{
+  width: 1540px;
+  height: 350px;
+  background-color: rgba(255, 250, 205, 0.8);
+
+}
+
+#FooterCol{
+  text-align: center;
+  margin-top: 27px;
+}
+
+#ThirdFooterCol{
+  margin-top: 40px;
+
+}
+#FaceBookLogo{
+  width: 40px;
+  height: 40px;
+  margin-left: 150px;
+}
+#phone-call{
+  width: 40px;
+  height: 40px;
+  margin-left:100px;
+}
+#envelope{
+  width: 40px;
+  height: 40px;
+  margin-top:20px;
+  margin-left:95px;
+}
+#HeaderText{
+  margin-right: 50px;
 }
