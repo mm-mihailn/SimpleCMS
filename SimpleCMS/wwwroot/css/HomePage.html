@@ -6,24 +6,21 @@
     <title>PGEE M.V.Lomonosov/homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link  href="site.css" rel="stylesheet">
+    <script src="MyScripts.js"></script>
 </head>
   <body>
-    <div class="container">
+    <div class="container-g0" >
       <div class="row " id="Header" >
-      <div class="col-8">
-
-      </div>
-      <div class="col" id="email">
+       <div class="col-3 " id="email">
          <img src="photos/envelope.png">
          &nbsp; e-mail
      </div>
-       <div class="col" id="phone">
+       <div class= "col-4" id="phone">
           <img src="photos/phone-call.png">
           &nbsp; phone 
         </div>
-        <div class="col" id="search"><img src="photos/line.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="photos/search.png">
-       &nbsp;&nbsp;&nbsp;
-       Търсене
+        <div class=" col-5" id="search"><img src="photos/line.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="photos/search.png">
+       Търсене&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
     </div>
   </div>
@@ -33,9 +30,8 @@
   <div class="row">
     <div class="col">
       <div id="navi">
-
         <div class="row" id="navButtonsPlace">
-          <div class="col-6"><img id="logo" src="photos/Logo.png"></div>
+          <div class="col-6 col-md-3 col-ms"><img id="logo" src="photos/Logo.png"></div>
           <div class="col" id="NavButton">ЗА НАС</div>
           <div class="col"id="NavButton">ПРИЕМ</div> 
           <div class="col"id="NavButton">УЧЕНИЦИ</div>
@@ -48,10 +44,14 @@
             </div>
           </div>
         </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">⚡</button>
        </div>
+      
      </div> 
    </div>
+   
 </div>
+
 <div class="container-g0" id="NewsContainer">
   <div class="row" id="NewsTextPlace">
     <div class="col-12" id="NewsText">
@@ -60,17 +60,17 @@
     </div>
   </div>
   <div class="row" id="NewsPlace">
-    <div class="col-4" id="News">
+    <div class="col-sm-12 col-md-6 col-lg-4" id="News" id="NewsPlace1">
+      <img class="NewsPhotos"  src="photos/PhotoNews.png">
+      <h4>ден-месец-година</h4>
+      <h3 class="NewsTitel">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4" id="News",id="NewsPlace2">
       <img class="NewsPhotos" src="photos/PhotoNews.png">
       <h4>ден-месец-година</h4>
       <h3 class="NewsTitel">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
     </div>
-    <div class="col-4" id="News">
-      <img class="NewsPhotos" src="photos/PhotoNews.png">
-      <h4>ден-месец-година</h4>
-      <h3 class="NewsTitel">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-    </div>
-    <div class="col-4" id="News">
+    <div class="col-sm-12 col-md-6 col-lg-4" id="News"id="News3">
       <img class="NewsPhotos" src="photos/PhotoNews.png">
       <h4>ден-месец-година</h4>
       <h3 class="NewsTitel">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
@@ -78,7 +78,7 @@
   </div>
   <div class="row" id="AllNewPlace">
     <div class="col-10" ></div>
-    <div class="col-2">
+    <div class="col-2 col-sm-1">
       <button id="AllNewsButton">Всички новини</button>
      </div>
      </div>
@@ -101,6 +101,7 @@
       <button id="SpecialtyButton">Електроника </button></div>
   </div>
 </div>
+
 <div class="container-g0" id="ContainerForStudents">
   <div class="row" id="ForStudentsPlace">
     <div class="col-4" id="ForStudentsThing"><img id="ForStudentsPhoto" src="photos/Priem.jpg">
@@ -110,7 +111,8 @@
       <button id="ButtonForTimetable"><h1>Седмично разсписание</h1></button></div>
   </div>
   <div class="row" id="ForStudentsPlace2">
-    <div class="col-4" id="ForStudentsThing"><img id="ForStudentsPhoto" src="photos/img2.jpg">
+    <div class="col-4" id="ForStudentsThing">
+      <img id="ForStudentsPhoto" src="photos/img2.jpg">
    </div>
     <div class="col-4" id="ForStudentsThing"><img id="ForStudentsPhoto" src="photos/Ednevnik.jpg">
       <button id="ButtonForEpaper"><h1>Електронен дневник</h1></button>
@@ -118,6 +120,7 @@
     <div class="col-4" id="ForStudentsThing"><img id="ForStudentsPhoto" src="photos/img3.jpg"></div>
   </div>
 </div>
+
 <div class="container-g0" id="ContainerForFooter">
  <div class="row" id="HeaderFirstTextPlace">
   <div class="col-4" id="FooterCol"><h3>ПГЕЕ "M.В.Ломоносов"</h3>
@@ -146,6 +149,7 @@
     </div>
   </div>
 </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
