@@ -255,8 +255,6 @@ h4{
 }
 #HeaderText{
   margin-right: 50px;
-<<<<<<< Updated upstream
-=======
 }
 #NavButton:hover{
   background-color: rgba(255, 250, 205, 0.8);
@@ -336,5 +334,4 @@ padding-right:100px;
   #smallItems{
     visibility: hidden;
   }
->>>>>>> Stashed changes
 }
