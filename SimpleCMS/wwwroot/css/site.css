@@ -24,19 +24,19 @@ body {
   margin: 0%;
   text-align: right;
   background-color: rgba(249, 241, 163, 1);
-  width: 1540px;
+  width: 100%;
   height: 50px;
   
 }
 #email,#phone,#search {
+  width: 160px;
   margin-top:7px;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
 }
 #email,#phone,#search:hover{
   cursor:pointer;
- 
 }
-
 #phone{
   margin-top:10px;
 }
@@ -280,58 +280,89 @@ padding-right:100px;
   padding: 15px;
   border-radius: 100%;
 }
-#smallMenu{
-  background-color:rgba(255, 255, 255, 0.4);
-  display:inline-block;
+.topnav {
+  overflow: hidden;
+  background-color:rgb(65,154,215)  ;
   position: relative;
-  padding: 30px;
-  bottom:300px;
-  left: 120px;
-  border-radius: 20px ;
 }
-#smalNavi{
-  display:inline;
-  text-align: center;
-  text-decoration: underline;
-}
-#SmallWelcomeButton{
-  padding-bottom: 20px;
-  text-align: center;
-  background-color: #258cfb;
-  position: relative;
-  padding: 30px;
-  bottom: 290px;
-  height: 30px;
-  border:none;
-  text-decoration: underline;
-  border-radius: 20px ;
-  width:250px;
-  left:90px
-}
-@media (max-width: 668px) {
-  html {
-    font-size: 16px;
-  }
-  #navi{
-    visibility: hidden;
 
-  }
-  #Welcome-photo{
-    margin: 0;
-    width: 100%;
-    height: 350.82px;
-    opacity:0.75;
-  }
-  #WelcomeText{
-    visibility: visible;
-  }
-  #NewsContainer{
-    margin-top:0;
-  }
-  
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
 }
-@media (min-width: 768px) {
-  #smallItems{
-    visibility: hidden;
-  }
+
+/* Style navigation menu links */
+.topnav a {
+  color:rgb(255,242,0);
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
 }
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background:rgb(200,228,247);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#SmallLogo{
+  width: 40px;
+  height: 40px;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color:rgba(255, 255, 255, 0.4);
+}
+#HamburgerMenu{
+
+}
+
+@media (min-width: 768px) 
+  {
+    #HamburgerMenu{
+      display: none;
+    }
+    .p{
+      display: none;
+     }
+}
+@media (max-width: 768px) 
+  {
+    #WelcomeTextPlace{
+      visibility: visible;
+      width: 253px;
+      height: 75px;
+      position: absolute;
+      top: 37px;
+      left:5%;
+      background-color:rgba(92, 173, 255, 0.7);
+      border-radius: 20px;
+    }
+    #WelcomeText{
+      position: absolute;
+     bottom: 5%;
+     font-size: 10px;
+    }
+    #yellowLine{
+      width:200px;
+    }
+    #AllHeader{
+      display: none;
+    }
+    #Welcome-photo{
+      height: 300px;
+    }
+   #BigMenu{
+   visibility: hidden;
+   }
+   p{
+   display:none
+   }
+   #email,#phone,#search{
+    display: none;
+   }
+  }
