@@ -17,7 +17,7 @@ namespace SimpleCMS.Data.Models
         {
             CreatedById = Guid.Empty.ToString();
             Title = Guid.NewGuid().ToString();
-            Files = new List<File>();
+            Files = new List<ArticleFile>();
             Slug = Title;
             Type = ArticleType.General;
         }
@@ -40,7 +40,7 @@ namespace SimpleCMS.Data.Models
             set => _createdBy = value;
         }
 
-        public ICollection<File> Files{ get; set; }
+        public ICollection<ArticleFile> Files{ get; set; }
 
     }
 }

@@ -16,7 +16,7 @@ namespace SimpleCMS.Data
 
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
         public DbSet<Article> Articles => Set<Article>();
-        public DbSet<Models.File> Files => Set<Models.File>();
+        public DbSet<ArticleFile> Files => Set<ArticleFile>();
         public DbSet<Setting> Setting => Set<Setting>();
 
         protected override void OnModelCreating(ModelBuilder builder)

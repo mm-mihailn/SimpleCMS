@@ -26,7 +26,7 @@ namespace SimpleCMS.Data.EntityConfigurations
                 .UsingEntity<Dictionary<string, object>>(
                     "ArticlesFiles",
                     j => j
-                        .HasOne<Models.File>()
+                        .HasOne<Models.ArticleFile>()
                         .WithMany()
                         .HasForeignKey("FileId")
                         .HasConstraintName("FK_ArticlesFiles_Files_FileId")

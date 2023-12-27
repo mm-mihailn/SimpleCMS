@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimpleCMS.Data.Models
 {
-    public class File
+    public class ArticleFile
     {
-        public File()
+        public ArticleFile()
         {
             Name = String.Empty;
             Path = String.Empty;
