@@ -11,18 +11,18 @@
   <body>
     <div class="container-g0" id="AllHeader" >
       <div class="row " id="Header" >
-        <div class="col-8 col-sm-0"></div>
-       <div class="col-1   col-md-1  col-sm-1" id="email">
+        <div class="col-xl-8 col-md-5 col-sm-0"></div>
+       <div class="col-xl-1   col-md-1  col-sm-1" id="email">
          <img src="photos/envelope.png">
          <p>&nbsp; e-mail</p>
      </div>
-       <div class= "col-1  col-md-1  col-sm-1" id="phone">
+       <div class= "col-xl-1  col-md-1  col-sm-1" id="phone">
           <img src="photos/phone-call.png">
          <p> &nbsp; phone </p>
         </div>
-        <div class=" col-1  col-md-1  col-sm-1" id="search"><img src="photos/line.png">
-          <img src="photos/search.png">
-       <p>Търсене</p>
+        <div class=" col-xl-1  col-md-1  col-sm-1" id="search"><img id="searchLine" src="photos/line.png">
+          <img src="photos/search.png"> <div>Търсене</div>
+      
       </div>
     </div>
   </div>
@@ -39,7 +39,6 @@
         <a href="#about">АДМИНИСТРАЦИЯ</a>
         <a href="#about">КОНТАКТИ</a>
       </div>
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         ⚡
@@ -52,12 +51,12 @@
     <div class="col">
       <div id="navi">
         <div class="row" id="navButtonsPlace">
-          <div class="col-6 col-md-3 col-ms"><img id="logo" src="photos/Logo.png"></div>
-          <div class="col" id="NavButton">ЗА НАС</div>
-          <div class="col"id="NavButton">ПРИЕМ</div> 
-          <div class="col"id="NavButton">УЧЕНИЦИ</div>
-          <div class="col"id="NavButton">РОДИТЕЛИ</div>
-          <div class="col-2"id="NavButton" id="Administration">АДМИНИСТРАЦИЯ</div>
+          <div id="logoPlace" class="col-xl-3 col-md-3 col-ms"><img id="logo" src="photos/Logo.png"></div>
+          <div class="col" id="NavButton"><button id="navButtonBack">ЗА НАС</button></div>
+          <div class="col"id="NavButton"><button id="navButtonBack">ПРИЕМ</button></div> 
+          <div class="col"id="NavButton"><button id="navButtonBack">УЧЕНИЦИ</button></div>
+          <div class="col"id="NavButton"><button id="navButtonBack">РОДИТЕЛИ</button></div>
+          <div class="col-xl-2 col-md-1"id="NavButton" id="Administration"><button id="navButtonBack">АДМИНИСТРАЦИЯ</button></div>
           <div class="row" id="WelcomeTextPlace">
             <div class="col-12" id="WelcomeText">
               <H1><b>Добре дошли!</b></H1>
@@ -142,15 +141,18 @@
   </div>
 </div>
 
-<div class="container-g0" id="ContainerForFooter">
- <div class="row" id="HeaderFirstTextPlace">
-  <div class="col-4" id="FooterCol"><h3>ПГЕЕ "M.В.Ломоносов"</h3>
-  <img src="photos/BlueLine.png"></div>
-  <div class="col-4" id="FooterCol"><h3>Бързи линкове</h3>
+<div id="smallHeader">
+ <div class="container-g0" id="ContainerForFooter">
+  <div class="row" id="HeaderFirstTextPlace">
+   <div class="col-4" id="FooterCol"><h3>ПГЕЕ "M.В.Ломоносов"</h3>
     <img src="photos/BlueLine.png"></div>
-  <div class="col-4" id="FooterCol"><h3>За нас</h3>
+     <div class="col-4" id="FooterCol"><h3>Бързи линкове</h3>
+      <img src="photos/BlueLine.png"></div>
+     <div class="col-4" id="FooterCol"><h3>За нас</h3>
     <img src="photos/BlueLine.png"></div>
+  </div>
  </div>
+</div>
  <div class="row" id="HeaderSecondTextPlace">
   <div class="col-4" id="SecondFooterCol"><h4 id="HeaderText">ул. „Никола Петров“ 31, 5100 Център, Горна Оряховица</h4></div>
   <div class="col-4" id="SecondFooterCol"><h4>Новини<br> 
