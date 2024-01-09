@@ -1,0 +1,673 @@
+﻿.headerDesign {
+    background: #FFCC01;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    position: static;
+}
+
+.headerText {
+    width: 320px;
+    height: 54px;
+    left: 90px;
+    top: 1px;
+    position: absolute;
+    text-align: center;
+    color: #03293F;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.headerText2 {
+    width: 150px;
+    height: 36px;
+    left: 178px;
+    top: 29px;
+    position: absolute;
+    text-align: center;
+    color: #03293F;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+#schoolLogo {
+    width: 38px;
+    height: 50px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 30px;
+}
+
+#phoneIcon {
+    width: 27px;
+    height: 23px;
+    left: 987px;
+    top: 20px;
+    position: absolute;
+}
+
+#phoneLink {
+    left: 1030px;
+    top: 20px;
+    position: absolute;
+    color: #03293F;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+    #phoneLink:link {
+        color: #03293F;
+    }
+
+    #phoneLink:visited {
+        color: black;
+    }
+
+    #phoneLink:hover {
+        color: #0076BC;
+    }
+
+    #phoneLink:active {
+        color: blue;
+    }
+
+#facebookIcon {
+    width: 30px;
+    height: 29px;
+    left: 1262px;
+    top: 18px;
+    position: absolute;
+    mix-blend-mode: darken;
+}
+
+#bgFlag {
+    width: 38px;
+    height: 25px;
+    left: 1382px;
+    top: 18px;
+    position: absolute;
+}
+
+
+
+
+.navigationBarSchool {
+    padding: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin: 0;
+}
+
+ul {
+    left: 0px;
+    list-style-type: none;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    background: linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.93) 0%, rgba(0, 118, 188, 0) 100%);
+}
+
+li {
+    float: left;
+    margin-left: 50px;
+    font-size: 23px;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+    li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 12px 14px;
+    }
+
+        li a:hover {
+            background-color: #0076BC;
+            text-align: center;
+        }
+
+
+
+#homePagePhoto {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+#welcomingTitle {
+    width: 100% left: 10px;
+    top: 400px;
+    position: absolute;
+    text-align: center;
+    color: #0076BC;
+    font-size: 40px;
+    font-family: Montserrat;
+    word-wrap: break-word;
+}
+
+#backgroundWhiteTitle {
+    width: 100%;
+    height: 80px;
+    top: 400px;
+    position: absolute;
+    opacity: 0.50;
+    background: white;
+    text-align: center;
+}
+
+.priemButton {
+    width: 350px;
+    height: 70px;
+    left: 570px;
+    top: 500px;
+    position: absolute;
+    opacity: 0.70;
+    background: #0076BC;
+    border: none;
+    border-radius: 20px;
+    align: center;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+#backgrPhoto {
+    width: 100%;
+    height: 1100px;
+    position: absolute;
+    opacity: 0.05;
+    top: 810px;
+}
+
+
+
+#majorpageTitle {
+    width: 100% left: 0px;
+    position: relative;
+    text-align: center;
+    color: #0076BC;
+    font-size: 30px;
+    font-family: Montserrat;
+    word-wrap: break-word;
+}
+
+.majorBlock {
+    width: 308px;
+    height: 305px;
+}
+
+.blueBlockInfo {
+    width: 308px;
+    height: 305px;
+    left: 0px;
+    top: 76px;
+    position: absolute;
+    background: #0076BC;
+}
+
+.yellowCircleMajorIcon {
+    width: 110px;
+    height: 110px;
+    left: 100px;
+    top: 0px;
+    position: absolute;
+    background: #FFCC01;
+    border-radius: 9999px;
+}
+
+.majorIcon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    mix-blend-mode: darken;
+}
+
+.majorTitle {
+    top: 120px;
+    position: absolute;
+    text-align: center;
+    color: #FFCC01;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.majorDescription {
+    width: 300px;
+    left: 5px;
+    top: 230px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.learnMoreMajorButton {
+    width: 180px;
+    height: 30px;
+    left: 67px;
+    top: 340px;
+    position: absolute;
+    border: none;
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.40);
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.button1:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.card {
+    position: absolute;
+    top: 800px;
+}
+
+.card-photo-body {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.card-body {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: rgba(0, 118, 188, 0.93);
+    border-radius: 30px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.card-text {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.btn {
+    color: white;
+    background: rgba(255, 255, 255, 0.40);
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.allNewsButton {
+    width: 300px;
+    height: 70px;
+    left: 600px;
+    position: absolute;
+    opacity: 0.70;
+    background: #0076BC;
+    border: none;
+    border-radius: 20px;
+    align: center;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+    .allNewsButton:hover {
+        background-color: #0076BC;
+        color: white;
+    }
+
+.additionalBox {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    background: white;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 30px;
+    position: absolute;
+}
+
+.additionalBoxText {
+    width: 539px;
+    height: 189px;
+    position: absolute;
+    text-align: center;
+    color: rgba(0, 118, 188, 0.93);
+    font-size: 36px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.additionalBoxIcon {
+    width: 100px;
+    height: 100px;
+    left: 10px;
+    top: 60px;
+}
+
+.footerTitles {
+    text-align: left;
+    color: white;
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+    border-bottom: 1px solid;
+    -color: white;
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footerAddInfo {
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+    padding-left: 60px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.footerTable {
+    width: 100%;
+    height: 300px;
+    top: 2050px;
+    background: #0076BC;
+    position: relative;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .ft {
+        width: 100%;
+    }
+
+    .headerDesign {
+        background: #FFCC01;
+        width: 100%;
+        height: 60px;
+        left: 0px;
+        top: 0px;
+        position: static;
+    }
+
+    #homePagePhoto {
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    #welcomingTitle {
+        width: 350px;
+        left: 0px;
+        top: 205px;
+        position: absolute;
+        text-align: center;
+        color: #0076BC;
+        font-size: 8px;
+        font-family: Montserrat;
+        word-wrap: break-word;
+    }
+
+    #backgroundWhiteTitle {
+        width: 100%;
+        height: 30px;
+        top: 215px;
+        position: absolute;
+        opacity: 0.50;
+        background: white;
+        text-align: center;
+    }
+
+    .priemButton {
+        width: 80px;
+        height: 15px;
+        left: 133px;
+        top: 250px;
+        position: absolute;
+        opacity: 0.70;
+        background: #0076BC;
+        border: none;
+        border-radius: 20px;
+        align: center;
+        text-align: center;
+        color: white;
+        font-size: 7px;
+        font-family: Montserrat;
+        font-weight: 400;
+        word-wrap: break-word;
+    }
+
+    .headerText {
+        width: 190px;
+        height: 54px;
+        left: 15px;
+        top: 17px;
+        position: absolute;
+        text-align: center;
+        color: #03293F;
+        font-size: 13px;
+        font-family: Montserrat;
+        font-weight: 500;
+        word-wrap: break-word
+    }
+
+    .headerText2 {
+        width: 150px;
+        height: 36px;
+        left: 30px;
+        top: 30px;
+        position: absolute;
+        text-align: center;
+        color: #03293F;
+        font-size: 10px;
+        font-family: Montserrat;
+        font-weight: 300;
+        word-wrap: break-word;
+    }
+
+    #schoolLogo {
+        width: 22px;
+        height: 34px;
+        margin-top: 13px;
+        margin-bottom: 6px;
+        margin-left: 10px;
+    }
+
+    #phoneIcon {
+        width: 20px;
+        height: 18px;
+        left: 200px;
+        top: 25px;
+        position: absolute;
+    }
+
+    #phoneLink {
+        visibility: hidden;
+    }
+
+    #facebookIcon {
+        width: 20px;
+        height: 19px;
+        left: 250px;
+        top: 25px;
+        position: absolute;
+        mix-blend-mode: darken;
+    }
+
+    #bgFlag {
+        width: 25px;
+        height: 15px;
+        left: 300px;
+        top: 25px;
+        position: absolute;
+    }
+
+    ul {
+        visibility: hidden;
+    }
+
+    #backgrPhoto {
+        width: 100%;
+        height: 1100px;
+        position: absolute;
+        opacity: 0.05;
+        top: 810px;
+    }
+
+
+
+    #majorpageTitle {
+        right: 25px;
+        top: 0px;
+        position: relative;
+        text-align: center;
+        color: #0076BC;
+        font-size: 15px;
+        font-family: Montserrat;
+        word-wrap: break-word;
+    }
+
+    .majorBlock {
+        width: 108px;
+        height: 105px;
+    }
+
+    .container text-center {
+        width: 100%;
+    }
+
+    .blueBlockInfo {
+        width: 308px;
+        height: 305px;
+        left: 0px;
+        top: 76px;
+        position: absolute;
+        background: #0076BC;
+    }
+
+    .yellowCircleMajorIcon {
+        width: 40px;
+        height: 40px;
+        left: 100px;
+        top: 0px;
+        position: absolute;
+        background: #FFCC01;
+        border-radius: 9999px;
+    }
+
+    .majorIcon {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        mix-blend-mode: darken;
+    }
+
+    .majorTitle {
+        top: 120px;
+        position: absolute;
+        text-align: center;
+        color: #FFCC01;
+        font-size: 30px;
+        font-family: Montserrat;
+        font-weight: 500;
+        word-wrap: break-word;
+    }
+
+    .majorDescription {
+        visibility: hidden;
+    }
+
+    .learnMoreMajorButton {
+        width: 180px;
+        height: 30px;
+        left: 67px;
+        top: 340px;
+        position: absolute;
+        border: none;
+        text-align: center;
+        color: white;
+        background: rgba(255, 255, 255, 0.40);
+        border-radius: 30px;
+        font-size: 20px;
+        font-family: Montserrat;
+        font-weight: 500;
+        word-wrap: break-word;
+    }
+
+
+
+
+
+
+    .footerAddInfo {
+        text-align: left;
+        color: white;
+        font-size: 12px;
+        font-family: Montserrat;
+        font-weight: 500;
+        word-wrap: break-word;
+        padding-left: 5px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .footerTitles {
+        text-align: left;
+        color: white;
+        font-size: 18px;
+        font-family: Montserrat;
+        font-weight: 500;
+        word-wrap: break-word;
+        border-bottom: 1px solid;
+        -color: white;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
