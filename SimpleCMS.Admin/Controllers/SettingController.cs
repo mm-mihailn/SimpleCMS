@@ -40,30 +40,20 @@ namespace SimpleCMS.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var isSettingNameExists = await _settingService.GetSettingByNameAsync(setting.Name);
-                var isSettingValueExists = await _settingService.GetSettingByValueAsync(setting.Value);
-
+              
                 if (isSettingNameExists != null)
                 {
                     ModelState.AddModelError(nameof(setting.Name), "A setting with this name already exists.");
                     return View(setting);
                 }
 
-                else if (isSettingValueExists != null)
-                {
-                    ModelState.AddModelError(nameof(setting.Value), "A setting with this name already value.");
-                    return View(setting);
-                }
-
-                else
-                { 
-                    await _settingService.AddSetting(setting);
-                    return RedirectToAction(nameof(Index));
-                }
+                await _settingService.AddSetting(setting);
+                return RedirectToAction(nameof(Index));
+  
             }
 
             return View(setting);
         }
-
 
         public async Task<IActionResult> Edit(int id)
         {
