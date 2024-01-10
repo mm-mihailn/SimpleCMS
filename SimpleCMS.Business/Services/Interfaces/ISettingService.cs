@@ -12,6 +12,8 @@ namespace SimpleCMS.Business.Services.Interfaces
         Task<IEnumerable<Setting>> GetSettingAsync();
         Task<Setting?> GetSettingByIdAsync(int id);
         Task<Setting?> GetSettingByNameAsync(string name);
+        Task<Setting?> GetSettingByValueAsync(string value);
+
         Task<Setting> AddSetting(Setting setting);
         Task<Setting> FindAsync(int id);
         Task DeleteAsync(Setting setting);

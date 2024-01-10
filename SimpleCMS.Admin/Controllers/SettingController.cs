@@ -6,6 +6,8 @@ using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data.Models;
 using SimpleCMS.Data.Repositories.Interfaces;
 using System.Diagnostics;
+using SimpleCMS.Data.Models;
+using System.Diagnostics.Eventing.Reader;
 
 namespace SimpleCMS.Admin.Controllers
 {
@@ -37,12 +39,31 @@ namespace SimpleCMS.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-               await _settingService.AddSetting(setting);
-                return RedirectToAction(nameof(Index));
+                var isSettingNameExists = await _settingService.GetSettingByNameAsync(setting.Name);
+                var isSettingValueExists = await _settingService.GetSettingByValueAsync(setting.Value);
+
+                if (isSettingNameExists != null)
+                {
+                    ModelState.AddModelError(nameof(setting.Name), "A setting with this name already exists.");
+                    return View(setting);
+                }
+
+                else if (isSettingValueExists != null)
+                {
+                    ModelState.AddModelError(nameof(setting.Value), "A setting with this name already value.");
+                    return View(setting);
+                }
+
+                else
+                { 
+                    await _settingService.AddSetting(setting);
+                    return RedirectToAction(nameof(Index));
+                }
             }
 
             return View(setting);
         }
+
 
         public async Task<IActionResult> Edit(int id)
         {
@@ -64,7 +85,7 @@ namespace SimpleCMS.Admin.Controllers
        
         public async Task<IActionResult> Edit(int id, Setting setting)
         {
-            if(id != setting.Id)
+            if (id != setting.Id)
             {
                 return NotFound();
             }

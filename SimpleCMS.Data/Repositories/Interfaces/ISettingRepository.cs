@@ -12,6 +12,7 @@ namespace SimpleCMS.Data.Repositories.Interfaces
         Task<IEnumerable<Setting>> GetAllSettingAsync();
         Task<Setting> GetByIdAsync(int id);
         Task<Setting> GetByNameAsync(string name);
+        Task<Setting> GetByValueAsync(string value);
 
 
     }

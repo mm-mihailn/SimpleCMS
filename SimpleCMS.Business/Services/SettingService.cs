@@ -52,5 +52,10 @@ namespace SimpleCMS.Business.Services
         {
             return await _settingRepository.FindAsync(id);
         }
+
+        public async Task<Setting?> GetSettingByValueAsync(string value)
+        {
+            return await _settingRepository.GetByValueAsync(value);
+        }
     }
 }
