@@ -95,27 +95,16 @@
     position: absolute;
 }
 
-
-
-
 .navigationBarSchool {
-    padding: 0;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
     width: 100%;
-    margin: 0;
+    overflow: hidden;
 }
 
-ul {
-    left: 0px;
-    list-style-type: none;
-    position: absolute;
+#menuList {
     overflow: hidden;
-    width: 100%;
-    height: 70px;
-    text-align: center;
     background: linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.93) 0%, rgba(0, 118, 188, 0) 100%);
+    list-style-type: none;
+    position: sticky;
 }
 
 li {
@@ -130,7 +119,7 @@ li {
 
     li a {
         text-decoration: none;
-        color: white;
+        color: #03293F;
         display: block;
         padding: 12px 14px;
     }
@@ -138,9 +127,8 @@ li {
         li a:hover {
             background-color: #0076BC;
             text-align: center;
+            color: white;
         }
-
-
 
 #homePagePhoto {
     width: 100%;
@@ -197,8 +185,6 @@ li {
     top: 810px;
 }
 
-
-
 #majorpageTitle {
     width: 100% left: 0px;
     position: relative;
@@ -212,6 +198,36 @@ li {
 .majorBlock {
     width: 308px;
     height: 305px;
+}
+
+#majorBlock1 {
+    position: relative;
+    right: 70px;
+    top: 100px;
+}
+
+#majorBlock2 {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+}
+
+#majorBlock3 {
+    position: absolute;
+    top: 100px;
+    left: 130px;
+}
+
+#majorBlock4 {
+    position: absolute;
+    top: 250px;
+    left: 190px;
+}
+
+#majorBlock5 {
+    position: absolute;
+    top: 250px;
+    left: 280px;
 }
 
 .blueBlockInfo {
@@ -240,8 +256,44 @@ li {
     mix-blend-mode: darken;
 }
 
+#computerMajorIcon {
+    width: 80px;
+    height: 80px;
+    left: 115px;
+    top: 14px;
+}
+
+#programmingMajorIcon {
+    width: 60px;
+    height: 60px;
+    left: 125px;
+    top: 25px;
+}
+
+#roboticsMajorIcon {
+    width: 60px;
+    height: 60px;
+    left: 125px;
+    top: 20px;
+}
+
+#electricityMajorIcon {
+    width: 80px;
+    height: 80px;
+    left: 115px;
+    top: 12px;
+}
+
+#electricianMajorIcon {
+    width: 80px;
+    height: 80px;
+    left: 115px;
+    top: 12px;
+}
+
 .majorTitle {
-    top: 120px;
+    top: 700px;
+    left: 0px;
     position: absolute;
     text-align: center;
     color: #FFCC01;
@@ -250,6 +302,30 @@ li {
     font-weight: 500;
     word-wrap: break-word;
 }
+
+#majorBlock1 {
+    left: 10px;
+}
+
+#majorBlock2 {
+    left: 55px;
+}
+
+#majorBlock3 {
+    left: 55px;
+    top: 120px;
+}
+
+#majorBlock4 {
+    left: 15px;
+    top: 140px;
+}
+
+#majorBlock5 {
+    left: 12px;
+    top: 120px;
+}
+
 
 .majorDescription {
     width: 300px;
@@ -334,6 +410,7 @@ li {
     width: 300px;
     height: 70px;
     left: 600px;
+    top: 2500px;
     position: absolute;
     opacity: 0.70;
     background: #0076BC;
@@ -353,6 +430,14 @@ li {
         color: white;
     }
 
+#additionalBoxesContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 1500px;
+    left: 180px;
+}
+
 .additionalBox {
     width: 500px;
     height: 500px;
@@ -361,6 +446,36 @@ li {
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25) inset;
     border-radius: 30px;
     position: absolute;
+}
+
+#additionalBox1 {
+    left: 0px;
+    top: 0px;
+}
+
+#additionalBox2 {
+    left: 656px;
+    top: 7px;
+}
+
+#box1 {
+    width: 450px;
+    height: 74px;
+    left: 30px;
+    top: 380px;
+    position: absolute;
+    background: rgba(0, 118, 188, 0.40);
+    border-radius: 30px;
+}
+
+#box2 {
+    width: 450px;
+    height: 74px;
+    left: 680px;
+    top: 380px;
+    position: absolute;
+    background: rgba(0, 118, 188, 0.40);
+    border-radius: 30px;
 }
 
 .additionalBoxText {
@@ -375,11 +490,35 @@ li {
     word-wrap: break-word;
 }
 
+#additionalBoxText1 {
+    left: 0px;
+    top: 160px;
+}
+
+#additionalBoxText2 {
+    left: 650px;
+    top: 160px;
+}
+
 .additionalBoxIcon {
     width: 100px;
     height: 100px;
     left: 10px;
     top: 60px;
+}
+
+#additionalBoxicon1 {
+    left: 870px;
+    position: absolute;
+}
+
+#additionalBoxicon2 {
+    left: 200px;
+    position: absolute;
+}
+
+#ft {
+    top: 2000px;
 }
 
 .footerTitles {
@@ -390,7 +529,7 @@ li {
     font-weight: 500;
     word-wrap: break-word;
     border-bottom: 1px solid;
-    -color: white;
+    color: white;
     padding-left: 60px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -416,6 +555,37 @@ li {
     position: relative;
 }
 
+#titleFooter1 {
+    width: 40%;
+}
+
+#titleFooter2 {
+    width: 30%;
+}
+
+#learnMorebtn1 {
+    left: 160px;
+    top: 390px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+#learnMorebtn2 {
+    left: 810px;
+    top: 390px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
 
 
 
