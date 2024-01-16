@@ -1,0 +1,564 @@
+.desktop {
+  background-color: #c8e4f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.desktop .header-wrapper {
+  width: 100%;
+  height: 1040px;
+  top: -9px;
+  left: 0;
+}
+
+.desktop .header-section {
+  width: 100%;
+  height: 52px;
+}
+
+.desktop .header-features {
+  position: relative;
+  width: 100%;
+  height: 77px;
+  /* Enable flexbox */
+  display: flex;
+  /* Align items to the right */
+  justify-content: flex-end;
+  /* Align items in the center vertically */
+  align-items: center;
+  background-color: #f9f1a3;
+}
+
+.desktop .rectangle-symbol {
+  width: 1000%  ;
+  height: 50px;
+  background-color: #f9f1a3;
+}
+
+.desktop .search-text {
+  width: 109px;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .phone-text {
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .phone-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.desktop .separator {
+  width: 14px;
+  font-weight: 200;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .search-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.desktop .mail-icon {
+  width: 35px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.desktop .mail-text {
+  width: 78px;
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .navigation-bar {
+  width: 100%;
+  height: 1006px;
+  background-image: url(../img/mask-group.png);
+  background-size: 100% 100%;
+  padding: 50px 50px 0px 50px;
+}
+
+.desktop .navbar-items {
+  position: relative;
+  width: 100%;
+  height: 162px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.desktop .welcome-section {
+  width: 100%;
+  height: 1006px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.desktop .frame {
+  flex-direction: column;
+  width: 853px;
+  height: 155px;
+  gap: 23px;
+  padding: 28px 121px;
+  position: relative;
+  background-color: #5cadffb2;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.desktop .welcome-text {
+  position: relative;
+  width: 458px;
+  margin-top: -1px;
+  font-family: "Outfit", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .line-decoration {
+  position: relative;
+  width: 381.05px;
+  height: 11.63px;
+}
+
+.desktop .logo {
+  width: 107px;
+  height: 137px;
+  object-fit: cover;
+}
+
+.navbar-items .logo {
+  float: left;
+}
+
+.navbar-items .other-items {
+  float: right;
+}
+
+.desktop .nav-item-about {
+  width: 101px;
+  font-weight: var(--nav-style-font-weight);
+  font-size: var(--nav-style-font-size);
+  text-align: center;
+  text-decoration: underline;
+  font-family: var(--nav-style-font-family);
+  color: #000000;
+  letter-spacing: var(--nav-style-letter-spacing);
+  line-height: var(--nav-style-line-height);
+  font-style: var(--nav-style-font-style);
+}
+
+.desktop .nav-item-admission {
+  width: 101px;
+  font-weight: var(--nav-style-font-weight);
+  font-size: var(--nav-style-font-size);
+  text-align: center;
+  text-decoration: underline;
+  font-family: var(--nav-style-font-family);
+  color: #000000;
+  letter-spacing: var(--nav-style-letter-spacing);
+  line-height: var(--nav-style-line-height);
+  font-style: var(--nav-style-font-style);
+}
+
+.desktop .nav-item-students {
+  width: 131px;
+  font-weight: var(--nav-style-font-weight);
+  font-size: var(--nav-style-font-size);
+  text-align: center;
+  text-decoration: underline;
+  font-family: var(--nav-style-font-family);
+  color: #000000;
+  letter-spacing: var(--nav-style-letter-spacing);
+  line-height: var(--nav-style-line-height);
+  font-style: var(--nav-style-font-style);
+}
+
+.desktop .nav-item-parents {
+  width: 155px;
+  font-weight: var(--nav-style-font-weight);
+  font-size: var(--nav-style-font-size);
+  text-align: center;
+  text-decoration: underline;
+  font-family: var(--nav-style-font-family);
+  color: #000000;
+  letter-spacing: var(--nav-style-letter-spacing);
+  line-height: var(--nav-style-line-height);
+  font-style: var(--nav-style-font-style);
+}
+
+.desktop .nav-item-admin {
+  width: 243px;
+  font-weight: var(--nav-style-font-weight);
+  font-size: var(--nav-style-font-size);
+  text-align: center;
+  text-decoration: underline;
+  font-family: var(--nav-style-font-family);
+  color: #000000;
+  letter-spacing: var(--nav-style-letter-spacing);
+  line-height: var(--nav-style-line-height);
+  font-style: var(--nav-style-font-style);
+}
+
+.desktop .specialty-card {
+  width: 318px;
+  height: 505px;
+}
+
+.desktop .specialty-img {
+  position: relative;
+  height: 505px;
+}
+
+.desktop .specialty-title {
+  position: relative;
+  width: fit-content;
+  margin-top: -7.5px;
+  margin-bottom: -5.5px;
+  margin-left: -1.85px;
+  margin-right: -1.85px;
+  font-weight: var(--h-1-font-weight);
+  font-size: var(--h-1-font-size);
+  text-align: center;
+  font-family: var(--h-1-font-family);
+  color: #000000;
+  letter-spacing: var(--h-1-letter-spacing);
+  line-height: var(--h-1-line-height);
+  font-style: var(--h-1-font-style);
+}
+
+.desktop .p {
+  position: relative;
+  width: 287px;
+  height: 45px;
+  margin-top: -17.5px;
+  margin-bottom: -15.5px;
+  margin-left: -11.35px;
+  margin-right: -11.35px;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .heading-text {
+  font-family: "Outfit", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 60px;
+  letter-spacing: 0;
+}
+
+.desktop .section{
+  padding: 50px 50px 100px 50px;
+}
+
+.desktop .section-heading {
+  padding-bottom: 80px;
+}
+
+.desktop .text-wrapper-14 {
+  font-size: var(--h-1-font-size);
+  font-family: var(--h-1-font-family);
+  font-style: var(--h-1-font-style);
+  font-weight: var(--h-1-font-weight);
+  letter-spacing: var(--h-1-letter-spacing);
+  line-height: var(--h-1-line-height);
+}
+
+.desktop .sidebar-menu {
+  width: 100%;
+  height: 402px;
+  top: 2857px;
+  left: 0;
+}
+
+.desktop .menu-item {
+  width: 466px;
+  height: 402px;
+  background-size: 100% 100%;
+}
+
+.desktop .application{
+  background-image: url(../img/mask-group-5.png);
+}
+
+.desktop .gradebook{
+  background-image: url(../img/mask-group-6.png);
+}
+
+.desktop .schedule{
+  background-image: url(../img/mask-group-7.png);
+}
+
+.desktop .menu-item-frame {
+  width: 384px;
+  height: 102px;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 65px;
+  position: relative;
+  top: 182px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.desktop .menu-item-application{
+  background-color: #4c7bb4;
+}
+
+.desktop .menu-item-gradebook{
+  background-color: #dbdbee;
+}
+
+.desktop .menu-item-schedule{
+  background-color: #71c4cd;
+}
+
+.desktop .menu-item-text {
+  position: relative;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .news-item {
+  width: 448px;
+  height: 420px;
+}
+
+.desktop .thumbnail {
+  width: 444px;
+  height: 254px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+}
+
+.desktop .date {
+  width: 243px;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .headline {
+  width: 372px;
+  font-weight: 600;
+  font-size: 33px;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .news-label {
+  width: 682px;
+  height: 86px;
+}
+
+.desktop .line-image {
+  width: 675px;
+  height: 17px;
+}
+
+.desktop .read-all-news {
+  width: 227px;
+  height: 67px;
+  background-color: #f3df21cc;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+
+.desktop .read-all-news-text {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .footer {
+  width: 100%;
+  /*height: 365px;*/
+  background-color: #fffacdcc;
+}
+
+.desktop .footer-content {
+  position: relative;
+  width: 100%;
+  /*height: 365px;*/
+  background-color: #fffacdcc;
+}
+
+.desktop .link {
+  font-weight: var(--footed-text-font-weight);
+  font-size: var(--footed-text-font-size);
+  text-align: center;
+  font-family: var(--footed-text-font-family);
+  color: #000000;
+  letter-spacing: var(--footed-text-letter-spacing);
+  line-height: var(--footed-text-line-height);
+  font-style: var(--footed-text-font-style);
+}
+
+.desktop .contact-info {
+  width: 331px;
+  height: 111px;
+}
+
+.desktop .phone-number {
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .phone-call-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.desktop .facebook-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+.desktop .address {
+  width: 331px;
+  font-weight: 400;
+  font-size: 19px;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .email-info {
+  width: 107px;
+  height: 32px;
+}
+
+.desktop .email-icon {
+  width: 35px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.desktop .email {
+  width: 78px;
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .footer-text {
+  width: 301px;
+  height: 44px;
+}
+
+.desktop .footer-line {
+  width: 301px;
+  height: 5px;
+}
+
+.desktop .school-name {
+  width: 296px;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .quick-links {
+  width: 301px;
+  height: 44px;
+}
+
+.desktop .title {
+  width: 296px;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Outfit", Helvetica;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .about-us {
+  width: 301px;
+  height: 44px;
+}
+
+.footer-column{
+  
+}
