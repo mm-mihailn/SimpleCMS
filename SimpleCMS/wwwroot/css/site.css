@@ -2,7 +2,7 @@ html {
   font-size: 14px;
 }
 
-
+none
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -82,7 +82,7 @@ body {
   height: 130px;
   margin-top: 2.5%;
   margin-left: 5%;
-  padding: none;
+  padding: 0%;
 
 }
 #navButtonsPlace{
@@ -173,7 +173,7 @@ h4{
   box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
 -webkit-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
 -moz-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.83);
-  padding:none;
+  padding:0%;
   margin-left: 17px;
   margin-top: 10px;
   border:none;
@@ -346,6 +346,14 @@ padding-right:100px;
 }
 #navButtonBack:hover{
   background-color:rgb(249,241,163);
+}
+#SpecialitiesYellowLine{
+  width:300px; 
+  height:8px;
+}
+#NewsYellowLine{
+  width:400px; 
+  height:8px; 
 }
 @media (min-width: 768px) 
   {
