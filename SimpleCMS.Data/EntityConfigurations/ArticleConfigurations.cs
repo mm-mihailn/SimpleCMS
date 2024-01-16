@@ -18,7 +18,7 @@ namespace SimpleCMS.Data.EntityConfigurations
             builder.Property(x => x.Title).HasMaxLength(255);
             builder.Property(x => x.SubTitle).HasMaxLength(500);
             builder.Property(x => x.Slug).HasMaxLength(255);
-            builder.Property(x=> x.CreatedById).HasMaxLength(450);
+            builder.Property(x => x.CreatedById).HasMaxLength(450);
 
             builder
                 .HasMany(p => p.Files)
