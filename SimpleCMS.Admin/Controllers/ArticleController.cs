@@ -74,6 +74,7 @@ namespace SimpleCMS.Admin.Controllers
             {
                 return NotFound();
             }
+            
             if (ModelState.IsValid)
             {
                 try
