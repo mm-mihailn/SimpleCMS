@@ -21,4 +21,8 @@
     <ProjectReference Include="..\SimpleCMS.Data\SimpleCMS.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Users\" />
+  </ItemGroup>
+
 </Project>
