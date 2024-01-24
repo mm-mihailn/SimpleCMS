@@ -41,7 +41,7 @@ namespace SimpleCMS.Admin.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(Article article)
         {
@@ -69,7 +69,7 @@ namespace SimpleCMS.Admin.Controllers
             }
             return View(article);
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Article article)
         {
@@ -103,7 +103,7 @@ namespace SimpleCMS.Admin.Controllers
 
             return View(article);
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)
