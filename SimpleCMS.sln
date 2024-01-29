@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCMS.Data", "SimpleCMS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCMS.Business", "SimpleCMS.Business\SimpleCMS.Business.csproj", "{C303F290-2171-4230-83EB-2FBACFAC0A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCMS.Admin", "SimpleCMS.Admin\SimpleCMS.Admin.csproj", "{933D39AC-6667-47E0-A26D-63A1EF8D97D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCMS.Admin", "SimpleCMS.Admin\SimpleCMS.Admin.csproj", "{933D39AC-6667-47E0-A26D-63A1EF8D97D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

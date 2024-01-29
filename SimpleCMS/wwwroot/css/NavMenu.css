@@ -1,0 +1,88 @@
+﻿.navigationBarSchool {
+    width: 100%;
+    overflow: hidden;
+}
+
+#menuList {
+    overflow: hidden;
+    background: linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.93) 0%, rgba(0, 118, 188, 0) 100%);
+    list-style-type: none;
+    position: sticky;
+}
+
+li {
+    display:inline;
+    float: left;
+    margin-left: 50px;
+    font-size: 18px;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+    li a {
+        text-decoration: none;
+        color: #03293F;
+        display: block;
+        padding: 12px 14px;
+    }
+
+        li a:hover {
+            background-color: #0076BC;
+            text-align: center;
+            color: white;
+        }
+
+#logo {
+    width: 25px;
+    height: 30px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #FFCC01;
+    position: relative;
+}
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+        .topnav a.icon {
+            background: rgb(91,167,212);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+.menuItem:hover {
+    background-color: #ddd;
+}
+
+.active {
+    background-color: rgb(91,167,212);
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #menuList {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .burgerMenu {
+        display: none;
+    }
+}
