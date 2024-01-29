@@ -6,6 +6,8 @@ using SimpleCMS.Business.Services.Interfaces;
 namespace SimpleCMS.Admin.Controllers
 {
     public class HomeController : Controller
+        //efsfsefsefesfesfs
+        //21413412
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUsersService _usersService;
