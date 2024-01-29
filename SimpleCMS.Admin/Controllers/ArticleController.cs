@@ -6,9 +6,11 @@ using SimpleCMS.Admin.Models.ViewModel;
 using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace SimpleCMS.Admin.Controllers
 {
+    [Authorize]
     public class ArticleController : Controller
     {
         private readonly IArticlesService _articlesService;
@@ -26,10 +28,10 @@ namespace SimpleCMS.Admin.Controllers
             return View(articleViewModel);
         }
 
-        public IActionResult Privacy()
+        /*public IActionResult Privacy()
         {
             return View();
-        }
+        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -41,14 +43,16 @@ namespace SimpleCMS.Admin.Controllers
         {
             return View();
         }
-        //[Authorize(Roles = "Admin")]
+        //[Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(Article article)
         {
             
             if (ModelState.IsValid)
             {
-                article.CreatedById = "83651fd9-a992-4644-9dff-437dfe02c30d";
+                //article.CreatedById = "83651fd9-a992-4644-9dff-437dfe02c30d";
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                article.CreatedById = userId;
                 await _articlesService.AddArticle(article);
                 return RedirectToAction(nameof(Index));
             }
@@ -56,7 +60,7 @@ namespace SimpleCMS.Admin.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
                 return NotFound();
             }
@@ -69,7 +73,7 @@ namespace SimpleCMS.Admin.Controllers
             }
             return View(article);
         }
-        //[Authorize(Roles = "Admin")]
+        //[Authorize]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Article article)
         {
@@ -96,14 +100,14 @@ namespace SimpleCMS.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var article = await _articlesService.FindAsync(id);
-            if (id == null)
+            if (id <= 0)
             {
                 return NotFound();
             }
 
             return View(article);
         }
-        //[Authorize(Roles = "Admin")]
+        //[Authorize]
         [HttpPost, ActionName("Delete")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)

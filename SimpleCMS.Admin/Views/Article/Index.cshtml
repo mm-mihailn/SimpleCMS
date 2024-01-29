@@ -20,11 +20,22 @@
             <th>
                 @Html.DisplayNameFor(article => article.Articles![0].SubTitle)
             </th>
+          
             <th>
                 @Html.DisplayNameFor(article => article.Articles![0].Content)
             </th>
             <th>
+                @Html.DisplayNameFor(article => article.Articles![0].Published)
+            </th>
+            <th>
+                @Html.DisplayNameFor(article => article.Articles![0].DateModified)
+            </th>
+            <th>
                 @Html.DisplayNameFor(article => article.Articles![0].DateCreated)
+            </th>
+    
+            <th>
+                @Html.DisplayNameFor(article => article.Articles![0].CreatedById)
             </th>
             <th></th>
         </tr>
@@ -32,20 +43,30 @@
     <tbody>
         @foreach (var item in Model.Articles)
         {
-            <tr><td>
-                    @Html.DisplayFor(modelItem => item.Id)
+            <tr>
+                     <td>
+                    @Html.DisplayFor(articleItem => item.Id)
+                    </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(articleItem => item.SubTitle)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SubTitle)
+                    @Html.DisplayFor(articleItem => item.Content)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Content)
+                    @Html.DisplayFor(articleItem => item.Published)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DateCreated)
+                    @Html.DisplayFor(articleItem => item.DateModified)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.CreatedById)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
