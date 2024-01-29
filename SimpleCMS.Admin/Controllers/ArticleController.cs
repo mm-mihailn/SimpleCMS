@@ -49,9 +49,8 @@ namespace SimpleCMS.Admin.Controllers
         {
             
             if (ModelState.IsValid)
-            {
-                //article.CreatedById = "83651fd9-a992-4644-9dff-437dfe02c30d";
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            {             
+                string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 article.CreatedById = userId;
                 await _articlesService.AddArticle(article);
                 return RedirectToAction(nameof(Index));
