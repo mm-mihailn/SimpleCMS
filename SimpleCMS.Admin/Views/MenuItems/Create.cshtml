@@ -17,8 +17,8 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Published"  class=" control-label"></label>
-                <input asp-for="Published" type="checkbox"  />
+                <label asp-for="Published" class="control-label"></label>
+                <input asp-for="Published" type="checkbox" />
                 <span asp-validation-for="Published" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -27,16 +27,14 @@
                 <span asp-validation-for="Link" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parent" class="control-label"></label>
-                <input asp-for="Parent" class="form-control" />
-                <span asp-validation-for="Parent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="ParentId" class="control-label"></label>
-                <input asp-for="ParentId" class="form-control" />
+                <select asp-for="ParentId" asp-items="@(new SelectList(ViewBag.ParentItems, "Id", "Title", Model?.ParentId))" class="form-control">
+                    <option value="">None</option>
+                </select>
                 <span asp-validation-for="ParentId" class="text-danger"></span>
             </div>
-           
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

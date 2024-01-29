@@ -37,22 +37,22 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].Id)
+                    @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].Title)
+                    @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].Published)
+                    @Html.DisplayFor(modelItem => item.Published)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].Link)
+                    @Html.DisplayFor(modelItem => item.Link)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].Parent)
+                    @Html.DisplayFor(modelItem => item.Parent.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Items![0].ParentId)
+                    @Html.DisplayFor(modelItem => item.ParentId)
                 </td>
 
                 <td>

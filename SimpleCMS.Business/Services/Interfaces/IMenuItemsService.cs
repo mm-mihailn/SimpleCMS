@@ -12,9 +12,11 @@ namespace SimpleCMS.Business.Services.Interfaces
     {
         Task<IEnumerable<MenuItem>> GetMenuItemsAsync();
         Task<MenuItem?> GetMenuItemsByIdAsync(int id);
+        Task<IEnumerable<MenuItem>> GetMenuItemsByParentIdAsync(int id);
         Task<MenuItem> AddMenuItems(MenuItem item);
         Task<MenuItem> FindAsync(int id);
+        Task<bool> IsMenuItemAParent(int id);
         Task DeleteAsync(MenuItem item);
-        void UpdateMenuItem(MenuItem item);
+        Task UpdateMenuItem(MenuItem item);
     }
 }

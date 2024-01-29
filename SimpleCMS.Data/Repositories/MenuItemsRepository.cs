@@ -25,5 +25,16 @@ namespace SimpleCMS.Data.Repositories
         {
             return await Entities.FirstOrDefaultAsync(p => p.Id == id);
         }
+        public async Task<IEnumerable<MenuItem>> GetByParentIdAsync(int id)
+        {
+            return await Entities
+        .Where(x => x.ParentId == id)
+        .ToListAsync(); 
+        }
+        public  async Task<bool> HasChildItemsAsync(int parentId)
+        {
+            
+            return await Entities.AnyAsync(x => x.ParentId == parentId);
+        }
     }
 }

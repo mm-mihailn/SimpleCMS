@@ -33,22 +33,29 @@ namespace SimpleCMS.Business.Services
             return await _menuItemsRepository.GetByIdAsync(id);
         }
 
-       
-
+        public async Task<IEnumerable<MenuItem?>> GetMenuItemsByParentIdAsync(int id)
+        {
+            return await _menuItemsRepository.GetByParentIdAsync(id);
+        }
         public async Task<MenuItem> AddMenuItems(MenuItem item)
         {
             return await _menuItemsRepository.AddAsync(item);
         }
-
-        public void UpdateMenuItem(MenuItem item)
+        public async Task<bool> IsMenuItemAParent(int id)
         {
-            _menuItemsRepository.UpdateAsync(item);
+            return await _menuItemsRepository.HasChildItemsAsync(id);
+        }
+
+        public async Task UpdateMenuItem(MenuItem item)
+        {
+           await _menuItemsRepository.UpdateAsync(item);
         }
 
         public async Task<MenuItem> FindAsync(int id)
         {
             return await _menuItemsRepository.FindAsync(id);
         }
+
 
 
     }
