@@ -76,7 +76,7 @@ namespace SimpleCMS.Admin.Controllers
                 }
             }
 
-            // Repopulate ViewBag.ParentItems in case of validation errors
+           
             ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
 
             return View(item);
@@ -95,6 +95,9 @@ namespace SimpleCMS.Admin.Controllers
                 return NotFound();
             }
             ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
+            ViewBag.ParentItems = ((IEnumerable<MenuItem>)ViewBag.ParentItems)
+    .Where(menuItem => menuItem.Id != item.Id)
+    .ToList();
             return View(item);
         }
         [HttpPost]
@@ -142,6 +145,7 @@ namespace SimpleCMS.Admin.Controllers
 
             
             ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
+           
 
             return View(item);
         }
