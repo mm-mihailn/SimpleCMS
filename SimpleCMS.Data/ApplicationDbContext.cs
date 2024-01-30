@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SimpleCMS.Data.EntityConfigurations;
 using SimpleCMS.Data.Models;
+using File = SimpleCMS.Data.Models.File;
 
 namespace SimpleCMS.Data
 {
@@ -16,7 +17,7 @@ namespace SimpleCMS.Data
 
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
         public DbSet<Article> Articles => Set<Article>();
-        public DbSet<ArticleFile> Files => Set<ArticleFile>();
+        public DbSet<File> Files => Set<File>();
         public DbSet<Setting> Setting => Set<Setting>();
 
         protected override void OnModelCreating(ModelBuilder builder)
