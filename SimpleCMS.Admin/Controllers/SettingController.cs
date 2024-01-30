@@ -8,9 +8,11 @@ using SimpleCMS.Data.Repositories.Interfaces;
 using System.Diagnostics;
 using SimpleCMS.Data.Models;
 using System.Diagnostics.Eventing.Reader;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SimpleCMS.Admin.Controllers
 {
+    [Authorize]
     public class SettingController : Controller
     {
         private readonly ISettingService _settingService;
@@ -22,10 +24,12 @@ namespace SimpleCMS.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            SettingViewModel viewModell = new SettingViewModel();
-            viewModell.Settings = (await _settingService.GetSettingAsync()).ToList();
-            
-            return View(viewModell);
+            SettingViewModel viewModel = new SettingViewModel
+            {
+                Settings = (await _settingService.GetSettingAsync()).ToList()
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Create()
@@ -34,7 +38,6 @@ namespace SimpleCMS.Admin.Controllers
         }
 
         [HttpPost]
-       
         public async Task<IActionResult> Create(Setting setting)
         {
             if (ModelState.IsValid)
@@ -49,7 +52,6 @@ namespace SimpleCMS.Admin.Controllers
 
                 await _settingService.AddSetting(setting);
                 return RedirectToAction(nameof(Index));
-  
             }
 
             return View(setting);
@@ -57,9 +59,9 @@ namespace SimpleCMS.Admin.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
-                return NotFound();
+                return BadRequest("Invalid id parameter");
             }
 
             var setting = await _settingService.FindAsync(id);
@@ -72,9 +74,13 @@ namespace SimpleCMS.Admin.Controllers
         }
 
         [HttpPost]
-       
         public async Task<IActionResult> Edit(int id, Setting setting)
         {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid id parameter");
+            }
+
             if (id != setting.Id)
             {
                 return NotFound();
@@ -93,11 +99,15 @@ namespace SimpleCMS.Admin.Controllers
 
                 return RedirectToAction(nameof(Index)); 
             }
-            return View(setting) ;
+            return View(setting);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid id parameter");
+            }
             
             var setting = await _settingService.FindAsync(id);
 
@@ -111,10 +121,13 @@ namespace SimpleCMS.Admin.Controllers
 
 
         [HttpPost, ActionName("Delete")]
-     
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-       
+            if (id <= 0)
+            {
+                return BadRequest("Invalid id parameter");
+            }
+
             var setting = await _settingService.GetSettingByIdAsync(id);
             if (setting != null)
             {
@@ -122,12 +135,6 @@ namespace SimpleCMS.Admin.Controllers
             }
 
             return RedirectToAction(nameof(Index));
-        }
-
-    
-        public IActionResult Private()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

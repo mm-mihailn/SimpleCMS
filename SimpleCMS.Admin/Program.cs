@@ -26,10 +26,6 @@ builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<ISettingRepository, SettingRepository>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 
-builder.Services.AddScoped<IArticleFileRepository, ArticleFileRepository>();
-builder.Services.AddScoped<IAritcleFileService, AritcleFileService>();
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
