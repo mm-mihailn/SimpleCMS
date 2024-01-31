@@ -14,7 +14,7 @@ namespace SimpleCMS.Business.Services.Interfaces
         Task<MenuItem?> GetMenuItemsByIdAsync(int id);
         Task<IEnumerable<MenuItem>> GetMenuItemsByParentIdAsync(int id);
         Task<MenuItem> AddMenuItems(MenuItem item);
-        Task<MenuItem> FindAsync(int id);
+        Task<MenuItem?> FindAsync(int id);
         Task<bool> IsMenuItemAParent(int id);
         Task DeleteAsync(MenuItem item);
         Task UpdateMenuItem(MenuItem item);

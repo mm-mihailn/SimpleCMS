@@ -11,7 +11,7 @@ namespace SimpleCMS.Data.Repositories.Interfaces
     public interface IMenuItemsRepository: IRepository<MenuItem>
     {
         Task<IEnumerable<MenuItem>> GetAllMenuItemsAsync();
-        Task<MenuItem> GetByIdAsync(int id);
+        Task<MenuItem?> GetByIdAsync(int id);
         Task<IEnumerable<MenuItem>> GetByParentIdAsync(int id);
         Task <bool> HasChildItemsAsync(int parentId);
         

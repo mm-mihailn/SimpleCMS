@@ -20,10 +20,10 @@ namespace SimpleCMS.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            MenuItemsViewModel viewModell = new MenuItemsViewModel();
-            viewModell.Items = (await _menuItemsService.GetMenuItemsAsync()).ToList();
+            var viewModel = new MenuItemsViewModel();
+            viewModel.Items = (await _menuItemsService.GetMenuItemsAsync()).ToList();
 
-            return View(viewModell);
+            return View(viewModel);
         }
         public async Task<IActionResult> Create()
         {
@@ -39,30 +39,24 @@ namespace SimpleCMS.Admin.Controllers
             {
                 try
                 {
-                    
                     if (item.ParentId.HasValue)
                     {
                         var selectedParent = await _menuItemsService.FindAsync(item.ParentId.Value);
 
                         if (selectedParent != null)
                         {
-                            
                             item.ParentId = selectedParent.Id;
                             item.Parent = selectedParent;
-                            
                         }
                         else
                         {
-                           
                             ModelState.AddModelError("ParentId", "Selected parent not found");
-                            
                             ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
                             return View(item);
                         }
                     }
                     else
                     {
-                        
                         item.ParentId = null;
                         item.Parent = null;
                     }
@@ -75,21 +69,18 @@ namespace SimpleCMS.Admin.Controllers
                     return NotFound();
                 }
             }
-
            
             ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
-
             return View(item);
         }
         public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
-                return NotFound();
+                return BadRequest("Invalid parameter Id");
             }
 
             var item = await _menuItemsService.FindAsync(id);
-
             if (item == null)
             {
                 return NotFound();

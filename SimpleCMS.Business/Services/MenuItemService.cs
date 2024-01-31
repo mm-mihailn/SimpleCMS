@@ -33,7 +33,7 @@ namespace SimpleCMS.Business.Services
             return await _menuItemsRepository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<MenuItem?>> GetMenuItemsByParentIdAsync(int id)
+        public async Task<IEnumerable<MenuItem>> GetMenuItemsByParentIdAsync(int id)
         {
             return await _menuItemsRepository.GetByParentIdAsync(id);
         }
@@ -51,7 +51,7 @@ namespace SimpleCMS.Business.Services
            await _menuItemsRepository.UpdateAsync(item);
         }
 
-        public async Task<MenuItem> FindAsync(int id)
+        public async Task<MenuItem?> FindAsync(int id)
         {
             return await _menuItemsRepository.FindAsync(id);
         }
