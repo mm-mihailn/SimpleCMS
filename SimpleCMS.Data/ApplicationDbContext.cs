@@ -54,7 +54,7 @@ namespace SimpleCMS.Data
             var adminUserId = Guid.NewGuid().ToString();
             var user = new User
             {
-                Id = adminUserId,
+                //Id = adminUserId,
                 UserName = email,
                 NormalizedUserName = email.ToUpper(),
                 Email = email,

@@ -28,10 +28,7 @@ namespace SimpleCMS.Admin.Controllers
             return View(articleViewModel);
         }
 
-        /*public IActionResult Privacy()
-        {
-            return View();
-        }*/
+    
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -43,13 +40,13 @@ namespace SimpleCMS.Admin.Controllers
         {
             return View();
         }
-        //[Authorize]
+        
         [HttpPost]
         public async Task<IActionResult> Create(Article article)
         {
             
             if (ModelState.IsValid)
-            {             
+            {
                 string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 article.CreatedById = userId;
                 await _articlesService.AddArticle(article);
@@ -72,7 +69,7 @@ namespace SimpleCMS.Admin.Controllers
             }
             return View(article);
         }
-        //[Authorize]
+      
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Article article)
         {
@@ -106,7 +103,7 @@ namespace SimpleCMS.Admin.Controllers
 
             return View(article);
         }
-        //[Authorize]
+        
         [HttpPost, ActionName("Delete")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)
