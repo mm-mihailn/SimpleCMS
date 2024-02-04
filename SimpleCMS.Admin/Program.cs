@@ -22,6 +22,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
+builder.Services.AddScoped<IMenuItemsService,MenuItemService>();
 
 var app = builder.Build();
 
