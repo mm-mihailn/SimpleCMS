@@ -23,12 +23,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 
-builder.Services.AddScoped<ISettingRepository, SettingRepository>();
-builder.Services.AddScoped<ISettingService, SettingService>();
-
-builder.Services.AddScoped<IArticleFileRepository, ArticleFileRepository>();
-builder.Services.AddScoped<IAritcleFileService, AritcleFileService>();
-
+builder.Services.AddScoped<IFileRepository, FileRepository>();
+builder.Services.AddScoped<IFileService, FileService>();
 
 var app = builder.Build();
 

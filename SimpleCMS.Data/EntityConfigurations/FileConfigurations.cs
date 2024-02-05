@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace SimpleCMS.Data.EntityConfigurations
 {
-    public class FileConfigurations : IEntityTypeConfiguration<Models.ArticleFile>
+    public class FileConfigurations : IEntityTypeConfiguration<Models.Files>
     {
-        public void Configure(EntityTypeBuilder<Models.ArticleFile> builder)
+        public void Configure(EntityTypeBuilder<Models.Files> builder)
         {
             builder.ToTable("Files");
             builder.HasKey(p => p.Id);

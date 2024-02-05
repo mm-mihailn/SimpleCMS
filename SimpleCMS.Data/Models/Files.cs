@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace SimpleCMS.Data.Models
 {
-    public class ArticleFile
+    public class Files
     {
-        public ArticleFile()
+        public Files()
         {
             Name = String.Empty;
             Path = String.Empty;
             MimeType = String.Empty;
-            Articles = new List<Article>();
         }
 
         public int Id { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
         public string Path { get; set; }
         public string MimeType { get; set; }
 
-        public ICollection<Article> Articles { get; set; }
+
+        public List<Article> Articles { get; set; }
     }
 }
