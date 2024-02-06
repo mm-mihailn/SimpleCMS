@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SimpleCMS.Admin.Models.ViewModel;
 using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data.Models;
@@ -6,6 +7,7 @@ using System.Security.Claims;
 
 namespace SimpleCMS.Admin.Controllers
 {
+    [Authorize]
     public class UploadingFilesController : Controller
     {
         private readonly IFileService _fileService;

@@ -6,7 +6,6 @@ using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data.Models;
 using SimpleCMS.Data.Repositories.Interfaces;
 using System.Diagnostics;
-using SimpleCMS.Data.Models;
 using System.Diagnostics.Eventing.Reader;
 
 namespace SimpleCMS.Admin.Controllers
