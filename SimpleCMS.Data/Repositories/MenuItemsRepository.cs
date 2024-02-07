@@ -21,7 +21,7 @@ namespace SimpleCMS.Data.Repositories
             return await Entities.ToListAsync();
         }
 
-        public async Task<MenuItem> GetByIdAsync(int id)
+        public async Task<MenuItem?> GetByIdAsync(int id)
         {
             return await Entities.FirstOrDefaultAsync(p => p.Id == id);
         }
@@ -33,7 +33,6 @@ namespace SimpleCMS.Data.Repositories
         }
         public  async Task<bool> HasChildItemsAsync(int parentId)
         {
-            
             return await Entities.AnyAsync(x => x.ParentId == parentId);
         }
     }
