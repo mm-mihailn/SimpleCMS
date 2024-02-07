@@ -84,9 +84,10 @@ namespace SimpleCMS.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             if (id == null)
-            {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
             var item = await _menuItemsService.FindAsync(id);
 
@@ -94,11 +95,18 @@ namespace SimpleCMS.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
-            ViewBag.ParentItems = ((IEnumerable<MenuItem>)ViewBag.ParentItems)
-    .Where(menuItem => menuItem.Id != item.Id)
-    .ToList();
-            return View(item);
+
+            
+            var parentItems = await _menuItemsService.GetMenuItemsAsync();
+            parentItems = parentItems.Where(menuItem => menuItem.Id != item.Id).ToList();
+
+            var viewModel = new MenuItemsViewModel
+            {
+                Parent = item,
+                SubMenuItems = parentItems
+            };
+
+            return View(viewModel);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(int id, MenuItem item)
@@ -155,12 +163,22 @@ namespace SimpleCMS.Admin.Controllers
 
             var item = await _menuItemsService.FindAsync(id);
 
+            var viewModel = new MenuItemsViewModel
+            {
+                Id = item.Id,
+                Title = item.Title,
+                Published = item.Published,
+                Link = item.Link,
+                Parent = item.Parent,
+                ParentId = item.ParentId
+            };
+
             if (item == null)
             {
                 return NotFound();
             }
 
-            return View(item);
+            return View(viewModel);
         }
         [HttpPost, ActionName("Delete")]
 
