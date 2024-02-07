@@ -1,5 +1,4 @@
-﻿@model IEnumerable<SimpleCMS.Data.Models.Article>
-
+﻿@model SimpleCMS.Admin.Models.ViewModel.ArticleViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,71 +12,67 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(article => article.Articles![0].Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SubTitle)
+                @Html.DisplayNameFor(article => article.Articles![0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Content)
+                @Html.DisplayNameFor(article => article.Articles![0].SubTitle)
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(article => article.Articles![0].Content)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Published)
+                @Html.DisplayNameFor(article => article.Articles![0].Published)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateModified)
+                @Html.DisplayNameFor(article => article.Articles![0].DateModified)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateCreated)
+                @Html.DisplayNameFor(article => article.Articles![0].DateCreated)
             </th>
+    
             <th>
-                @Html.DisplayNameFor(model => model.Slug)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedById)
+                @Html.DisplayNameFor(article => article.Articles![0].CreatedById)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Published)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateModified)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Slug)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedById)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Articles)
+        {
+            <tr>
+                     <td>
+                    @Html.DisplayFor(articleItem => item.Id)
+                    </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.SubTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.Published)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.DateModified)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.DisplayFor(articleItem => item.CreatedById)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

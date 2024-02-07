@@ -11,11 +11,11 @@ using System.Security.Claims;
 namespace SimpleCMS.Admin.Controllers
 {
     [Authorize]
-    public class ArticleController : Controller
+    public class ArticlesController : Controller
     {
         private readonly IArticlesService _articlesService;
 
-        public ArticleController(IArticlesService articlesService)
+        public ArticlesController(IArticlesService articlesService)
         {
             _articlesService = articlesService;
         }
