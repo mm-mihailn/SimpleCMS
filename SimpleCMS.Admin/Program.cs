@@ -26,6 +26,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
+builder.Services.AddScoped<IMenuItemsService,MenuItemService>();
+
+builder.Services.AddScoped<ISettingRepository, SettingRepository>();
+builder.Services.AddScoped<ISettingService, SettingService>();
 
 builder.Services.AddScoped<IArticlesRepository, ArticlesRepository>();
 builder.Services.AddScoped<IArticlesService, ArticlesService>();
