@@ -25,6 +25,9 @@ builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
 builder.Services.AddScoped<IMenuItemsService,MenuItemService>();
 
+builder.Services.AddScoped<ISettingRepository, SettingRepository>();
+builder.Services.AddScoped<ISettingService, SettingService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

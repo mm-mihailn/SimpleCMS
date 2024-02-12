@@ -66,7 +66,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b6bb36cb-f8bf-47cd-98df-f707c2e57b88",
+                            Id = "3d994190-47f5-4d77-b72c-8d22b72d59f0",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -163,8 +163,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "a74293cb-c060-43b0-9767-ea2cdc68c59d",
-                            RoleId = "b6bb36cb-f8bf-47cd-98df-f707c2e57b88"
+                            UserId = "83ddfc1e-4bc6-4919-8aba-d7809cf7cd20",
+                            RoleId = "3d994190-47f5-4d77-b72c-8d22b72d59f0"
                         });
                 });
 
@@ -296,6 +296,29 @@ namespace SimpleCMS.Data.Migrations
                     b.ToTable("MenuItems", (string)null);
                 });
 
+            modelBuilder.Entity("SimpleCMS.Data.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings", (string)null);
+                });
+
             modelBuilder.Entity("SimpleCMS.Data.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -367,19 +390,19 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a74293cb-c060-43b0-9767-ea2cdc68c59d",
+                            Id = "83ddfc1e-4bc6-4919-8aba-d7809cf7cd20",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a5ea3eb4-7123-44d2-81e6-561f45c0406b",
+                            ConcurrencyStamp = "45b6124b-b70d-4d63-b44f-e7ef699e6689",
                             Email = "admin@simplecms.net",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "John Smith",
                             NormalizedEmail = "ADMIN@SIMPLECMS.NET",
                             NormalizedUserName = "ADMIN@SIMPLECMS.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN7SfbeVcBlwwR95g8+x9FvXxJRkhka5nCnz1l7YTyG6Y7gVy8a2B6j/20byyORuBg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDbfXKi+Kprz2qerZym84suGxKIu/flYDc9JhT9HPEH0MFiLi678JNSgTIFmqAdoHw==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cada3f11-4c1d-4d70-a2dd-69f2b2561898",
+                            SecurityStamp = "020e2a7f-f70b-4c35-8758-09c3ddf8ea4f",
                             TwoFactorEnabled = false,
                             UserName = "admin@simplecms.net"
                         });
