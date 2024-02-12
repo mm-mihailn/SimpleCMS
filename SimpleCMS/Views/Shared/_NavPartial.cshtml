@@ -1,5 +1,6 @@
 ﻿@page
-@model SimpleCMS.Admin.Views.Shared._NavPartialModel
+@using SimpleCMS.Admin.Models;
+@model List<MenuItemsViewModel>
 @{
     <!DOCTYPE html>
     <html lang="en">
@@ -27,7 +28,12 @@
                         <li class="col-1 "><a href="#"> галерия </a></li>
                         <li class="col-1 "><a href="#"> профил на купувача </a></li>
                     </ul>
-
+                    <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li class="col-1"><a href="item.Link">@item.Title</a></li>
+                    }
+                    </ul>
                     <div class="burgerMenu">
                         <div class="topnav">
                             <a href="#home" class="active"><img id="logo" src="pictures/logo.PNG"></a>
