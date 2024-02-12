@@ -7,7 +7,7 @@ namespace SimpleCMS.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger; 
         private readonly IUsersService _usersService;
         
         public HomeController(ILogger<HomeController> logger, IUsersService usersService)

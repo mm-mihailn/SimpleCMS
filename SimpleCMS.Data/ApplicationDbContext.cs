@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SimpleCMS.Data.EntityConfigurations;
@@ -17,6 +16,7 @@ namespace SimpleCMS.Data
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
         public DbSet<Article> Articles => Set<Article>();
         public DbSet<Files> Files => Set<Files>();
+
         public DbSet<Setting> Setting => Set<Setting>();
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -56,7 +56,7 @@ namespace SimpleCMS.Data
             var adminUserId = Guid.NewGuid().ToString();
             var user = new User
             {
-                Id = adminUserId,
+                //Id = adminUserId,
                 UserName = email,
                 NormalizedUserName = email.ToUpper(),
                 Email = email,

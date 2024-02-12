@@ -48,7 +48,7 @@ namespace SimpleCMS.Business.Services
              _settingRepository.UpdateAsync(setting);
         }
 
-        public async Task<Setting> FindAsync(int id)
+        public async Task<Setting?> FindAsync(int id)
         {
             return await _settingRepository.FindAsync(id);
         }

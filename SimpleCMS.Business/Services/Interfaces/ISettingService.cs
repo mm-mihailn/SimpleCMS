@@ -15,7 +15,7 @@ namespace SimpleCMS.Business.Services.Interfaces
         Task<Setting?> GetSettingByValueAsync(string value);
 
         Task<Setting> AddSetting(Setting setting);
-        Task<Setting> FindAsync(int id);
+        Task<Setting?> FindAsync(int id);
         Task DeleteAsync(Setting setting);
         void UpdateSetting(Setting setting);    
  
