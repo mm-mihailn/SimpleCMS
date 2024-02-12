@@ -17,7 +17,7 @@ namespace SimpleCMS.Data.Models
         {
             CreatedById = Guid.Empty.ToString();
             Title = Guid.NewGuid().ToString();
-            Files = new List<File>();
+            Files = new List<Files>();
             Slug = Title;
             Type = ArticleType.General;
         }
@@ -33,14 +33,14 @@ namespace SimpleCMS.Data.Models
         public ArticleType Type { get; set; }
 
         public string CreatedById { get; set; }
-        private User? _createdBy;
-        public User CreatedBy
-        {
-            get => _createdBy ?? throw new InvalidOperationException("Uninitialized property: " + nameof(CreatedBy));
-            set => _createdBy = value;
-        }
+        //private User? _createdBy;
+        //public User CreatedBy
+        //{
+        //    get => _createdBy ?? throw new InvalidOperationException("Uninitialized property: " + nameof(CreatedBy));
+        //    set => _createdBy = value;
+        //}
 
-        public ICollection<File> Files{ get; set; }
+        public ICollection<Files> Files{ get; set; }
 
     }
 }

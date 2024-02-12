@@ -9,7 +9,7 @@ namespace SimpleCMS.Admin.Controllers
         //efsfsefsefesfesfs
         //21413412
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger; 
         private readonly IUsersService _usersService;
         
         public HomeController(ILogger<HomeController> logger, IUsersService usersService)

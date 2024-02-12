@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SimpleCMS.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleCMS.Data.EntityConfigurations
 {
@@ -18,7 +13,7 @@ namespace SimpleCMS.Data.EntityConfigurations
             builder.Property(x => x.Title).HasMaxLength(255);
             builder.Property(x => x.SubTitle).HasMaxLength(500);
             builder.Property(x => x.Slug).HasMaxLength(255);
-            builder.Property(x=> x.CreatedById).HasMaxLength(450);
+            builder.Property(x => x.CreatedById).HasMaxLength(450);
 
             builder
                 .HasMany(p => p.Files)
@@ -26,7 +21,7 @@ namespace SimpleCMS.Data.EntityConfigurations
                 .UsingEntity<Dictionary<string, object>>(
                     "ArticlesFiles",
                     j => j
-                        .HasOne<Models.File>()
+                        .HasOne<Files>()
                         .WithMany()
                         .HasForeignKey("FileId")
                         .HasConstraintName("FK_ArticlesFiles_Files_FileId")

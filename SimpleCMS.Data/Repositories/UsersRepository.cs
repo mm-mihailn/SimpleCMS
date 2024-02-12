@@ -34,5 +34,6 @@ namespace SimpleCMS.Data.Repositories
         {
             return await Entities.CountAsync();
         }
+
     }
 }

@@ -1,0 +1,84 @@
+﻿@addTagHelper*,Microsoft.AspNetcore.Mvc.TagHelpers
+@model SimpleCMS.Admin.Models.ViewModel.FileViewModel
+
+@{
+    ViewData["Title"] = "File Upload Page";
+}
+
+<h2>Single File Upload</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="UploadingFiles" asp-action="Index"
+              enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <input type="file" name="file" class="form-control" />
+            </div>
+
+            <div class="mb-3" id="category">
+
+                <label from="category">Category: </label>
+
+                <select id="category" name="category">
+
+                    <option value="Select">Select</option>
+                    <option value="Documents">Documents</option>
+                    <option value="Media">Media</option>
+                    <option value="Audio">Audio</option>
+                    <option value="Image">Image</option>
+                    <option value="Video">Video</option>
+                    <option value="Other">Other</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" value="Upload File" class="btn btn-primary" />
+            </div>
+
+            <span class="text-success">
+                @ViewBag.Message
+            </span>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Files![0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Files![0].Path)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Files![0].MimeType)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Files != null)
+                {
+                    @foreach (var item in Model.Files)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Path)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MimeType)
+                            </td>
+                            <td>
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

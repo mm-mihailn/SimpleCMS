@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - ПГЕЕ М. В. Ломоносов</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css" asp-append-version="true">
+</head>
+<body>
+	<div class="container text-left" id="headerDesign">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="pictures/logo.png" alt="logo" id="schoolLogo" />
+			</div>
+			<div class="col-sm-6">
+				<text class="headerText"> ПГЕЕ "М.В. Ломоносов" </text>
+				<text class="headerText2"> Горна Оряховица </text>
+			</div>
+			<div class="col-sm-4">
+				<img src="pictures/phoneIcon.png" id="phoneIcon" />
+				<a href="contactsPage.html" target="_blank" id="phoneLink">
+					<text id="phoneLinkTxt"> +359 618 6-06-19 </text>
+				</a>
+				<a href="https://www.facebook.com/pages/%D0%9F%D0%93%D0%95%D0%95-%D0%9C%D0%92%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2/110426068978070?locale=bg_BG" target="_blank">
+					<img src="pictures/facebIcon.png" id="facebookIcon" />
+				</a>
+				<img src="pictures/bgLan.jpg" id="bgFlag" />
+			</div>
+		</div>
+	</div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="ft">
+        <div class="container text-left" id="footerTable">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <h2 class="titleFooter1">ПГЕЕ “М. В. Ломоносов”</h2>
+                    </div>
+                    <div class="row">
+                        <text class="footerAddInfo">Горна Оряховица 5100, ул. “Никола Петров” 31</text><br />
+                        <text class="footerAddInfo"> Общи условия</text><br />
+                        <text class="footerAddInfo">Контакти</text><br />
+                        <text class="footerAddInfo">Политика за повеерителност </text>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="row">
+                        <h2 class="titleFooter2" id="col2additions">Бързи линкове</h2>
+                    </div>
+                    <div class="row">
+                        <text class="footerAddInfo" id="col2additions">Електронен дневник</text><br />
+                        <text class="footerAddInfo" id="col2additions"> За нас</text><br />
+                        <text class="footerAddInfo" id="col2additions"> Новини</text><br />
+                        <text class="footerAddInfo" id="col2additions">Прием 2023/2024 </text>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="row">
+                        <h2 class="titleFooter2">Документи</h2>
+                    </div>
+                    <div class="row">
+                        <text class="footerAddInfo">Учебен план</text><br />
+                        <text class="footerAddInfo"> Стипендии</text><br />
+                        <text class="footerAddInfo">Административни услуги </text>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
