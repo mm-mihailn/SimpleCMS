@@ -31,12 +31,14 @@
 			</div>
 		</div>
 	</div>
+    <div class="col-md-3">
+        @await  Component.InvokeAsync("menuItems")
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer id="ft">
         <div class="container text-left" id="footerTable">
             <div class="row">

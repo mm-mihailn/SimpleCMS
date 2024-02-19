@@ -1,0 +1,12 @@
+﻿@page
+@model List<SimpleCMS.Admin.Models.MenuItemsViewModel>
+>
+@{
+    <h3>Users</h3>
+    <ul>
+        @foreach (var items in Model)
+        {
+            <li>@items.Title</li>
+        }
+    </ul>
+}
