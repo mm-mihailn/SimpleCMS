@@ -22,7 +22,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IMenuItemsService, MenuItemService>();
 
-
+builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
+builder.Services.AddScoped<IMenuItemsService, MenuItemService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
