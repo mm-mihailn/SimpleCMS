@@ -1,0 +1,60 @@
+﻿#contactsPageTitle {
+    width: 100% left: 0px;
+    top: 10px;
+    position: relative;
+    text-align: center;
+    color: #0076BC;
+    font-size: 30px;
+    font-family: Montserrat;
+    word-wrap: break-word;
+}
+
+#backgroundPic {
+    width: 456px;
+    height: 526px;
+    position: absolute;
+    left: 500px;
+    top: 250px;
+    opacity: 0.05;
+}
+
+.contactsInfo {
+    margin: 10px;
+    position: absolute;
+    left: 70px;
+}
+
+#IconContainer1 {
+    top: 130px;
+}
+
+#IconContainer2 {
+    top: 280px;
+}
+
+#IconContainer3 {
+    top: 430px;
+}
+
+#locationIconInfo {
+    width: 60px;
+    height: 70px;
+}
+
+#emailIconInfo {
+    width: 70px;
+    height: 70px;
+}
+
+#phoneIconInfo {
+    width: 50px;
+    height: 50px;
+}
+
+#mapIFrame {
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    left: 800px;
+    top: 320px;
+}
