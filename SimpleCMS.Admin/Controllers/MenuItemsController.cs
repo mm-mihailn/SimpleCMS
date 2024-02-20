@@ -27,21 +27,32 @@ namespace SimpleCMS.Admin.Controllers
         }
         public async Task<IActionResult> Create()
         {
-            ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
-            return View();
+            var viewModel = new MenuItemsViewModel
+            {
+                SubMenuItems = await _menuItemsService.GetMenuItemsAsync() ?? new List<MenuItem>()
+            };
+
+            return View(viewModel);
         }
 
 
+
         [HttpPost]
-        public async Task<IActionResult> Create(MenuItem item)
+        public async Task<IActionResult> Create(MenuItemsViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
                 try
                 {
-                    if (item.ParentId.HasValue)
+                    var item = new MenuItem
                     {
-                        var selectedParent = await _menuItemsService.FindAsync(item.ParentId.Value);
+                        Title = viewModel.Title,
+                        Published = viewModel.Published,
+                        Link = viewModel.Link,
+                        ParentId = viewModel.ParentId
+                    };
+
+                    if (viewModel.ParentId.HasValue)
+                    {
+                        var selectedParent = await _menuItemsService.FindAsync(viewModel.ParentId.Value);
 
                         if (selectedParent != null)
                         {
@@ -51,8 +62,8 @@ namespace SimpleCMS.Admin.Controllers
                         else
                         {
                             ModelState.AddModelError("ParentId", "Selected parent not found");
-                            ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
-                            return View(item);
+                            viewModel.SubMenuItems = await _menuItemsService.GetMenuItemsAsync();
+                            return View(viewModel);
                         }
                     }
                     else
@@ -60,19 +71,21 @@ namespace SimpleCMS.Admin.Controllers
                         item.ParentId = null;
                         item.Parent = null;
                     }
-
-                    await _menuItemsService.AddMenuItems(item);
+                    await _menuItemsService.AddMenuItems(item);                   
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return NotFound();
+                catch (Exception ex)
+                {    
+                    ModelState.AddModelError(string.Empty, "Error occurred while creating the item: " + ex.Message);
+                    viewModel.SubMenuItems = await _menuItemsService.GetMenuItemsAsync();
+                    return View(viewModel);
                 }
-            }
+            
+
            
-            ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
-            return View(item);
         }
+
+
         public async Task<IActionResult> Edit(int id)
         {
             if (id <= 0)

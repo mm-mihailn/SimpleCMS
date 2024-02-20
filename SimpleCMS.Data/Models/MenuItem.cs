@@ -23,6 +23,6 @@ namespace SimpleCMS.Data.Models
         public bool Published { get; set; }
         public int? ParentId { get; set; }
         public MenuItem? Parent { get; set; }
-        public ICollection<MenuItem> SubMenuItems { get; set; }
+        public IEnumerable<MenuItem> SubMenuItems { get; set; }
     }
 }
