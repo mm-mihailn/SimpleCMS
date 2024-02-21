@@ -12,8 +12,12 @@ namespace SimpleCMS.Web.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var menuItem = await _menuItemsService.GetMenuItemsAsync();
-            return View(menuItem);
+            var menuItems = await _menuItemsService.GetMenuItemsAsync();
+            var model = menuItems.Where(p=>p.ParentId==null).Select(p => p.Title);
+            //return View(model.Any()?model.ToList():new List<string>());
+            return View(new List<string>());
+
+
         }
     }
 }
