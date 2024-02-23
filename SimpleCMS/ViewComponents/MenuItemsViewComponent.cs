@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleCMS.Business.Services.Interfaces;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace SimpleCMS.Web.ViewComponents
 {
@@ -12,10 +13,11 @@ namespace SimpleCMS.Web.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var menuItems = await _menuItemsService.GetMenuItemsAsync();
-            var model = menuItems.Where(p=>p.ParentId==null).Select(p => p.Title);
-            //return View(model.Any()?model.ToList():new List<string>());
-            return View(new List<string>());
+            //var menuItems = await _menuItemsService.GetMenuItemsAsync();
+            //var model = menuItems.Where(p=>p.ParentId==null).Select(p => p.Title);
+            ////return View(model.Any()?model.ToList():new List<string>());
+            List<string> list = new List<string>() { "училище", "прием", "за родителя", "за ученика", "контакти", "галерия", "профил на купувача" } ;
+            return View(list);
 
 
         }
