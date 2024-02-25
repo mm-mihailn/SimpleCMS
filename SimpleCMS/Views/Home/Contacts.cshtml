@@ -4,21 +4,15 @@
 @{
 	ViewData["Title"] = "Contacts Page";
 }
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>["Title"] -Contacts </title>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/contactsPage.css" asp-append-version="true">
-</head>
-<body>
-	<h2 id="contactsPageTitle"> –––––––––––––––––––––––––––––––––––––––––––Контакти––––––––––––––––––––––––––––––––––––––––––– </h2>
+	<link rel="stylesheet" href="/css/contactsPage.css" asp-append-version="true">
 
-<img id="backgroundPic" src="pictures/locationBackgr.jpg" />
+	<h2 id="contactsPageTitle"> Контакти </h2>
+
+<img id="backgroundPic" src="/pictures/locationBackgr.jpg" />
 
 <div class="container text-center">
 	<div class="contactsInfo">
@@ -26,28 +20,26 @@
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="contactsInfo" id="IconContainer1">
-					<img id="locationIconInfo" src="pictures/locationBackgr.jpg" />
+					<img id="locationIconInfo" src="/pictures/locationBackgr.jpg" />
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="contactsInfo" id="IconContainer2">
-					<img id="emailIconInfo" src="pictures/emailicon.jpg" />
+					<img id="emailIconInfo" src="/pictures/emailicon.jpg" />
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="contactsInfo" id="IconContainer3">
-					<img id="phoneIconInfo" src="pictures/phoneIcon.png" />
+					<img id="phoneIconInfo" src="/pictures/phoneIcon.png" />
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2911.868190214941!2d25.689512276609644!3d43.128295086221115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDA3JzQxLjkiTiAyNcKwNDEnMzEuNSJF!5e0!3m2!1sen!2sbg!4v1708336873887!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2911.868190214941!2d25.689512276609644!3d43.128295086221115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDA3JzQxLjkiTiAyNcKwNDEnMzEuNSJF!5e0!3m2!1sen!2sbg!4v1708336873887!5m2!1sen!2sbg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapIFrame"></iframe>
 
-</body>
-</html>

@@ -1,5 +1,6 @@
 ﻿#contactsPageTitle {
-    width: 100% left: 0px;
+    width: 100%;
+    left: 0px;
     top: 10px;
     position: relative;
     text-align: center;
@@ -56,5 +57,57 @@
     height: 400px;
     width: 600px;
     left: 800px;
-    top: 320px;
+    top: 260px;
 }
+
+@media only screen and (max-width: 768px) {
+
+    #backgroundPic {
+        width: 256px;
+        height: 326px;
+        position: absolute;
+        left: 50px;
+        top: 250px;
+        opacity: 0.05;
+    }
+
+    .contactsInfo {
+        margin: 10px;
+        position: absolute;
+        left: 10px;
+    }
+
+    #IconContainer1 {
+        top: 130px;
+    }
+
+    #IconContainer2 {
+        top: 280px;
+    }
+
+    #IconContainer3 {
+        top: 430px;
+    }
+
+    #locationIconInfo {
+        width: 40px;
+        height: 50px;
+    }
+
+    #emailIconInfo {
+        width: 55px;
+        height: 55px;
+    }
+
+    #phoneIconInfo {
+        width: 40px;
+        height: 40px;
+    }
+
+    #mapIFrame {
+        position: absolute;
+        height: 400px;
+        width: 300px;
+        left:30px;
+        top: 760px;
+    }
