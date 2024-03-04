@@ -2,7 +2,6 @@
     background: #FFCC01;
     width: 100%;
     height: 60px;
-    position: relative;
 }
 
 #schoolLogo {
@@ -15,7 +14,7 @@
 .headerText {
     left: 9px;
     top: 1px;
-    position: absolute;
+    position: relatve;
     color: #03293F;
     font-size: 30px;
     font-family: Montserrat;
@@ -38,17 +37,17 @@
 #phoneIcon {
     width: 27px;
     height: 23px;
-    position: absolute;
+    position: relative;
     margin-left: 100px;
     margin-top: 15px;
 }
 
 #phoneLink {
-    margin-top: 15px;
-    margin-left: 150px;
-    position: absolute;
+    bottom: 17px;
+    left: 150px;
+    position: relative;
     color: #03293F;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Montserrat;
     font-weight: 300;
     word-wrap: break-word;
@@ -73,22 +72,18 @@
 #facebookIcon {
     width: 30px;
     height: 29px;
-    margin-top: 15px;
-    margin-left: 380px;
-    position: absolute;
+    bottom: 47px;
+    left: 380px;
+    position: relative;
     mix-blend-mode: darken;
 }
 
 #bgFlag {
     width: 38px;
     height: 25px;
-    margin-top: 15px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#ft {
-    top: 0px;
+    bottom: 77px;
+    left: 500px;
+    position: relative;
 }
 
 .footerAddInfo {
@@ -146,6 +141,7 @@
 
 
 
+
 @media only screen and (max-width: 768px) {
 
     #schoolLogo {
@@ -182,7 +178,7 @@
     #phoneIcon {
         width: 20px;
         height: 17px;
-        position: absolute;
+        position: relative;
         margin-left: 235px;
         top: 6px;
     }
@@ -198,7 +194,7 @@
         height: 23px;
         top: 5px;
         margin-left: 280px;
-        position: absolute;
+        position: relative;
         mix-blend-mode: darken;
     }
 
@@ -207,8 +203,9 @@
         height: 18px;
         top: 5px;
         margin-left: 330px;
-        position: absolute;
+        position: relative;
     }
+
     #ft {
         width: 100%;
     }
@@ -266,7 +263,9 @@
         padding-left: 15px;
     }
 }
+
 @media only screen and (max-width: 1402px) {
+
 
     .footerAddInfo {
         padding-left: 12px;
@@ -314,6 +313,43 @@
 }
 
 @media only screen and (max-width: 1366px) {
+
+
+    #phoneIcon {
+        margin-left: 50px;
+        margin-top: 17px;
+    }
+
+    #phoneLink {
+        bottom: 25px;
+        left: 90px;
+    }
+
+        #phoneLink:link {
+            color: #03293F;
+        }
+
+        #phoneLink:visited {
+            color: black;
+        }
+
+        #phoneLink:hover {
+            color: #0076BC;
+        }
+
+        #phoneLink:active {
+            color: blue;
+        }
+
+    #facebookIcon {
+        bottom: 54px;
+        margin-left: 280px;
+    }
+
+    #bgFlag {
+        bottom: 80px;
+        margin-left: 380px;
+    }
 
     .footerAddInfo {
         padding-left: 12px;
