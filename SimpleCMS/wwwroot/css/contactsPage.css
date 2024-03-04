@@ -53,11 +53,23 @@
 }
 
 #mapIFrame {
-    position: absolute;
+    position: relative;
     height: 400px;
     width: 600px;
-    left: 800px;
-    top: 260px;
+    left: 680px;
+    top: 210px;
+}
+
+.infoDetails {
+    top: 130px;
+    left: 220px;
+    align: left;
+    position: relative;
+    color: #03293F;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
 }
 
 @media only screen and (max-width: 768px) {
@@ -105,9 +117,28 @@
     }
 
     #mapIFrame {
-        position: absolute;
+        position: relative;
         height: 400px;
         width: 300px;
-        left:30px;
-        top: 760px;
+        left: 30px;
+        right: 30px;
+        top: 860px;
     }
+
+    .infoDetails {
+        position: relative;
+        left: 120px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    #mapIFrame {
+        position: relative;
+        height: 400px;
+        width: 300px;
+        left: 30px;
+        right: 30px;
+        top: 860px;
+    }
+}
