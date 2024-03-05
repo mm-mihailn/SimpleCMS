@@ -54,21 +54,21 @@ namespace SimpleCMS.Data
 
             var email = "admin@simplecms.net";
             var adminUserId = Guid.NewGuid().ToString();
-            var user = new User
-            {
-                //Id = adminUserId,
-                UserName = email,
-                NormalizedUserName = email.ToUpper(),
-                Email = email,
-                NormalizedEmail = email.ToUpper(),
-                EmailConfirmed = true,
-                LockoutEnabled = false,
-                PhoneNumber = "1234567890",
-                Name = "John Smith"
-            };
-            var passwordHasher = new PasswordHasher<User>();
-            user.PasswordHash = passwordHasher.HashPassword(user, "!w@ntT0L0g!n");
-            builder.Entity<User>().HasData(user);
+            //var user = new User
+            //{
+            //    //Id = adminUserId,
+            //    UserName = email,
+            //    NormalizedUserName = email.ToUpper(),
+            //    Email = email,
+            //    NormalizedEmail = email.ToUpper(),
+            //    EmailConfirmed = true,
+            //    LockoutEnabled = false,
+            //    PhoneNumber = "1234567890",
+            //    Name = "John Smith"
+            //};
+            //var passwordHasher = new PasswordHasher<User>();
+            //user.PasswordHash = passwordHasher.HashPassword(user, "!w@ntT0L0g!n");
+            //builder.Entity<User>().HasData(user);
 
             builder.Entity<IdentityUserRole<string>>().HasData(
                 new IdentityUserRole<string>
