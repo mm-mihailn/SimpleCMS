@@ -1,19 +1,33 @@
 ﻿
 @model List<string>
-<navigationBarSchool>
-<div id="NavMenuContainer">
-    <div id="row">
-        <nav class="navigationBarSchool">
-           <ul id="menuList">
-              @foreach (var item in Model)
-              {
+ 
+  <nav class="navbar">
+   @foreach (var item in Model)
+   {
+     <ul class="nav-list">
+      <li class="dropdown">
+        <a id="firstElement" href="#">@item</a>
+        <ul id="firstElement"  class="dropdownContent parentElement">
+          <li><a href="#">Категория 1</a></li>
+          <li><a href="#">Категория 2</a>
 
-              <li class="col-1 "><a href="#">@item</a></li>
-              }
-           </ul>
-        </nav>
-    </div>
-</div>
+            <ul id="secondElement"  class="dropdownContent childrenElement">
+              <li><a href="#">Категория 1</a></li>
+              <li><a href="#">Категория 2</a></li>
+            </ul>
+          </li>
+        
+          <li><a href="#">Категория 3</a>
+             <ul id="secondElement"  class="dropdownContent childrenElement">
+               <li><a href="#">Категория 1</a></li>
+               <li><a href="#">Категория 2</a></li>
+             </ul>
+          </li>
+        </ul>
+      </ul>
+   }
+ </nav>
+ 
 
 <div class="burgerMenu">
      <div class="topnav">

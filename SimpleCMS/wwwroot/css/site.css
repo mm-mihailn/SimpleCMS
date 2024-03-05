@@ -1,42 +1,112 @@
-<<<<<<< HEAD
-/*navMenu*/
-.navigationBarSchool {
-    width: 100%;
+
+.navbar {
+    background: linear-gradient(180deg, hwb(202 0% 26%) 0%, rgba(0, 118, 188, 0.93) 0%, rgba(0, 118, 188, 0) 100%);
     overflow: hidden;
 }
-#menuList {
-   
-}
-#menuList {
-    overflow: hidden;
-    background: linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.93) 0%, rgba(0, 118, 188, 0) 100%);
+
+.nav-list {
     list-style-type: none;
-    position: sticky;
+    margin: 0;
+    padding: 0;
 }
 
-li {
-    display: inline;
-    float: left;
-    margin-left: 5.5%;
-    font-size: 18px;
-    text-align: center;
-    font-family: Montserrat;
-    font-weight: 500;
-}
-
-    li a {
-        font-family: Montserrat;
-        text-decoration: none;
-        color: #03293F;
-        display: block;
-        padding: 12px 14px;
+    .nav-list li {
+        float: left;
+        margin-left: 3%;
+        height: 55px;
     }
 
-        li a:hover {
-            background-color: #0076BC;
+        .nav-list li a {
+            font-size: 23px;
+            display: block;
+            font-family: Montserrat;
+            word-wrap: break-word;
+            color: rgb(0, 0, 0);
             text-align: center;
-            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
         }
+
+            .nav-list li a:hover {
+                background-color: hwb(202 0% 26%);
+                color: black;
+                display: block;
+            }
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdownContent {
+    width: 250px;
+    padding: 0%;
+    margin: auto;
+    margin-right: 200px;
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 160, 255, 0.05);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdownContent li {
+        width: 250px;
+        margin: auto;
+        border: 1px solid rgba(3, 41, 63, 1);
+        height: 5px;
+        display: inline-block;
+        height: 30px;
+    }
+
+        .dropdownContent li a {
+            height: 5px;
+            width: 218px;
+            font-size: 15px;
+            color: black;
+            height: 5px;
+            margin-right: 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 17px;
+        }
+
+#firstElement {
+    margin: auto;
+    margin-left: 40px;
+}
+
+    #firstElement li {
+        margin: auto;
+    }
+
+.dropdownContent li a:hover {
+    background-color: #ddd;
+}
+
+.childrenElement {
+    margin-left: 250px;
+    margin-top: -33.5px;
+}
+
+    .childrenElement li {
+        display: none;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.parentElement li:hover .childrenElement li {
+    display: block;
+    position: relative;
+}
+
+
+
+
 
 #logo {
     width: 25px;
@@ -84,7 +154,7 @@ li {
 
 @media only screen and (max-width: 1140px) {
 
-    #menuList {
+    .navbar {
         display: none;
     }
 }
