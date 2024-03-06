@@ -10,6 +10,7 @@ using SimpleCMS.Data.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -19,6 +20,10 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IMenuItemsService, MenuItemService>();
+
+builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
+builder.Services.AddScoped<IMenuItemsService, MenuItemService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,7 +37,6 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
