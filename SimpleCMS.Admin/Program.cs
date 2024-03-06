@@ -7,11 +7,11 @@ using SimpleCMS.Data.Models;
 using SimpleCMS.Data.Repositories;
 using SimpleCMS.Data.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using SimpleCMS.Admin.Data;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<SimpleCMSAdminContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SimpleCMSAdminContext") ?? throw new InvalidOperationException("Connection string 'SimpleCMSAdminContext' not found.")));
 
 // Add services to the container.
