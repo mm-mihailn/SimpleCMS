@@ -12,9 +12,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(user => user.Users![0].Id)
-            </th>
+            </th> *@
            <th>
                 @Html.DisplayNameFor(user => user.Users![0].Name)
             </th>
@@ -31,9 +31,9 @@
         @foreach (var item in Model.Users)
         {
                 <tr>
-                         <td>
+                        @*  <td>
                     @Html.DisplayFor(Item => item.Id)
-                        </td>
+                        </td> *@
                     <td>
                     @Html.DisplayFor(Item => item.Name)
                     </td>
