@@ -42,9 +42,75 @@ namespace SimpleCMS.Data
 
         private void SeedInitialData(ModelBuilder builder)
         {
-            //Add user and role
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 1,
+                Link = "test",
+                Title = "Училище",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 2,
+                Link = "test",
+                Title = "Начало",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 3,
+                Link = "test",
+                Title = "Прием",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 4,
+                Link = "test",
+                Title = "За Родителя",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 5,
+                Link = "test",
+                Title = "За Ученика",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 6,
+                Link = "test",
+                Title = "Контакти",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 7,
+                Link = "test",
+                Title = "Галерия",
+                Published = true
+            });
+
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 8,
+                Link = "test",
+                Title = "Профил на куповача",
+                Published = true
+            });
+            // Seed user roles and users
             var roleName = "Administrator";
             var adminRoleId = Guid.NewGuid().ToString();
+            var adminUserId = Guid.NewGuid().ToString();
+
+            // Seed identity role
             builder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Id = adminRoleId,
@@ -52,8 +118,8 @@ namespace SimpleCMS.Data
                 NormalizedName = roleName.ToUpper()
             });
 
+            // Seed user
             var email = "admin@simplecms.net";
-            var adminUserId = Guid.NewGuid().ToString();
             var user = new User
             {
                 //Id = adminUserId,
@@ -68,14 +134,17 @@ namespace SimpleCMS.Data
             };
             var passwordHasher = new PasswordHasher<User>();
             user.PasswordHash = passwordHasher.HashPassword(user, "!w@ntT0L0g!n");
+
             builder.Entity<User>().HasData(user);
 
+            // Seed identity user role
             builder.Entity<IdentityUserRole<string>>().HasData(
                 new IdentityUserRole<string>
                 {
                     RoleId = adminRoleId,
                     UserId = adminUserId
                 }
+            
             );
         }
     }
