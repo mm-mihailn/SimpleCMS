@@ -1,5 +1,6 @@
-﻿
-@model List<string>
+﻿@using SimpleCMS.Web.Models
+@model List<MenuItemsViewModel>
+
 <navigationBarSchool>
 <div id="NavMenuContainer">
     <div id="row">
@@ -7,8 +8,7 @@
            <ul id="menuList">
               @foreach (var item in Model)
               {
-
-              <li class="col-1 "><a href="#">@item</a></li>
+              <li class="col-1 "><a href="#">@item.Title</a></li>
               }
            </ul>
         </nav>
@@ -22,7 +22,7 @@
         
             @foreach (var item in Model)
             {
-                <a class="menuItem" href="#">@item</a>
+                <a class="menuItem" href="#">@item.Title</a>
             }
            </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">

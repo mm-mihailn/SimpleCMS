@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace SimpleCMS.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class MenuItemsController : Controller
     {
         private readonly IMenuItemsService _menuItemsService;

@@ -1,6 +1,6 @@
 ﻿using SimpleCMS.Data.Models;
 
-namespace SimpleCMS.Admin.Models
+namespace SimpleCMS.Web.Models
 {
     public class MenuItemsViewModel
     {

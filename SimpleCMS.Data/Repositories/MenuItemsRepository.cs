@@ -35,5 +35,6 @@ namespace SimpleCMS.Data.Repositories
         {
             return await Entities.AnyAsync(x => x.ParentId == parentId);
         }
+        
     }
 }
