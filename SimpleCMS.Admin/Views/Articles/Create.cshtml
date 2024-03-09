@@ -1,7 +1,11 @@
 ﻿@model SimpleCMS.Data.Models.Article
+
+
 @{
     ViewData["Title"] = "Create";
 }
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
 <h1>Create</h1>
 
@@ -9,33 +13,45 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" asp-controller="Articles" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="SubTitle" class="control-label"></label>
                 <input asp-for="SubTitle" class="form-control" />
                 <span asp-validation-for="SubTitle" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" style="width: 160%;">
                 <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
+                <textarea asp-for="Content" class="form-control"></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label class="control-lable">Image</label>
+                <input asp-for="Image" class="form-control" type="file" placeholder="image" />
+                <span asp-asp-validation-for="image" class="text-danger" />
+            </div>
+
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(article => article.Published)
                 </label>
             </div>
+
             <div class="form-group">
                 <label asp-for="DateModified" class="control-label"></label>
                 <input asp-for="DateModified" class="form-control" />
                 <span asp-validation-for="DateModified" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="DateCreated" class="control-label"></label>
                 <input asp-for="DateCreated" class="form-control" />
@@ -54,6 +70,14 @@
 </div>
 
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Content').summernote({
+                height: 250
+            });
+        });
+    </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

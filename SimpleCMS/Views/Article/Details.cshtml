@@ -1,0 +1,22 @@
+﻿@model SimpleCMS.Web.Models.ViewModel.ArticleViewModel;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <head>
+        <link rel="stylesheet" href="~/css/ArticleDetails.css" asp-append-version="true" />
+    </head>
+
+    <h1 id="newsPageTitle">@Model.Title</h1>
+
+    <div class="conteiner-image">
+        <div class="text-center">
+            <img src="/pictures/news1.jpg" class="rounded" alt="news">
+        </div>
+    </div>
+
+    <div class="card-body">
+        <p class="card-text product-information">@Model.Content</p>  
+    </div>
+
+}

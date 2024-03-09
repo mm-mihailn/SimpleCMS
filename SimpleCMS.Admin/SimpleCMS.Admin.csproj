@@ -32,4 +32,8 @@
     <ProjectReference Include="..\SimpleCMS.Data\SimpleCMS.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\Media\Audio\" />
+  </ItemGroup>
+
 </Project>

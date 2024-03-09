@@ -1,0 +1,47 @@
+﻿h1 {
+    width: 100%;
+    margin: 0.7em auto;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 300;
+    color: #0076BC;
+}
+
+    h1:before, h1:after {
+        content: "";
+        display: inline-block;
+        width: 50%;
+        margin: 0 .5em 0 -55%;
+        vertical-align: middle;
+        border-bottom: 1px solid;
+    }
+
+    h1:after {
+        margin: 0 -55% 0 .5em;
+    }
+
+.conteiner-image {
+    text-align: center;
+}
+
+    .conteiner-image img {
+        width:500px;
+        display: inline-block;
+        margin: 30px auto;
+        border-radius: 30px;
+    }
+
+.card-body {
+    width: 100%;
+    margin: 20px auto;
+    background: rgba(0, 118, 188, 0.93);
+    border-radius:30px;
+    padding: 25px;
+    font-size: 22px;
+    line-height: 1.5;
+    white-space: normal;
+}
+
+.card-body p{
+    color:white;
+}
