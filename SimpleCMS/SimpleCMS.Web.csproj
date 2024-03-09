@@ -27,8 +27,4 @@
     <ProjectReference Include="..\SimpleCMS.Data\SimpleCMS.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\pictures\" />
-  </ItemGroup>
-
 </Project>
