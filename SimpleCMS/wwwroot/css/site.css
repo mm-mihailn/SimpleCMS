@@ -27,6 +27,7 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            color:white;
         }
 
             .nav-list li a:hover {
@@ -222,7 +223,7 @@ h1 {
     width: 20%;
     height: 66px;
     margin-left: 40%;
-    margin-top: -3000px;
+    margin-bottom: -500px;
     border-radius: 20px;
     text-align: center;
     font-size: 18px;
