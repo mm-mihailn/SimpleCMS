@@ -8,15 +8,17 @@
     </head>
 
     <h1 id="newsPageTitle">@Model.Title</h1>
+    <h3 id="newsPageTitle">@Model.SubTitle</h3>
+
 
     <div class="conteiner-image">
         <div class="text-center">
-            <img src="/pictures/news1.jpg" class="rounded" alt="news">
+            <img src="@Model.Image" class="rounded" alt="news">
         </div>
     </div>
 
     <div class="card-body">
-        <p class="card-text product-information">@Model.Content</p>  
+        <p class="card-text product-information">@Html.Raw(Model.Content)</p>  
     </div>
 
 }

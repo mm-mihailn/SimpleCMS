@@ -20,6 +20,7 @@ namespace SimpleCMS.Web.Controllers
         public IActionResult Index()
         {
             var articles = _context.Articles.ToList();
+
             return View(articles);
         }
 
@@ -44,7 +45,10 @@ namespace SimpleCMS.Web.Controllers
             {
                 Id = articles.Id,
                 Title = articles.Title,
+                SubTitle = articles.SubTitle,
                 Content = articles.Content,
+                Image = articles.Image
+
             };
            
             return View(articleViewModel);

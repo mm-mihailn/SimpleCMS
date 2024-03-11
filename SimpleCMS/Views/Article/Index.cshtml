@@ -6,11 +6,11 @@
 *@
 @{
 }
-    <head>
-        <link rel="stylesheet" href="~/css/Article.css" asp-append-version="true" />
-    </head>
+<head>
+    <link rel="stylesheet" href="~/css/Article.css" asp-append-version="true" />
+</head>
 
- <body>
+<body>
     <h1 id="newsPageTitle">Новини</h1>
 
     <div class="container text-center">
@@ -19,22 +19,48 @@
             {
                 <div class="col-md-4">
 
-                    <div class="card" style="width: 25rem; left: 0px;">
-                        <div class="card-photo-body">
-                            <img src="/Article/myaction/@item.Image">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text product-information">@item.SubTitle</p>
-                            <a type="btn btn-success" asp-controller="Article" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">научи повече</a>
+                    <img class="bd-placeholder-img card-img-top aspect-ratio-object" src="@item.Image" alt="Card image"></img>
+                    
+                    <div class="card-body ">
+                        
+                        <p class="card-text article-title">@item.Title</p>
+                       
+                        <div class="d-flex justify-content-between align-items-center">
+                            
+                            <div class="btn-group">
+
+                                <a type="btn btn-success" asp-controller="Article" asp-action="Details" asp-route-id="@item.Id"
+                                   class="btn btn-primary">научи повече</a>
+                            </div>
+
                         </div>
                     </div>
-                    @*<img class="bd-placeholder-img card-img-top aspect-ratio-object" src="@item." alt="Card image"></img>*@
-                 
+
+                   
+                    @*  <div class="col-md-4">
+
+                <div class="card" style="width: 25rem; left: 0px;">
+                <div class="card-photo-body">
+                <img class="bd-placeholder-img card-img-top aspect-ratio-object" src="@item.Image" alt="Card image"></img>
+                </div>
+                <div class="card-body">
+                <p class="card-text product-information">@item.SubTitle</p>
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                <div class="btn-group">
+                <a type="btn btn-success" asp-controller="Article" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">научи повече</a>
+                </div>
+                </div>
+                </div>
+
+                </div>*@
+
                 </div>
             }
         </div>
     </div>
-  
+
 </body>
 
 

@@ -48,7 +48,7 @@ namespace SimpleCMS.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Article article, IFormFile image)
         {
-            string uploadsFolder = Path.Combine(_webHost.WebRootPath, "UploadsArticleImage");
+            string uploadsFolder = Path.Combine("C:\\Users\\LENOVO GAMING\\source\\repos\\SimpleSMCTest\\SimpleCMS\\wwwroot", "UploadsArticleImages");
        
             if (!Directory.Exists(uploadsFolder))
             {
@@ -56,8 +56,7 @@ namespace SimpleCMS.Admin.Controllers
             }
 
             string fileName = Path.GetFileName(image.FileName);
-            string fileFolderPath = Path.Combine(uploadsFolder, "UploadsArticleImage");
-            string fileSavePath = Path.Combine(fileFolderPath, fileName);
+            string fileSavePath = Path.Combine(uploadsFolder, fileName);
 
             using (FileStream stream = new FileStream(fileSavePath, FileMode.Create))
             {
@@ -65,7 +64,7 @@ namespace SimpleCMS.Admin.Controllers
             }
 
             string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            article.Image = fileSavePath;
+            article.Image = "\\UploadsArticleImages\\" + fileName;
             article.CreatedById = userId;
             await _articlesService.AddArticle(article);
 
