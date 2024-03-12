@@ -38,13 +38,13 @@
     width: 27px;
     height: 23px;
     position: relative;
-    margin-left: 100px;
+    left: 230px;
     margin-top: 15px;
 }
 
 #phoneLink {
-    bottom: 17px;
-    left: 150px;
+    top: 15px;
+    left: 140px;
     position: relative;
     color: #03293F;
     font-size: 18px;
@@ -72,8 +72,8 @@
 #facebookIcon {
     width: 30px;
     height: 29px;
-    bottom: 47px;
-    left: 380px;
+    top: 15px;
+    left: 0px;
     position: relative;
     mix-blend-mode: darken;
 }
@@ -81,8 +81,8 @@
 #bgFlag {
     width: 38px;
     height: 25px;
-    bottom: 77px;
-    left: 500px;
+    top: 15px;
+    left: 0px;
     position: relative;
 }
 
@@ -145,8 +145,8 @@
 @media only screen and (max-width: 768px) {
 
     #schoolLogo {
-        width: 24px;
-        height: 36px;
+        width: 21px;
+        height: 33px;
         top: 8px;
         left: 8px;
         position: absolute;
@@ -168,10 +168,11 @@
     #phoneIcon {
         width: 20px;
         height: 17px;
-        left: 200px;
+        left: 300px;
     }
 
     #phoneLink {
+        width: 0px;
         visibility: hidden;
     }
 
@@ -180,14 +181,16 @@
     #facebookIcon {
         width: 23px;
         height: 23px;
-        left: 360px;
+        left: 380px;
+        top: 0px;
     }
 
     #bgFlag {
         width: 30px;
         height: 20px;
-   
-        left: 400px;
+        left: 460px;
+        top: 0px;
+
     }
 
     #ft {
@@ -299,48 +302,18 @@
 @media only screen and (max-width: 1366px) {
 
     .headerText {
-        font-size: 18px;
+        top: 8px;
+        font-size: 20px;
     }
 
     .headerText2 {
         left: 60px;
-        font-size: 12px;
-    }
-
-    #phoneIcon {
-       
-        margin-top: 17px;
+        font-size: 14px;
     }
 
     #phoneLink {
-        bottom: 25px;
-       
-    }
-
-        #phoneLink:link {
-            color: #03293F;
-        }
-
-        #phoneLink:visited {
-            color: black;
-        }
-
-        #phoneLink:hover {
-            color: #0076BC;
-        }
-
-        #phoneLink:active {
-            color: blue;
-        }
-
-    #facebookIcon {
-        bottom: 52px;
-
-    }
-
-    #bgFlag {
-        bottom: 77px;
-     
+        width: 0px;
+        visibility: hidden;
     }
 
     .footerAddInfo {
@@ -381,54 +354,6 @@
         padding-left: 12px;
         padding-top: 10px;
         padding-bottom: 10px;
-    }
-}
-
-@media only screen and (max-width: 1125px) {
-    #phoneIcon {
-        width: 27px;
-        height: 23px;
-      
-        margin-left: 100px;
-        margin-top: 15px;
-    }
-
-    #phoneLink {
-        bottom: 18px;
-        left: 150px;
-        position: relative;
-        color: #03293F;
-        font-size: 18px;
-        font-family: Montserrat;
-        font-weight: 300;
-        word-wrap: break-word;
-    }
-
-        #phoneLink:link {
-            color: #03293F;
-        }
-
-        #phoneLink:visited {
-            color: black;
-        }
-
-        #phoneLink:hover {
-            color: #0076BC;
-        }
-
-        #phoneLink:active {
-            color: blue;
-        }
-
-    #facebookIcon {
-        bottom: 47px;
-  
-       
-    }
-
-    #bgFlag {
-        bottom: 77px;
-    
     }
 }
 
