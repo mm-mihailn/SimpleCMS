@@ -176,7 +176,7 @@
     width: 100%;
     height: 100%;
     opacity:87%;
-}
+}36
 
 .WelcomeText {
     margin: 0%;
@@ -191,13 +191,13 @@
     font-size: 17px;
 }
 
-h1 {
+.Welcome {
     overflow: hidden;
     text-align: center;
 }
 
-    h1::before,
-    h1::after {
+    .Welcome::before,
+    .Welcome::after {
         background-color: rgba(0, 118, 188, 1);
         content: "";
         display: inline-block;
@@ -207,12 +207,12 @@ h1 {
         width: 50%;
     }
 
-    h1::before {
+    .Welcome::before {
         right: 0.5em;
         margin-left: -50%;
     }
-
-    h1::after {
+ h1
+    .Welcome::after {
         left: 0.5em;
         margin-right: -50%;
     }
@@ -227,7 +227,7 @@ h1 {
     list-style: none;
     background-color: rgba(0, 118, 188, 0.7);
     position:absolute;
-    bottom:100px;
+    bottom:1000px;
     right:40%;
 }
 
@@ -240,6 +240,95 @@ h1 {
         background-color: rgba(0, 118, 188, 0.9);
     }
 
+/*Specialitites*/
+
+#backGroundPhoto {
+    margin-top:700px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 1300px;
+    background: url('path/to/your/photo.jpg') center/cover;
+    opacity: 5%; /* Adjust the opacity as needed */
+    z-index: -1; /* Place the background photo behind other content */
+}
+
+.SpecialitiesContainer {
+}
+
+.SpacialitiesBackground {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.specialitiesRow {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.SpecialitiesPlace {
+    height: 550px;
+    width: 450px;
+}
+
+#SpecTitle {
+    margin-bottom: 50px;
+    margin-left: 43%;
+}
+
+#ScpecialitiesText {
+    height: 40px;
+    width: 100%;
+}
+
+.specialitiesSection {
+    margin-top: 50px;
+    width: 400px;
+    height: 450px;
+    background-color: rgba(0, 118, 188, 1);
+    margin: auto;
+    margin-top: 40px;
+}
+
+.specialitiesPictures {
+    height: 130px;
+    width: 130px;
+    color: rgba(255, 204, 1, 1);
+    border-radius: 100%;
+    margin-top: -45px;
+    margin-left: 35%;
+}
+
+.SpecText {
+    margin-top: 10px;
+    padding-left: 10px;
+    color: rgba(255, 204, 1, 1);
+    text-align: center;
+}
+
+.Spec≈ssenceText {
+    margin-top: 1000px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.moreInfo {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    width: 350px;
+    height: 40px;
+    margin-left: 5%;
+}
+
+    .moreInfo:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
 
 /*header*/
 #headerDesign {
