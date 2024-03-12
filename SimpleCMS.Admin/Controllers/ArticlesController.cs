@@ -48,27 +48,41 @@ namespace SimpleCMS.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Article article, IFormFile image)
         {
+            bool isValid = false;
+            string[] validExtensions = { ".jpg", ".png", ".jpeg" };
             string uploadsFolder = Path.Combine("C:\\Users\\LENOVO GAMING\\source\\repos\\SimpleSMCTest\\SimpleCMS\\wwwroot", "UploadsArticleImages");
-       
+
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);
             }
 
             string fileName = Path.GetFileName(image.FileName);
+            string fileExtension = Path.GetExtension(fileName);
             string fileSavePath = Path.Combine(uploadsFolder, fileName);
-
-            using (FileStream stream = new FileStream(fileSavePath, FileMode.Create))
+       
+            if (validExtensions.Contains(fileExtension))
             {
-                await image.CopyToAsync(stream);
+                using (FileStream stream = new FileStream(fileSavePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(stream);
+                }
+
+                string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                article.Image = "\\UploadsArticleImages\\" + fileName;
+                article.CreatedById = userId;
+                await _articlesService.AddArticle(article);
+                isValid = true;
+
+                return RedirectToAction(nameof(Index));
             }
-
-            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            article.Image = "\\UploadsArticleImages\\" + fileName;
-            article.CreatedById = userId;
-            await _articlesService.AddArticle(article);
-
-            return RedirectToAction(nameof(Index));
+            else
+            {
+                isValid = false;
+                return View();
+            }
+           
+           
         }
         public async Task<IActionResult> Edit(int id)
         {

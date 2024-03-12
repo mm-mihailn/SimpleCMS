@@ -31,7 +31,6 @@ namespace SimpleCMS.Data.Models
         public DateTime DateCreated { get; set; }
         public string Slug { get; set;}
         public ArticleType Type { get; set; }
-
         public string Image { get; set; }
         public string CreatedById { get; set; }
         
