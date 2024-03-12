@@ -1,4 +1,6 @@
 ﻿using SimpleCMS.Data.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace SimpleCMS.Admin.Models.ViewModel
 {
@@ -9,5 +11,6 @@ namespace SimpleCMS.Admin.Models.ViewModel
         public string? Name { get; set; }
         public string PasswordHash { get; set; }
         public string Id { get; set; }
+       
     }
 }

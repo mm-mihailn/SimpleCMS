@@ -1,39 +1,42 @@
-﻿@model SimpleCMS.Admin.Models.ViewModel.UserViewModel
+﻿@using PagedList
+@using SimpleCMS.Admin.Models.ViewModel
+@using X.PagedList.Mvc.Core
+@using SimpleCMS.Data.Models
+@using SimpleCMS.Admin.Models
+@using static SimpleCMS.Admin.Controllers.UsersController
+
+@model X.PagedList.IPagedList<SimpleCMS.Admin.Models.ViewModel.UserViewModel>
 @{
     ViewData["Title"] = "Index";
 }
-
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>
-            @* <th>
-                @Html.DisplayNameFor(user => user.Users![0].Id)
-            </th> *@
-           <th>
-                @Html.DisplayNameFor(user => user.Users![0].Name)
+            <th>
+                @Html.DisplayNameFor(user => user.First().Name)
             </th>
             <th>
-                @Html.DisplayNameFor(user => user.Users![0].Email)
+                @Html.DisplayNameFor(user => user.First().Email)
             </th>
             <th>
-                @Html.DisplayNameFor(user => user.Users![0].PasswordHash)
+                @Html.DisplayNameFor(user => user.First().PasswordHash)
             </th>
             <th></th>
-        </tr>
+            </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Users)
+        @foreach (var item in Model)
         {
                 <tr>
-                        @*  <td>
-                    @Html.DisplayFor(Item => item.Id)
-                        </td> *@
+                     
                     <td>
                     @Html.DisplayFor(Item => item.Name)
                     </td>
@@ -43,9 +46,6 @@
                     <td>
                     <input type="password" value="@item.PasswordHash" readonly />
                     </td>
-                   @*  <td>
-                    @Html.DisplayFor(Item => item.PasswordHash)
-                    </td> *@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -54,3 +54,7 @@
         }
     </tbody>
 </table>
+
+<div class="pagination-container">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>
