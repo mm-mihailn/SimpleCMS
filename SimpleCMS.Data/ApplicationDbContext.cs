@@ -18,6 +18,7 @@ namespace SimpleCMS.Data
         public DbSet<Files> Files => Set<Files>();
 
         public DbSet<Setting> Setting => Set<Setting>();
+        public DbSet<Teacher> Teachers => Set<Teacher>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
