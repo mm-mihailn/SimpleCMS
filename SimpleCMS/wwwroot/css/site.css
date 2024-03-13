@@ -2,8 +2,9 @@
 
 .navbar {
     margin-top: 0%;
-    background:linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.927083) 0.01%, rgba(0, 118, 188, 0) 100%);
+    background: linear-gradient(180deg, #0076BC 0%, rgba(0, 118, 188, 0.927083) 0.01%, rgba(0, 118, 188, 0) 100%);
     height: 59px;
+    margin-bottom: 0%;
 }
 
 .nav-list {
@@ -111,6 +112,7 @@
     background-color: rgba(0,118,188,0.8);
 }
 /*BurgerMenu*/
+
 #logo {
     width: 25px;
     height: 30px;
@@ -220,296 +222,160 @@
         margin-right: -50%;
     }
 
-.ReceptionButton {
-    border: none;
-    width: 20%;
-    height: 66px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 18px;
-    list-style: none;
-    background-color: rgba(0, 118, 188, 0.7);
-    position:absolute;
-    right:40%;
-    top:70%;
-}
 
-    .ReceptionButton a {
-        text-decoration: none;
-        color: white
+    .ReceptionButton {
+        border: none;
+        width: 20%;
+        height: 66px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 18px;
+        list-style: none;
+        background-color: rgba(0, 118, 188, 0.7);
+        position: absolute;
+        right: 40%;
+        top: 70%;
     }
 
-    .ReceptionButton:hover {
-        background-color: rgba(0, 118, 188, 0.9);
+        .ReceptionButton a {
+            text-decoration: none;
+            color: white
+        }
+
+        .ReceptionButton:hover {
+            background-color: rgba(0, 118, 188, 0.9);
+        }
+
+@media only screen and (max-width: 1200px) {
+    .Welcome {
+    display:none;
+    }
+    .WelcomeText {
+        display: none;
+    }
+}
+    /*Specialitites*/
+    #backGroundPhoto {
+        margin-top: 700px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: 1300px;
+        background: url('path/to/your/photo.jpg') center/cover;
+        opacity: 5%; /* Adjust the opacity as needed */
+        z-index: -1; /* Place the background photo behind other content */
     }
 
-/*Specialitites*/
-
-#backGroundPhoto {
-    margin-top:700px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    height: 1300px;
-    background: url('path/to/your/photo.jpg') center/cover;
-    opacity: 5%; /* Adjust the opacity as needed */
-    z-index: -1; /* Place the background photo behind other content */
-}
-
-.SpecialitiesContainer {
-}
-
-.SpacialitiesBackground {
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
-}
-
-.specialitiesRow {
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
-}
-
-.SpecialitiesPlace {
-    height: 550px;
-    width: 450px;
-}
-
-#SpecTitle {
-    margin-bottom: 20px;
-    margin-left: 43%;
-    color: rgba(0, 118, 188, 1);
-}
-
-#ScpecialitiesText {
-    height: 40px;
-    width: 100%;
-}
-
-.specialitiesSection {
-    border-radius: 20px;
-    width: 400px;
-    height: 420px;
-    background-color: rgba(0, 118, 188, 1);
-    margin: auto;
-    margin-top: 90px;
-}
-
-.specialitiesPictures {
-    height: 130px;
-    width: 130px;
-    color: rgba(255, 204, 1, 1);
-    border-radius: 100%;
-    margin-top: -45px;
-    margin-left: 35%;
-}
-
-.SpecText {
-    margin-top: 10px;
-    padding-left: 10px;
-    color: rgba(255, 204, 1, 1);
-    text-align: center;
-}
-
-.Spec≈ssenceText{
-    text-align: center;
-    padding: 10px;
-    font-size: 20%;
-}
-
-.moreInfo {
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: none;
-    width: 350px;
-    height: 40px;
-    margin-left: 5%;
-    margin-top:100px;
-}
-
-    .moreInfo:hover {
-        background-color: rgba(255, 255, 255, 0.8);
+    .SpecialitiesContainer {
     }
 
-/*header*/
-#headerDesign {
-    background: #FFCC01;
-    width: 100%;
-    height: 60px;
-    position: relative;
-}
-
-#schoolLogo {
-    width: 38px;
-    height: 50px;
-    margin-top: 5px;
-    margin-left: 5px;
-}
-
-.headerText {
-    left: 9px;
-    top: 1px;
-    position: absolute;
-    color: #03293F;
-    font-size: 30px;
-    font-family: Montserrat;
-    font-weight: 500;
-    word-wrap: break-word
-}
-
-.headerText2 {
-    left: 100px;
-    top: 29px;
-    position: absolute;
-    color: #03293F;
-    font-size: 20px;
-    font-family: Montserrat;
-    font-weight: 300;
-    word-wrap: break-word;
-}
-
-
-#phoneIcon {
-    width: 27px;
-    height: 23px;
-    position: absolute;
-    margin-left: 100px;
-    margin-top: 15px;
-}
-
-#phoneLink {
-    margin-top: 15px;
-    margin-left: 150px;
-    position: absolute;
-    color: #03293F;
-    font-size: 20px;
-    font-family: Montserrat;
-    font-weight: 300;
-    word-wrap: break-word;
-}
-
-    #phoneLink:link {
-        color: #03293F;
+    .SpacialitiesBackground {
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
     }
 
-    #phoneLink:visited {
-        color: black;
+    .specialitiesRow {
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
     }
 
-    #phoneLink:hover {
-        color: #0076BC;
+    .SpecialitiesPlace {
+        height: 550px;
+        width: 450px;
     }
 
-    #phoneLink:active {
-        color: blue;
+    #SpecTitle {
+        margin-bottom: 20px;
+        margin-left: 43%;
+        color: rgba(0, 118, 188, 1);
     }
 
-#facebookIcon {
-    width: 30px;
-    height: 29px;
-    margin-top: 15px;
-    margin-left: 380px;
-    position: absolute;
-    mix-blend-mode: darken;
-}
+    #ScpecialitiesText {
+        height: 40px;
+        width: 100%;
+    }
 
-#bgFlag {
-    width: 38px;
-    height: 25px;
-    margin-top: 15px;
-    margin-left: 500px;
-    position: absolute;
-}
+    .specialitiesSection {
+        border-radius: 20px;
+        width: 400px;
+        height: 420px;
+        background-color: rgba(0, 118, 188, 1);
+        margin: auto;
+        margin-top: 90px;
+    }
 
-#ft {
-    top: 2000px;
-}
+    .specialitiesPictures {
+        height: 130px;
+        width: 130px;
+        color: rgba(255, 204, 1, 1);
+        border-radius: 100%;
+        margin-top: -45px;
+        margin-left: 35%;
+    }
 
-.footerAddInfo {
-    padding-left: 100px;
-    color: white;
-    font-size: 18px;
-    font-family: Montserrat;
-    font-weight: 500;
-    word-wrap: break-word;
-    padding-bottom: 20px;
-    padding-top: 10px;
-}
+    .SpecText {
+        margin-top: 10px;
+        padding-left: 10px;
+        color: rgba(255, 204, 1, 1);
+        text-align: center;
+    }
 
-#footerTable {
-    width: 100%;
-    height: 300px;
-    top: 2050px;
-    background: #0076BC;
-    position: relative;
-}
+    .Spec≈ssenceText {
+        text-align: center;
+        padding: 10px;
+        font-size: 20%;
+    }
 
-.titleFooter1 {
-    text-align: left;
-    color: white;
-    font-size: 32px;
-    font-family: Montserrat;
-    font-weight: 500;
-    font-weight: bold;
-    word-wrap: break-word;
-    border-bottom: 3px solid;
-    color: white;
-    padding-left: 100px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
+    .moreInfo {
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: none;
+        width: 350px;
+        height: 40px;
+        margin-left: 5%;
+        margin-top: 100px;
+    }
 
-.titleFooter2 {
-    text-align: left;
-    color: white;
-    font-size: 32px;
-    font-family: Montserrat;
-    font-weight: 500;
-    font-weight: bold;
-    word-wrap: break-word;
-    border-bottom: 3px solid;
-    color: white;
-    padding-left: 100px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
+        .moreInfo:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
 
-#col2additions {
-    padding-left: 150px;
-}
-
-
-
-@media only screen and (max-width: 768px) {
+    /*header*/
+    #headerDesign {
+        background: #FFCC01;
+        width: 100%;
+        height: 60px;
+        position: relative;
+    }
 
     #schoolLogo {
-        width: 24px;
-        height: 36px;
-        top: 8px;
-        left: 8px;
-        position: absolute;
+        width: 38px;
+        height: 50px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
 
     .headerText {
-        left: 45px;
-        top: 13px;
+        left: 9px;
+        top: 1px;
         position: absolute;
         color: #03293F;
-        font-size: 17px;
+        font-size: 30px;
         font-family: Montserrat;
         font-weight: 500;
         word-wrap: break-word
     }
 
     .headerText2 {
-        left: 90px;
+        left: 100px;
         top: 29px;
         position: absolute;
         color: #03293F;
-        font-size: 12px;
+        font-size: 20px;
         font-family: Montserrat;
         font-weight: 300;
         word-wrap: break-word;
@@ -517,43 +383,65 @@
 
 
     #phoneIcon {
-        width: 20px;
-        height: 17px;
+        width: 27px;
+        height: 23px;
         position: absolute;
-        margin-left: 235px;
-        top: 6px;
+        margin-left: 100px;
+        margin-top: 15px;
     }
 
     #phoneLink {
-        visibility: hidden;
+        margin-top: 15px;
+        margin-left: 150px;
+        position: absolute;
+        color: #03293F;
+        font-size: 20px;
+        font-family: Montserrat;
+        font-weight: 300;
+        word-wrap: break-word;
     }
 
+        #phoneLink:link {
+            color: #03293F;
+        }
 
+        #phoneLink:visited {
+            color: black;
+        }
+
+        #phoneLink:hover {
+            color: #0076BC;
+        }
+
+        #phoneLink:active {
+            color: blue;
+        }
 
     #facebookIcon {
-        width: 23px;
-        height: 23px;
-        top: 5px;
-        margin-left: 280px;
+        width: 30px;
+        height: 29px;
+        margin-top: 15px;
+        margin-left: 380px;
         position: absolute;
         mix-blend-mode: darken;
     }
 
     #bgFlag {
-        width: 28px;
-        height: 18px;
-        top: 5px;
-        margin-left: 330px;
+        width: 38px;
+        height: 25px;
+        margin-top: 15px;
+        margin-left: 500px;
         position: absolute;
     }
+
     #ft {
-        width: 100%;
+        top: 2000px;
     }
 
     .footerAddInfo {
-        padding-left: 15px;
+        padding-left: 100px;
         color: white;
-        font-size: 15px;
+        font-size: 18px;
         font-family: Montserrat;
         font-weight: 500;
         word-wrap: break-word;
@@ -563,7 +451,7 @@
 
     #footerTable {
         width: 100%;
-        height: 700px;
+        height: 300px;
         top: 2050px;
         background: #0076BC;
         position: relative;
@@ -572,34 +460,157 @@
     .titleFooter1 {
         text-align: left;
         color: white;
-        font-size: 20px;
+        font-size: 32px;
         font-family: Montserrat;
         font-weight: 500;
         font-weight: bold;
         word-wrap: break-word;
         border-bottom: 3px solid;
         color: white;
-        padding-left: 15px;
-        padding-bottom: 10px;
+        padding-left: 100px;
+        padding-top: 10px;
+        padding-bottom: 20px;
     }
 
     .titleFooter2 {
         text-align: left;
         color: white;
-        font-size: 20px;
+        font-size: 32px;
         font-family: Montserrat;
         font-weight: 500;
         font-weight: bold;
         word-wrap: break-word;
         border-bottom: 3px solid;
-        border-top: 3px solid;
         color: white;
-        padding-left: 15px;
+        padding-left: 100px;
         padding-top: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     #col2additions {
-        padding-left: 15px;
+        padding-left: 150px;
     }
-}
+
+
+
+    @media only screen and (max-width: 768px) {
+
+        #schoolLogo {
+            width: 24px;
+            height: 36px;
+            top: 8px;
+            left: 8px;
+            position: absolute;
+        }
+
+        .headerText {
+            left: 45px;
+            top: 13px;
+            position: absolute;
+            color: #03293F;
+            font-size: 17px;
+            font-family: Montserrat;
+            font-weight: 500;
+            word-wrap: break-word
+        }
+
+        .headerText2 {
+            left: 90px;
+            top: 29px;
+            position: absolute;
+            color: #03293F;
+            font-size: 12px;
+            font-family: Montserrat;
+            font-weight: 300;
+            word-wrap: break-word;
+        }
+
+
+        #phoneIcon {
+            width: 20px;
+            height: 17px;
+            position: absolute;
+            margin-left: 235px;
+            top: 6px;
+        }
+
+        #phoneLink {
+            visibility: hidden;
+        }
+
+
+
+        #facebookIcon {
+            width: 23px;
+            height: 23px;
+            top: 5px;
+            margin-left: 280px;
+            position: absolute;
+            mix-blend-mode: darken;
+        }
+
+        #bgFlag {
+            width: 28px;
+            height: 18px;
+            top: 5px;
+            margin-left: 330px;
+            position: absolute;
+        }
+
+        #ft {
+            width: 100%;
+        }
+
+        .footerAddInfo {
+            padding-left: 15px;
+            color: white;
+            font-size: 15px;
+            font-family: Montserrat;
+            font-weight: 500;
+            word-wrap: break-word;
+            padding-bottom: 20px;
+            padding-top: 10px;
+        }
+
+        #footerTable {
+            width: 100%;
+            height: 700px;
+            top: 2050px;
+            background: #0076BC;
+            position: relative;
+        }
+
+        .titleFooter1 {
+            text-align: left;
+            color: white;
+            font-size: 20px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-weight: bold;
+            word-wrap: break-word;
+            border-bottom: 3px solid;
+            color: white;
+            padding-left: 15px;
+            padding-bottom: 10px;
+        }
+
+        .titleFooter2 {
+            text-align: left;
+            color: white;
+            font-size: 20px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-weight: bold;
+            word-wrap: break-word;
+            border-bottom: 3px solid;
+            border-top: 3px solid;
+            color: white;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #col2additions {
+            padding-left: 15px;
+        }
+    }
