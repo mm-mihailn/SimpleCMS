@@ -2,29 +2,33 @@
 @model List<MenuItemsViewModel>
 
 <nav class="navbar">
-    @foreach (var item in Model)
+    @foreach (var menuItem in Model.Where(m => m.ParentId == null))
     {
         <ul class="nav-list">
             <li class="dropdown">
-                <a id="firstElement" href="@item.Link">@item.Title</a>
-                <ul id="firstElement" class="dropdownContent parentElement">
-                    <li><a href="#">Категория 1</a></li>
-                    <li>
-                        <a href="#">Категория 2</a>
-                        <ul id="secondElement" class="dropdownContent childrenElement">
-                            <li><a href="#">Категория 1</a></li>
-                            <li><a href="#">Категория 2</a></li>
-                        </ul>
-                    </li>
+                <a id="firstElement" href="@menuItem.Link">@menuItem.Title</a>
+                @if (menuItem.SubMenuItems.Any())
+                {
+                    @foreach (var child in menuItem.SubMenuItems)
+                    {
+                        <ul id="firstElement" class="dropdownContent parentElement">
+                            <li>
+                                <a href="@child.Link">@child.Title</a>
+                                @if (child.SubMenuItems.Any())
+                                {
+                                    <ul id="secondElement" class="dropdownContent childrenElement">
+                                        @foreach (var SeconfChild in child.SubMenuItems)
+                                        {
+                                            <li><a href="#">Категория 1</a></li>
+                                        }
+                                    </ul>
+                                }
 
-                    <li>
-                        <a href="#">Категория 3</a>
-                        <ul id="secondElement" class="dropdownContent childrenElement">
-                            <li><a href="#">Категория 1</a></li>
-                            <li><a href="#">Категория 2</a></li>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
+                    }
+                }
+            </li>
         </ul>
     }
 </nav>
