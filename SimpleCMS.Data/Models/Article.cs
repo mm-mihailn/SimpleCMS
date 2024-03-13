@@ -31,15 +31,9 @@ namespace SimpleCMS.Data.Models
         public DateTime DateCreated { get; set; }
         public string Slug { get; set;}
         public ArticleType Type { get; set; }
-
+        public string Image { get; set; }
         public string CreatedById { get; set; }
-        //private User? _createdBy;
-        //public User CreatedBy
-        //{
-        //    get => _createdBy ?? throw new InvalidOperationException("Uninitialized property: " + nameof(CreatedBy));
-        //    set => _createdBy = value;
-        //}
-
+        
         public ICollection<Files> Files{ get; set; }
 
     }
