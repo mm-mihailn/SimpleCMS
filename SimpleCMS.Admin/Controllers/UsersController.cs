@@ -28,34 +28,33 @@ namespace SimpleCMS.Admin.Controllers
         {
             public List<User> Users { get; set; }
         }
-
-        //public async Task<IActionResult> Index()
-        //{
-        //    UserViewModel viewModel = new UserViewModel
-        //    {
-        //        Users = (await _usersService.GetUsersAsync()).ToList()
-        //    };
-
-        //    return View(viewModel);
-        //}
-        public async Task<ActionResult> Index(int? page)
+        public async Task<IActionResult> Index(int? page,string email)
         {
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
-            var data = await _usersService.GetYourData();
+            IEnumerable<User> users;
 
-            var pagedList = data.ToPagedList(pageNumber, pageSize);
+            if (!string.IsNullOrEmpty(email))
+            {
+                var foundUser = await _usersService.GetUserByEmail(email);
+                if (foundUser != null)
+                {
+                    users = new List<User> { foundUser };
+                }
+                else
+                {
+                    users = new List<User>();
+                }
+            }
+            else
+            {
+                users = await _usersService.GetUsersAsync();
+            }
+            var pagedList = users.ToPagedList(pageNumber, pageSize);
 
-            IPagedList<UserViewModel> pageUsers = new StaticPagedList<UserViewModel>(
-            pagedList.Select(user => new UserViewModel { Name = user.Name, Email = user.Email,PasswordHash=user.PasswordHash }),
-            pagedList.PageNumber,
-            pagedList.PageSize,
-            pagedList.TotalItemCount);
-
-            return View(pageUsers);
+            return View(pagedList);
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -111,16 +110,15 @@ namespace SimpleCMS.Admin.Controllers
                 return NotFound();
             }
 
-            var existingUserWithEmail = await _usersService.GetUserByEmail(updateUser.Email);
-            if (existingUserWithEmail != null && existingUserWithEmail.Id != user.Id)
-            {
-                // Адресът вече се използва от друг потребител
-                ModelState.AddModelError("Email", "Имейл адресът вече е регистриран.");
-                return View(updateUser);
-            }
-
             if (ModelState.IsValid)
             {
+                var existingUserWithEmail = await _usersService.GetUserByEmail(updateUser.Email);
+                if (existingUserWithEmail != null && existingUserWithEmail.Id != user.Id)
+                {
+                    
+                    ModelState.AddModelError("Email", "Имейл адресът вече е регистриран.");
+                    return View(updateUser);
+                }
                 try
                 {
                     user.Name = updateUser.Name;

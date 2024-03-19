@@ -12,15 +12,15 @@ using SimpleCMS.Data;
 namespace SimpleCMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240115211329_migration1")]
-    partial class migration1
+    [Migration("20240319091736_AddSpecialtie")]
+    partial class AddSpecialtie
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.13")
+                .HasAnnotation("ProductVersion", "7.0.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -69,7 +69,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b6bb36cb-f8bf-47cd-98df-f707c2e57b88",
+                            Id = "a84a8248-2860-449b-8c1d-e7c4379bf250",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -166,8 +166,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "a74293cb-c060-43b0-9767-ea2cdc68c59d",
-                            RoleId = "b6bb36cb-f8bf-47cd-98df-f707c2e57b88"
+                            UserId = "5f94502d-ed6a-485a-ae39-9fb2a1bc3bfc",
+                            RoleId = "a84a8248-2860-449b-8c1d-e7c4379bf250"
                         });
                 });
 
@@ -236,12 +236,10 @@ namespace SimpleCMS.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
-
                     b.ToTable("Articles", (string)null);
                 });
 
-            modelBuilder.Entity("SimpleCMS.Data.Models.File", b =>
+            modelBuilder.Entity("SimpleCMS.Data.Models.Files", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -255,6 +253,7 @@ namespace SimpleCMS.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -297,6 +296,50 @@ namespace SimpleCMS.Data.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("MenuItems", (string)null);
+                });
+
+            modelBuilder.Entity("SimpleCMS.Data.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings", (string)null);
+                });
+
+            modelBuilder.Entity("SimpleCMS.Data.Models.Specialtie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Specialties");
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.User", b =>
@@ -366,26 +409,6 @@ namespace SimpleCMS.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "a74293cb-c060-43b0-9767-ea2cdc68c59d",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "a5ea3eb4-7123-44d2-81e6-561f45c0406b",
-                            Email = "admin@simplecms.net",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "John Smith",
-                            NormalizedEmail = "ADMIN@SIMPLECMS.NET",
-                            NormalizedUserName = "ADMIN@SIMPLECMS.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN7SfbeVcBlwwR95g8+x9FvXxJRkhka5nCnz1l7YTyG6Y7gVy8a2B6j/20byyORuBg==",
-                            PhoneNumber = "1234567890",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cada3f11-4c1d-4d70-a2dd-69f2b2561898",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@simplecms.net"
-                        });
                 });
 
             modelBuilder.Entity("ArticlesFiles", b =>
@@ -397,7 +420,7 @@ namespace SimpleCMS.Data.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_ArticlesFiles_Articles_ArticleId");
 
-                    b.HasOne("SimpleCMS.Data.Models.File", null)
+                    b.HasOne("SimpleCMS.Data.Models.Files", null)
                         .WithMany()
                         .HasForeignKey("FileId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -454,17 +477,6 @@ namespace SimpleCMS.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SimpleCMS.Data.Models.Article", b =>
-                {
-                    b.HasOne("SimpleCMS.Data.Models.User", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.MenuItem", b =>

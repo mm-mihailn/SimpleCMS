@@ -1,6 +1,6 @@
 ﻿using SimpleCMS.Data.Models;
 using PagedList;
-using PagedList.Mvc;
+using X.PagedList.Mvc;
 
 namespace SimpleCMS.Admin.Models.ViewModel
 {
