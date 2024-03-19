@@ -60,7 +60,7 @@
     margin: auto;
     border: 1px solid rgba(3, 41, 63, 1);
     display: inline-block;
-    height: 30px;
+    height: 25px;
     margin-bottom: 20px;
     background-color:rgba(255,204,1,0.9);
 }
@@ -77,7 +77,7 @@
             text-decoration: none;
             display: block;
             text-align: left;
-            margin-top: -10px;
+            margin-top: -15px;
         }
 
 #firstElement {
@@ -92,7 +92,7 @@
 
 .childrenElement {
     margin-left: 250px;
-    margin-top: -8%;
+    margin-top:-5px;
 }
 
     .childrenElement li {
