@@ -14,6 +14,6 @@ namespace SimpleCMS.Data.Repositories.Interfaces
         Task<MenuItem?> GetByIdAsync(int id);
         Task<IEnumerable<MenuItem>> GetByParentIdAsync(int id);
         Task <bool> HasChildItemsAsync(int parentId);
-        
+        Task<ICollection<MenuItem>> GetChildrenByParentIdAsync(int parentId);
     }
 }

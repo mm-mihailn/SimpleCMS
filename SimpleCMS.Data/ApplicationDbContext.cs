@@ -102,8 +102,188 @@ namespace SimpleCMS.Data
             {
                 Id = 8,
                 Link = "test",
-                Title = "Профил на куповача",
+                Title = "Профил на купувача",
                 Published = true
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 9,
+                Link = "test",
+                Title = "Административни услуги",
+                Published = true,
+                ParentId=1
+                
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 10,
+                Link = "test",
+                Title = "Учителски състав",
+                Published = true,
+                ParentId = 1
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 11,
+                Link = "test",
+                Title = "История",
+                Published = true,
+                ParentId = 1
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 12,
+                Link = "test",
+                Title = "Новини",
+                Published = true,
+                ParentId = 1
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 13,
+                Link = "test",
+                Title = "Партньори и проекти",
+                Published = true,
+                ParentId = 1
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 14,
+                Link = "test",
+                Title = "Брошура",
+                Published = true,
+                ParentId = 3
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 15,
+                Link = "test",
+                Title = "Специалности",
+                Published = true,
+                ParentId = 3
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 16,
+                Link = "test",
+                Title = "Приложно програмиране",
+                Published = true,
+                ParentId = 15
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 17,
+                Link = "test",
+                Title = "КТТ",
+                Published = true,
+                ParentId = 15
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 18,
+                Link = "test",
+                Title = "Електроенергетика",
+                Published = true,
+                ParentId = 15
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 19,
+                Link = "test",
+                Title = "Електрообзавеждане",
+                Published = true,
+                ParentId = 15
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 20,
+                Link = "test",
+                Title = "Роботика",
+                Published = true,
+                ParentId = 15
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 21,
+                Link = "test",
+                Title = "Стипендии",
+                Published = true,
+                ParentId = 4
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 22,
+                Link = "test",
+                Title = "Ел. Дневник",
+                Published = true,
+                ParentId = 4
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 23,
+                Link = "test",
+                Title = "Изпити",
+                Published = true,
+                ParentId = 5
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 24,
+                Link = "test",
+                Title = "Учебници",
+                Published = true,
+                ParentId = 5
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 25,
+                Link = "test",
+                Title = "Седмично разписание",
+                Published = true,
+                ParentId = 5
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 26,
+                Link = "test",
+                Title = "ДЗИ",
+                Published = true,
+                ParentId = 23
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 27,
+                Link = "test",
+                Title = "Поправителни изпити",
+                Published = true,
+                ParentId = 23
+
+            });
+            builder.Entity<MenuItem>().HasData(new MenuItem()
+            {
+                Id = 28,
+                Link = "test",
+                Title = "Самостоятелна форма",
+                Published = true,
+                ParentId = 23
+
             });
             // Seed user roles and users
             var roleName = "Administrator";
