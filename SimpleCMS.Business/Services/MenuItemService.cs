@@ -55,6 +55,12 @@ namespace SimpleCMS.Business.Services
         {
             return await _menuItemsRepository.FindAsync(id);
         }
+        public async Task<ICollection<MenuItem>> GetChildrenByParentIdAsync(int parentId)
+        {
+            return await _menuItemsRepository.GetChildrenByParentIdAsync(parentId);
+
+
+        }
 
 
 
