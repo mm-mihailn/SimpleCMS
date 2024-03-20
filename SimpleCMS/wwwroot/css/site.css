@@ -148,10 +148,17 @@
             top: 0;
         }
 
-.menuItem:hover {
-    background-color: #ddd;
+.childMenuItem{
+    display:none;
 }
 
+.menuItem:hover {
+    background-color: #ddd;
+
+}
+.menuItem:hover .childMenuItem {
+  display:block;
+} 
 .active {
     background-color: rgb(91,167,212);
     color: white;

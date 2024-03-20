@@ -35,9 +35,24 @@
     <div class="topnav">
         <a href="#home" class="active"><img id="logo" src="pictures/logo.PNG"></a>
         <div id="myLinks">
-            @foreach (var item in Model)
+            @foreach (var burgerMenuItems in Model)
             {
-                <a class="menuItem" href="#">@item.Title</a>
+                <a class="menuItem" href="#">@burgerMenuItems.Title</a>
+                @if (burgerMenuItems.SubMenuItems.Any())
+                {
+                    @foreach (var child in @burgerMenuItems.SubMenuItems)
+                    {
+                        <a class="childMenuItem" href="@child.Link">@child.Title</a>
+
+                        @if (child.SubMenuItems.Any())
+                        {
+                            @foreach (var secondChild in child.SubMenuItems)
+                            {
+                                <a menuItem href="@secondChild.Link">@secondChild.Title</a>
+                            }
+                        }
+                    }
+                }
             }
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
