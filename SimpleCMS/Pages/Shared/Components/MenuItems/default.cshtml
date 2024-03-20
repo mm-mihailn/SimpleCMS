@@ -1,0 +1,33 @@
+﻿
+@model List<string>
+<navigationBarSchool>
+<div id="NavMenuContainer">
+    <div id="row">
+        <nav class="navigationBarSchool">
+           <ul id="menuList">
+              @foreach (var item in Model)
+              {
+
+              <li class="col-1 "><a href="#">@item</a></li>
+              }
+           </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="burgerMenu">
+     <div class="topnav">
+        <a href="#home" class="active"><img id="logo" src="pictures/logo.PNG"></a>
+           <div id="myLinks">
+        
+            @foreach (var item in Model)
+            {
+                <a class="menuItem" href="#">@item</a>
+            }
+           </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars">⚡</i>
+         </a>
+     </div>             
+</div>
+</navigationBarSchool>
