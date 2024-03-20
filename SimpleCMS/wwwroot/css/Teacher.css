@@ -1,0 +1,28 @@
+﻿.pageTitle {
+    width: 100%;
+    left: 0px;
+    top: 10px;
+    margin-bottom: 100px;
+    position: relative;
+    text-align: center;
+    color: #0076BC;
+    font-size: 30px;
+    font-family: Montserrat;
+    word-wrap: break-word;
+}
+
+.teacherIcon {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    border-radius: 9999px;
+}
+
+.teacherName {
+    position: relative;
+    color: #03293F;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 300;
+    word-wrap: break-word;
+}

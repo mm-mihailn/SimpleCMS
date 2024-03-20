@@ -19,8 +19,6 @@ namespace SimpleCMS.Data.Models
         public string Name { get; set; }
         public string Path { get; set; }
         public string MimeType { get; set; }
-
-
         public List<Article> Articles { get; set; }
     }
 }

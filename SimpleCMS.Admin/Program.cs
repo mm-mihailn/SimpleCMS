@@ -11,8 +11,8 @@ using SimpleCMS.Admin.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<SimpleCMSAdminContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SimpleCMSAdminContext") ?? throw new InvalidOperationException("Connection string 'SimpleCMSAdminContext' not found.")));
+//builder.Services.AddDbContext<SimpleCMSAdminContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("SimpleCMSAdminContext") ?? throw new InvalidOperationException("Connection string 'SimpleCMSAdminContext' not found.")));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -26,6 +26,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
+
 builder.Services.AddScoped<IMenuItemsRepository, MenuItemsRepository>();
 builder.Services.AddScoped<IMenuItemsService,MenuItemService>();
 

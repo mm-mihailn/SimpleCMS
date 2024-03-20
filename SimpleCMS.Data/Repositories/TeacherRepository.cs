@@ -30,5 +30,10 @@ namespace SimpleCMS.Data.Repositories
         {
             return await Entities.FirstOrDefaultAsync(p => p.Name == name);
         }
+
+        public async Task<Teacher> GetByIdAsyncNoTracking(int id)
+        {
+            return await Entities.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+        }
     }
 }

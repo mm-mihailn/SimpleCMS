@@ -10,6 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SimpleCMS.Business.Services
 {
+
     public class MenuItemService: IMenuItemsService
     {
         private readonly IMenuItemsRepository _menuItemsRepository;

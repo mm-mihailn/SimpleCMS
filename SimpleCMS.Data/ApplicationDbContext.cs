@@ -6,6 +6,7 @@ using SimpleCMS.Data.Models;
 
 namespace SimpleCMS.Data
 {
+
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

@@ -10,6 +10,7 @@ namespace SimpleCMS.Data.Repositories.Interfaces
     public interface ITeacherRepository : IRepository<Teacher>
     {
         Task<IEnumerable<Teacher>> GetAllTeacherAsync();
+        Task<Teacher> GetByIdAsyncNoTracking(int id);
         Task<Teacher> GetByIdAsync(int id);
         Task<Teacher> GetByNameAsync(string name);
     }

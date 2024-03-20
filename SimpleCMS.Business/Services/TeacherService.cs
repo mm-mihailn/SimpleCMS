@@ -1,4 +1,5 @@
-﻿using SimpleCMS.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SimpleCMS.Data.Models;
 using SimpleCMS.Data.Repositories;
 using SimpleCMS.Data.Repositories.Interfaces;
 using System;
@@ -27,7 +28,6 @@ namespace SimpleCMS.Business.Services.Interfaces
         {
             return _teacherRepository.DeleteAsync(teacher);
         }
-
         public async Task<Teacher?> FindTeacherAsync(int id)
         {
             return await _teacherRepository.FindAsync(id);

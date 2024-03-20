@@ -22,6 +22,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IArticlesRepository, ArticlesRepository>();
 builder.Services.AddScoped<IArticlesService, ArticlesService>();
 
+builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
+builder.Services.AddScoped<ITeacherService, TeacherService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
