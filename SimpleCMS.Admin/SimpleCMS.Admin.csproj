@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.15" />
@@ -34,6 +35,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Uploads\Media\Audio\" />
+    <Folder Include="wwwroot\Uploads\Documents\" />
+    <Folder Include="wwwroot\Uploads\Media\" />
   </ItemGroup>
 
 </Project>

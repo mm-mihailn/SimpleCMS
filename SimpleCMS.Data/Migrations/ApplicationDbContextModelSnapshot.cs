@@ -233,12 +233,10 @@ namespace SimpleCMS.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
-
                     b.ToTable("Articles", (string)null);
                 });
 
-            modelBuilder.Entity("SimpleCMS.Data.Models.File", b =>
+            modelBuilder.Entity("SimpleCMS.Data.Models.Files", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -252,6 +250,7 @@ namespace SimpleCMS.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -294,6 +293,64 @@ namespace SimpleCMS.Data.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("MenuItems", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Link = "test",
+                            Published = true,
+                            Title = "Училище"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Link = "test",
+                            Published = true,
+                            Title = "Начало"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Link = "test",
+                            Published = true,
+                            Title = "Прием"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Link = "test",
+                            Published = true,
+                            Title = "За Родителя"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Link = "test",
+                            Published = true,
+                            Title = "За Ученика"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Link = "test",
+                            Published = true,
+                            Title = "Контакти"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Link = "test",
+                            Published = true,
+                            Title = "Галерия"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Link = "test",
+                            Published = true,
+                            Title = "Профил на куповача"
+                        });
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.Setting", b =>
@@ -442,7 +499,7 @@ namespace SimpleCMS.Data.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_ArticlesFiles_Articles_ArticleId");
 
-                    b.HasOne("SimpleCMS.Data.Models.File", null)
+                    b.HasOne("SimpleCMS.Data.Models.Files", null)
                         .WithMany()
                         .HasForeignKey("FileId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -499,17 +556,6 @@ namespace SimpleCMS.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SimpleCMS.Data.Models.Article", b =>
-                {
-                    b.HasOne("SimpleCMS.Data.Models.User", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.MenuItem", b =>

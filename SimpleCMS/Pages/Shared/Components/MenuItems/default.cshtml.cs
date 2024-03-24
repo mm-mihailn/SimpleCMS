@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SimpleCMS.Admin.Views.Shared
+namespace SimpleCMS.Web.Areas.Identity.Pages.Components.MenuItems
 {
-    public class _NavPartialModel : PageModel
+    public class defaultModel : PageModel
     {
         public void OnGet()
         {
