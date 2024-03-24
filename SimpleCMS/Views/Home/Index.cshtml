@@ -1,16 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-@* <div class="text-center col-3">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
- *@
-@using SimpleCMS.Data.Models;
-@using SimpleCMS.Admin;
-@model List<Article>
-    <div class="NewsContainer">
+   @*  <div class="NewsContainer">
         <div class="row newsTitlePlace">
             <div class="newsTitle">
                 Новини
@@ -37,4 +28,59 @@
             </button>
         </div>
     </div>
+ *@
+    <div class="NewsContainer">
+        <div class="row newsTitlePlace">
+            <div class="newsTitle">
+                Новини
+            </div>
+        </div>
+        <div class="row newsPhotosTextPlace">
+            <div class="col-sm-12 col-md-6 col-lg-4  newsPhotoPlace">
+                <div>
+                    <img class="newsPhoto" src="pictures/Computer.png">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 newsTextPlace">
+                    <div class="newsTextContainer">
+                        Lorem ipsum dolor sit amet. Vel Quis voluptates non odit nobis est eaque sint.
+                        Est quibusdam voluptate qui nisi possimus sit nihil necessitatibus quo consequuntur
+                        voluptates. Eos expedita deleniti quo error nisi eos nisi adipisci aut cumque eius
+                        eos expedita quaerat sit dolorem possimus est tempora sunt.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4  newsPhotoPlace">
+                <div>
+                    <img class="newsPhoto" src="pictures/Computer.png">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 newsTextPlace">
+                    <div class="newsTextContainer">
+                        Lorem ipsum dolor sit amet. Vel Quis voluptates non odit nobis est eaque sint.
+                        Est quibusdam voluptate qui nisi possimus sit nihil necessitatibus quo consequuntur
+                        voluptates. Eos expedita deleniti quo error nisi eos nisi adipisci aut cumque eius
+                        eos expedita quaerat sit dolorem possimus est tempora sunt.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4  newsPhotoPlace">
+                <div>
+                    <img class="newsPhoto" src="pictures/Computer.png">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 newsTextPlace">
+                    <div class="newsTextContainer">
+                        Lorem ipsum dolor sit amet. Vel Quis voluptates non odit nobis est eaque sint.
+                        Est quibusdam voluptate qui nisi possimus sit nihil necessitatibus quo consequuntur
+                        voluptates. Eos expedita deleniti quo error nisi eos nisi adipisci aut cumque eius
+                        eos expedita quaerat sit dolorem possimus est tempora sunt.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="col-4 allNews">
+                Всички новини
+            </button>
+        </div>
+    </div>
+
 

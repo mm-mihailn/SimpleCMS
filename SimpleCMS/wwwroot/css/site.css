@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 /*navMenu*/
+body {
+overflow-x:hidden;
+}
 .navigationBarSchool {
     width: 100%;
     overflow: hidden;
@@ -365,6 +368,9 @@ li {
     }
 }
 /*NewsSection*/
+.newsConatainer {
+overflow-x:hidden;
+}
 
 .newsTitle {
     height: 40px;
