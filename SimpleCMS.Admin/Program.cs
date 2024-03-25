@@ -11,8 +11,6 @@ using SimpleCMS.Admin.Data;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-//builder.Services.AddDbContext<SimpleCMSAdminContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("SimpleCMSAdminContext") ?? throw new InvalidOperationException("Connection string 'SimpleCMSAdminContext' not found.")));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
