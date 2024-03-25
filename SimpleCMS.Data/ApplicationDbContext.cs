@@ -17,9 +17,9 @@ namespace SimpleCMS.Data
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
         public DbSet<Article> Articles => Set<Article>();
         public DbSet<Files> Files => Set<Files>();
-
         public DbSet<Setting> Setting => Set<Setting>();
         public DbSet<Teacher> Teachers => Set<Teacher>();
+        public DbSet<StudentProgram> StudentPrograms => Set<StudentProgram>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,6 +38,7 @@ namespace SimpleCMS.Data
             builder.ApplyConfiguration(new ArticleConfigurations());
             builder.ApplyConfiguration(new FileConfigurations());
             builder.ApplyConfiguration(new SettingConfigurations());
+            builder.ApplyConfiguration(new StudentProgramConfiguration());
 
             SeedInitialData(builder);
         }
