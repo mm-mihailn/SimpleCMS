@@ -26,16 +26,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
 						<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu Items</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MenuItems" asp-action="Index">MenuItems</a>
 						</li>
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Articles" asp-action="Index">Articles</a>
                         </li>                       
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Setting" asp-action="Index">Settings</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MenuItems" asp-action="Index">MenuItems</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Setting" asp-action="Index">Setting</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="UploadingFiles" asp-action="Index">UploadingFiles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -48,6 +54,7 @@
             @RenderBody()
         </main>
     </div>
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - SimpleCMS.Admin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -56,7 +63,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

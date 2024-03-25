@@ -47,7 +47,6 @@ namespace SimpleCMS.Data.Migrations
                         principalColumn: "Id");
                 });
 
-
             migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new

@@ -30,12 +30,8 @@ namespace SimpleCMS.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(IFormFile file, string category)
         {
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest("No file provided. You must provide a file first before proceeding");
-            }
-
             string uploadsFolder = Path.Combine(_webHost.WebRootPath, "Uploads");
+            //string medisFolder = Path.Combine(uploadsFolder, "Media");
 
             if (!Directory.Exists(uploadsFolder))
             {
@@ -61,7 +57,6 @@ namespace SimpleCMS.Admin.Controllers
                 else if (category == "Audio")
                 {
                     string audioFolderPath = Path.Combine(uploadsFolder, "Media\\Audio");
-                    
                     if (!Directory.Exists(audioFolderPath))
                     {
                         Directory.CreateDirectory(audioFolderPath);
@@ -72,7 +67,6 @@ namespace SimpleCMS.Admin.Controllers
                 else if (category == "Image")
                 {
                     string imageFolderPath = Path.Combine(uploadsFolder, "Media\\Image");
-                    
                     if (!Directory.Exists(imageFolderPath))
                     {
                         Directory.CreateDirectory(imageFolderPath);
@@ -83,7 +77,6 @@ namespace SimpleCMS.Admin.Controllers
                 else if (category == "Video")
                 {
                     string videoFolderPath = Path.Combine(uploadsFolder, "Media\\Video");
-                   
                     if (!Directory.Exists(videoFolderPath))
                     {
                         Directory.CreateDirectory(videoFolderPath);
@@ -91,16 +84,6 @@ namespace SimpleCMS.Admin.Controllers
                     fileSavePath = Path.Combine(videoFolderPath, fileName);
                 }
 
-                else if (category == "Other")
-                {   
-                    string videoFolderPath = Path.Combine(uploadsFolder, "Media\\Other");
-                    
-                    if (!Directory.Exists(videoFolderPath))
-                    {
-                        Directory.CreateDirectory(videoFolderPath);
-                    }
-                    fileSavePath = Path.Combine(videoFolderPath, fileName);
-                }
             }
 
             else
@@ -127,11 +110,9 @@ namespace SimpleCMS.Admin.Controllers
             {
                 Console.WriteLine(ex.ToString());
             }
-            
             ViewBag.Message = file + "Upload successfully";
-            return RedirectToAction(nameof(Index));
 
-            //return View();
+            return View();
         }
 
         public async Task<IActionResult> Delete(int id)

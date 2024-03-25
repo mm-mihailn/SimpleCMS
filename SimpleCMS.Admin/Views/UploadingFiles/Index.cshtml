@@ -19,10 +19,12 @@
             <div class="mb-3" id="category">
 
                 <label from="category">Category: </label>
+
                 <select id="category" name="category">
 
                     <option value="Select">Select</option>
                     <option value="Documents">Documents</option>
+                    <option value="Media">Media</option>
                     <option value="Audio">Audio</option>
                     <option value="Image">Image</option>
                     <option value="Video">Video</option>
@@ -55,9 +57,7 @@
                     <th></th>
                 </tr>
             </thead>
-
             <tbody>
-
                 @if (Model != null && Model.Files != null)
                 {
                     @foreach (var item in Model.Files)

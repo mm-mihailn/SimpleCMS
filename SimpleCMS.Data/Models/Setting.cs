@@ -21,3 +21,4 @@ namespace SimpleCMS.Data.Models
         public string Value { get; set; }
     }
 }
+

@@ -1,0 +1,75 @@
+﻿@using SimpleCMS.Data.Models;
+@model List<Teacher>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Teacher.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <div class="container text-center">
+
+        <h2 class="pageTitle"> Учителски състав </h2>
+
+        <div class="row justify-content-md-center">
+
+            @foreach (var item in Model)
+            {
+                @if (item.Position == "Директор")
+                {
+                    <div class="col-8">
+                        <img class="teacherIcon" src="@item.Image">
+                        <div class="teacherInfo">
+                            <text class="teacherName"> @item.Name - @item.Position </text>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <!--zamestink direktori-->
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                @if (item.Position == "Заместник-директор")
+                {
+
+                <div class="col-md-6">
+                        <img src="@item.Image" class="teacherIcon" />
+                        <div class="teacherInfo">
+                            <text class="teacherName"> @item.Name - @item.Position </text>
+                        </div>
+                    </div>
+                }
+            }
+        </div><br />
+
+        <!-- uchiteli -->
+        <div class="row">
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                @if (Model[i].Position == "Учител")
+                {
+                    <div class="col-md-4">
+                        <img src="@Model[i].Image" class="teacherIcon" />
+                        <div class="teacherInfo">
+                            <text class="teacherName"> @Model[i].Name - @Model[i].Position </text>
+                        </div>
+                    </div>
+
+
+                    if (i % 3 == 0)
+                    {
+                        <br />
+                    }
+                }
+            }
+        </div>
+    </div>
+</body>

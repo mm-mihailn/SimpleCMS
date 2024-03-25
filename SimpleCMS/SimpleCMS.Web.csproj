@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="ViewComponents\MenuItemsViewComponent.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.13" />
@@ -25,10 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SimpleCMS.Business\SimpleCMS.Business.csproj" />
     <ProjectReference Include="..\SimpleCMS.Data\SimpleCMS.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\pictures\" />
   </ItemGroup>
 
 </Project>

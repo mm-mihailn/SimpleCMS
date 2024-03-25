@@ -1,0 +1,66 @@
+﻿@using SimpleCMS.Data.Models;
+@using SimpleCMS.Admin;
+@model List<Article>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Article.css" asp-append-version="true" />
+</head>
+
+<body>
+    <h1 id="newsPageTitle">Новини</h1>
+
+    <div class="container text-center">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+
+                    <img class="bd-placeholder-img card-img-top aspect-ratio-object" src="@item.Image" alt="Card image"></img>
+                    
+                    <div class="card-body ">
+                        
+                        <p class="card-text article-title">@item.Title</p>
+                       
+                        <div class="d-flex justify-content-between align-items-center">
+                            
+                            <div class="btn-group">
+
+                                <a type="btn btn-success" asp-controller="Article" asp-action="Details" asp-route-id="@item.Id"
+                                   class="btn btn-primary">научи повече</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                   
+                    @*  <div class="col-md-4">
+
+                <div class="card" style="width: 25rem; left: 0px;">
+                <div class="card-photo-body">
+                <img class="bd-placeholder-img card-img-top aspect-ratio-object" src="@item.Image" alt="Card image"></img>
+                </div>
+                <div class="card-body">
+                <p class="card-text product-information">@item.SubTitle</p>
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                <div class="btn-group">
+                <a type="btn btn-success" asp-controller="Article" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">научи повече</a>
+                </div>
+                </div>
+                </div>
+
+                </div>*@
+
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+
+

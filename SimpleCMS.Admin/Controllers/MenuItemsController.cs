@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace SimpleCMS.Admin.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class MenuItemsController : Controller
     {
         private readonly IMenuItemsService _menuItemsService;
@@ -86,26 +86,22 @@ namespace SimpleCMS.Admin.Controllers
                 return NotFound();
             }
 
+            
             var parentItems = await _menuItemsService.GetMenuItemsAsync();
             parentItems = parentItems.Where(menuItem => menuItem.Id != item.Id).ToList();
 
             var viewModel = new MenuItemsViewModel
             {
-                Id = item.Id,
-                Title = item.Title,
-                Published = item.Published,
-                Link = item.Link,
-                ParentId = item.ParentId,
+                Parent = item,
                 SubMenuItems = parentItems
             };
 
             return View(viewModel);
         }
-
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, MenuItemsViewModel viewModel)
+        public async Task<IActionResult> Edit(int id, MenuItem item)
         {
-            if (id != viewModel.Id)
+            if (id != item.Id)
             {
                 return NotFound();
             }
@@ -114,15 +110,29 @@ namespace SimpleCMS.Admin.Controllers
             {
                 try
                 {
-                    var item = await _menuItemsService.FindAsync(id);
+                   
+                    if (item.ParentId.HasValue)
+                    {
+                        var selectedParent = await _menuItemsService.FindAsync(item.ParentId.Value);
 
-                    item.Title = viewModel.Title;
-                    item.Published = viewModel.Published;
-                    item.Link = viewModel.Link;
-                    item.ParentId = viewModel.ParentId;
+                        if (selectedParent != null)
+                        {
+                            
+                            item.ParentId = selectedParent.Id;
+                            item.Parent = selectedParent;
+                            
 
-                    await _menuItemsService.UpdateMenuItem(item);
+                           await _menuItemsService.UpdateMenuItem(item);
+                            return RedirectToAction(nameof(Index));
+                        }
+                    }
 
+                    
+                    item.ParentId = null;
+                    item.Parent = null;
+                    
+
+                  await  _menuItemsService.UpdateMenuItem(item);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
@@ -131,12 +141,12 @@ namespace SimpleCMS.Admin.Controllers
                 }
             }
 
-            var parentItems = await _menuItemsService.GetMenuItemsAsync();
-            viewModel.SubMenuItems = parentItems.Where(menuItem => menuItem.Id != viewModel.Id).ToList();
+            
+            ViewBag.ParentItems = await _menuItemsService.GetMenuItemsAsync();
+           
 
-            return View(viewModel);
+            return View(item);
         }
-
 
         public async Task<IActionResult> Delete(int id)
         {
