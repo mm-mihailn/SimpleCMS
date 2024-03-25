@@ -8,7 +8,7 @@ using SimpleCMS.Data.Repositories;
 using SimpleCMS.Data.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleCMS.Admin.Data;
-
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<SimpleCMSAdminContext>(options =>
@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -41,6 +42,7 @@ builder.Services.AddScoped<IArticlesService, ArticlesService>();
 
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

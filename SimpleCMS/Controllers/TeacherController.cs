@@ -8,10 +8,13 @@ namespace SimpleCMS.Web.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ITeacherRepository _teacherRepository;
-        public TeacherController(ApplicationDbContext context, ITeacherRepository teacherRepository)
+        private readonly IConfiguration _configuration;
+        public TeacherController(ApplicationDbContext context, ITeacherRepository teacherRepository,
+            IConfiguration configuration)
         {
             _context = context;
             _teacherRepository = teacherRepository;
+            _configuration = configuration;
         }
         public IActionResult Index()
         {

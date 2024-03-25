@@ -12,32 +12,21 @@ namespace SimpleCMS.Web.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IArticlesRepository _articlesRepository;
-        public ArticleController(ApplicationDbContext context, IArticlesRepository articlesRepository)
+        private readonly IConfiguration _configuration;
+        public ArticleController(ApplicationDbContext context, IArticlesRepository articlesRepository,
+            IConfiguration configuration)
         {
             _context = context;
             _articlesRepository = articlesRepository;
+            _configuration = configuration;
         }
         public IActionResult Index()
         {
             var articles = _context.Articles.ToList();
-
             return View(articles);
         }
 
-        //public FileResult MyAction(string dir)
-        //{
-        //    FileResult a;
-        //    try
-        //    {
-        //        a = new FileStreamResult(new FileStream(dir, FileMode.Open), "image/png");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //    return a;
-        //}
-
+      
         public async Task<IActionResult> Details(int id)
         {
             var articles = await _articlesRepository.GetByIdAsync(id);

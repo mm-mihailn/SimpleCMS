@@ -7,6 +7,7 @@ using SimpleCMS.Admin.Models;
 using SimpleCMS.Admin.Models.ViewModel;
 using SimpleCMS.Business.Services.Interfaces;
 using SimpleCMS.Data.Models;
+using System.Configuration;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -16,12 +17,12 @@ namespace SimpleCMS.Admin.Controllers
     public class ArticlesController : Controller
     {
         private readonly IArticlesService _articlesService;
-        private readonly IWebHostEnvironment _webHost;
+        private readonly IConfiguration _configuration;
 
-        public ArticlesController(IArticlesService articlesService, IWebHostEnvironment webHost)
+        public ArticlesController(IArticlesService articlesService, IConfiguration configuration)
         {
             _articlesService = articlesService;
-            _webHost = webHost;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> Index()
@@ -50,8 +51,8 @@ namespace SimpleCMS.Admin.Controllers
         {
             bool isValid = false;
             string[] validExtensions = { ".jpg", ".png", ".jpeg" };
-            string uploadsFolder = Path.Combine("C:\\Users\\LENOVO GAMING\\source\\repos\\SimpleSMCTest\\SimpleCMS\\wwwroot", "UploadsArticleImages");
-
+            string uploadsFolder = _configuration.GetValue<string>("AppSettings:UploadsArticleImagesPath");
+          
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);

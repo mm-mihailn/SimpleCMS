@@ -18,13 +18,13 @@ namespace SimpleCMS.Admin.Controllers
     public class TeacherController : Controller
     {
         private readonly ITeacherService _teacherService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IConfiguration _configuration;
      
-        public TeacherController(ITeacherService teacherService, IWebHostEnvironment webHostEnvironment)
+        public TeacherController(ITeacherService teacherService, IConfiguration configuration)
         {
             _teacherService = teacherService;
-            _webHostEnvironment = webHostEnvironment;
-          
+            _configuration = configuration;
+        
         }
         public async Task<IActionResult> Index()
         {
@@ -42,7 +42,7 @@ namespace SimpleCMS.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Teacher teacher, IFormFile image)
         {
-            string uploadsFolder = Path.Combine("C:\\Users\\LENOVO GAMING\\source\\repos\\SimpleSMCTest\\SimpleCMS\\wwwroot", "TeacherImages");
+            string uploadsFolder = _configuration.GetValue<string>("AppSettings:UploadsArticleImagesPath");
 
             if (!Directory.Exists(uploadsFolder))
             {
@@ -88,7 +88,7 @@ namespace SimpleCMS.Admin.Controllers
             {
                 return Content("File not selected");
             }
-            string uploadsFolder = Path.Combine("C:\\Users\\LENOVO GAMING\\source\\repos\\SimpleSMCTest\\SimpleCMS\\wwwroot\\TeacherImages");
+            string uploadsFolder = _configuration.GetValue<string>("AppSettings:UploadsArticleImagesPath");
             string fileName = Path.GetFileName(image.FileName);
             string fileSavePath = Path.Combine(uploadsFolder, fileName);
 
@@ -102,7 +102,7 @@ namespace SimpleCMS.Admin.Controllers
                 Id = teacherEdit.Id,
                 Name = teacherEdit.Name,
                 Position = teacherEdit.Position,
-                Image = "\\UploadsArticleImages\\" + fileName
+                Image = "\\TeacherImages\\" + fileName
 
             };
 
