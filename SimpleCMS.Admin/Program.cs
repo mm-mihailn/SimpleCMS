@@ -32,6 +32,7 @@ builder.Services.AddScoped<IMenuItemsService,MenuItemService>();
 
 builder.Services.AddScoped<IFileRepository, FileRepository>();
 builder.Services.AddScoped<IFileService, FileService>();
+
 builder.Services.AddScoped<ISettingRepository, SettingRepository>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 
@@ -41,6 +42,10 @@ builder.Services.AddScoped<IArticlesService, ArticlesService>();
 
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 builder.Services.AddScoped<ITeacherService, TeacherService>();
+
+builder.Services.AddScoped<IStudentProgramRepository, StudentProgramRepository>();
+builder.Services.AddScoped<IStudentProgramService, StudentProgramService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

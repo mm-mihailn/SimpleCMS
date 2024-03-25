@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SimpleCMS.Admin.Models.ViewModel.StudentProgramViewModel
+
 @{
+    ViewData["Title"] = "Student Program";
 }
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentPrograms![0].LessonsNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentPrograms![0].DayOfTheWeek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentPrograms![0].SubjectName)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StudentPrograms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LessonsNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayOfTheWeek)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectName)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
