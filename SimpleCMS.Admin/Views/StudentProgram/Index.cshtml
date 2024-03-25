@@ -1,4 +1,5 @@
-﻿@model SimpleCMS.Admin.Models.ViewModel.StudentProgramViewModel
+﻿
+@model SimpleCMS.Admin.Models.ViewModel.StudentProgramViewModel
 
 @{
     ViewData["Title"] = "Student Program";
@@ -20,7 +21,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.StudentPrograms![0].SubjectName)
             </th>
-
+            <th>
+                @Html.DisplayNameFor(model => model.StudentPrograms![0].Class)
+            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -37,13 +41,26 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.SubjectName)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
-
             </tr>
         }
     </tbody>
 </table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".gridSizeButton").click(function () {
+                var gridSize = $(this).data("value");
+                $("#gridSizeInput").val(gridSize);
+                $("#gridForm").submit();
+            });
+        });
+    </script>
+}

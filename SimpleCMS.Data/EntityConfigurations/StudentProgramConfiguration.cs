@@ -18,6 +18,7 @@ namespace SimpleCMS.Data.EntityConfigurations
             builder.Property(p => p.LessonsNumber);
             builder.Property(p => p.DayOfTheWeek).HasMaxLength(50);
             builder.Property(p => p.SubjectName).HasMaxLength(100);
+            builder.Property(p => p.Class).HasMaxLength(100);
         }
     }
 }

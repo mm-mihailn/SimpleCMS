@@ -14,6 +14,7 @@ namespace SimpleCMS.Data.Models
             SubjectName = string.Empty;
         }
         public int Id { get; set; }
+        public string Class { get; set; }
         public int LessonsNumber { get; set; }
         public string DayOfTheWeek { get; set;}
         public string SubjectName { get; set;}
