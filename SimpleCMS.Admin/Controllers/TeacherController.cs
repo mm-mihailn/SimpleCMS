@@ -19,12 +19,12 @@ namespace SimpleCMS.Admin.Controllers
     {
         private readonly ITeacherService _teacherService;
         private readonly IConfiguration _configuration;
-     
+
         public TeacherController(ITeacherService teacherService, IConfiguration configuration)
         {
             _teacherService = teacherService;
             _configuration = configuration;
-        
+
         }
         public async Task<IActionResult> Index()
         {
