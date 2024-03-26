@@ -11,10 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-
-var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -37,9 +33,6 @@ builder.Services.AddScoped<ISettingService, SettingService>();
 
 builder.Services.AddScoped<IArticlesRepository, ArticlesRepository>();
 builder.Services.AddScoped<IArticlesService, ArticlesService>();
-
-builder.Services.AddScoped<ISpecialtiesRepository, SpecialtiesRepository>();
-builder.Services.AddScoped<ISpecialtiesService, SpecialtiesService>();
 
 var app = builder.Build();
 

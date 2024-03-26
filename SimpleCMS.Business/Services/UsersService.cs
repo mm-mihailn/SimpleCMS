@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using SimpleCMS.Business.Services.Interfaces;
-using SimpleCMS.Data;
 using SimpleCMS.Data.Models;
-using SimpleCMS.Data.Repositories;
 using SimpleCMS.Data.Repositories.Interfaces;
 
 namespace SimpleCMS.Business.Services
@@ -19,11 +16,6 @@ namespace SimpleCMS.Business.Services
         public UsersService(IUsersRepository userRepository)
         {
             _userRepository = userRepository;
-        }
-
-        public async Task<IEnumerable<User>> GetYourData()
-        {
-            return await _userRepository.GetAllUsersAsync();
         }
 
         public async Task<IEnumerable<User>> GetUsersAsync()
@@ -40,14 +32,7 @@ namespace SimpleCMS.Business.Services
         {
             return await _userRepository.GetByIdAsync(id);
         }
-        public void UpdateUser(User user)
-        {
-            _userRepository.UpdateAsync(user);
-        }
-        public async Task<User> FindAsync(string id)
-        {
-            return await _userRepository.FindAsync(id);
-        }
+
         public async Task<User?> GetUserByEmail(string email)
         {
             return await _userRepository.GetByEmailAsync(email);
@@ -57,7 +42,5 @@ namespace SimpleCMS.Business.Services
         {
             return await _userRepository.AddAsync(user);
         }
-
-        
     }
 }
