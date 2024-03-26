@@ -1,24 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleCMS.Business.Services.Interfaces;
-using SimpleCMS.Web.Models;
+using SimpleCMS.Data.Repositories.Interfaces;
+using SimpleCMS.Data;
 
 namespace SimpleCMS.Web.Controllers
 {
     public class SpecialtiesController : Controller
     {
-        private readonly ISpecialtiesService _specialtiesService;
-
-        public SpecialtiesController(ISpecialtiesService specialtiesService)
+        private readonly ApplicationDbContext _context;
+        private readonly ISpecialtiesRepository _specialtyRepository;
+        private readonly IConfiguration _configuration;
+        public SpecialtiesController(ApplicationDbContext context, ISpecialtiesRepository specialityRepository,
+            IConfiguration configuration)
         {
-            _specialtiesService = specialtiesService;
+            _context = context;
+            _specialtyRepository = specialityRepository;
+            _configuration = configuration;
+        }
+        public IActionResult Index()
+        {
+            var specialties = _context.Specialties.ToList();
+
+            return View(specialties);
         }
 
-        public async Task<IActionResult> Index()
-        {
-            SpecialtiesViewModel specialtieViewModel = new SpecialtiesViewModel();
-            specialtieViewModel.Specialties = (await _specialtiesService.GetSpecialtiesAsync()).ToList();
-
-            return View(specialtieViewModel);
-        }
     }
 }

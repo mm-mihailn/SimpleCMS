@@ -1,5 +1,5 @@
-﻿@using SimpleCMS.Data.Models;
-@model List<Specialtie>
+﻿@* @using SimpleCMS.Data.Models;
+@model List<Specialtie> *@
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -16,11 +16,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    @foreach (var item in Model)
-    {
+   @*  @foreach (var item in Model)
+    { *@
         <div class="specialitiesPageContainer">
             <div class="specPageTitle">
-                @item.Name
+             @*    @item.Name *@
             </div>
             <div class="row">
                 <div class="col-lg-4 specPageSections">
@@ -34,10 +34,10 @@
                 </div>
                 <div class="col-lg-7 specPageTextSection">
                     <div class="specPageDescription">
-                        @item.Description
+                        @* @item.Description *@
                     </div>
                 </div>
             </div>
         </div>
-    }
+  @*   } *@
 </body>
