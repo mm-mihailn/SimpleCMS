@@ -2,7 +2,7 @@
 
 namespace SimpleCMS.Web.Models
 {
-    public class SpecialitiesViewModel
+    public class SpecialtiesViewModel
     {
             public List<Specialtie> Specialties { get; set; }
             public int Id { get; set; }

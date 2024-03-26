@@ -69,7 +69,7 @@ namespace SimpleCMS.Data.Migrations
 
                             Id = "65531771-af41-4bbe-bd5b-a561f096c948",
 
-                            Id = "8c24c741-010d-4045-9868-1098ac1e5e05",
+                           
 
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"

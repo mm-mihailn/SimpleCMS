@@ -15,7 +15,7 @@ namespace SimpleCMS.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            SpecialitiesViewModel specialtieViewModel = new SpecialitiesViewModel();
+            SpecialtiesViewModel specialtieViewModel = new SpecialtiesViewModel();
             specialtieViewModel.Specialties = (await _specialtiesService.GetSpecialtiesAsync()).ToList();
 
             return View(specialtieViewModel);
