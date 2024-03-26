@@ -13,7 +13,7 @@ using System.Security.Claims;
 
 namespace SimpleCMS.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ArticlesController : Controller
     {
         private readonly IArticlesService _articlesService;

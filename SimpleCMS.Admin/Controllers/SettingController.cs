@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SimpleCMS.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class SettingController : Controller
     {
         private readonly ISettingService _settingService;

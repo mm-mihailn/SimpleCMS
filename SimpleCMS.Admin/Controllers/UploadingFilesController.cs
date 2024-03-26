@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace SimpleCMS.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UploadingFilesController : Controller
     {
         private readonly IFileService _fileService;

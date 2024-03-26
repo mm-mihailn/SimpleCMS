@@ -14,7 +14,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 namespace SimpleCMS.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class TeacherController : Controller
     {
         private readonly ITeacherService _teacherService;
