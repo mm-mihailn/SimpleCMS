@@ -120,7 +120,7 @@ namespace SimpleCMS.Data
             // Seed user
             var email = "admin@simplecms.net";
 
-            var adminUserId = Guid.NewGuid().ToString();
+            //var adminUserId = Guid.NewGuid().ToString();
             //var user = new User
             //{
             //    //Id = adminUserId,
