@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimpleCMS.Data;
 
@@ -11,9 +12,11 @@ using SimpleCMS.Data;
 namespace SimpleCMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240319091736_AddSpecialtie")]
+    partial class AddSpecialtie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,11 +69,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-
-                            Id = "65531771-af41-4bbe-bd5b-a561f096c948",
-
-                            Id = "8c24c741-010d-4045-9868-1098ac1e5e05",
-
+                            Id = "a84a8248-2860-449b-8c1d-e7c4379bf250",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -167,9 +166,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-
-                            UserId = "3bafae0e-9a03-4cbd-b8b9-6aacf7531f40",
-                            RoleId = "65531771-af41-4bbe-bd5b-a561f096c948"
+                            UserId = "5f94502d-ed6a-485a-ae39-9fb2a1bc3bfc",
+                            RoleId = "a84a8248-2860-449b-8c1d-e7c4379bf250"
                         });
                 });
 
@@ -298,64 +296,6 @@ namespace SimpleCMS.Data.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("MenuItems", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Link = "test",
-                            Published = true,
-                            Title = "Училище"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Link = "test",
-                            Published = true,
-                            Title = "Начало"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Link = "test",
-                            Published = true,
-                            Title = "Прием"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Link = "test",
-                            Published = true,
-                            Title = "За Родителя"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Link = "test",
-                            Published = true,
-                            Title = "За Ученика"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Link = "test",
-                            Published = true,
-                            Title = "Контакти"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Link = "test",
-                            Published = true,
-                            Title = "Галерия"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Link = "test",
-                            Published = true,
-                            Title = "Профил на куповача"
-                        });
                 });
 
             modelBuilder.Entity("SimpleCMS.Data.Models.Setting", b =>
@@ -469,28 +409,6 @@ namespace SimpleCMS.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
-
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "9ab49ddd-0059-4804-b78d-5371e6b9d1e6",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "5f8c485a-9c37-4c1a-8bb1-f07330eba6c0",
-                            Email = "admin@simplecms.net",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "John Smith",
-                            NormalizedEmail = "ADMIN@SIMPLECMS.NET",
-                            NormalizedUserName = "ADMIN@SIMPLECMS.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEP3fKU4aCUJDIw5jXQ9IrltZKP1KiECg0g034HRkFENhThVQQ48wdkHkEvwzTf+huw==",
-                            PhoneNumber = "1234567890",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "4afd4ab1-aaae-422c-a5ce-4a81a07d9324",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@simplecms.net"
-                        });
-
                 });
 
             modelBuilder.Entity("ArticlesFiles", b =>

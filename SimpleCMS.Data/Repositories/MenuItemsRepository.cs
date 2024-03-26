@@ -35,5 +35,12 @@ namespace SimpleCMS.Data.Repositories
         {
             return await Entities.AnyAsync(x => x.ParentId == parentId);
         }
+        public async Task<ICollection<MenuItem>> GetChildrenByParentIdAsync(int parentId)
+        {
+            return await Entities
+                .Where(x => x.ParentId == parentId)
+                .ToListAsync();
+        }
+
     }
 }

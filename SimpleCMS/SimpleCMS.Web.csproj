@@ -20,15 +20,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleCMS.Business\SimpleCMS.Business.csproj" />
     <ProjectReference Include="..\SimpleCMS.Data\SimpleCMS.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\pictures\" />
   </ItemGroup>
 
 </Project>

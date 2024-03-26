@@ -16,9 +16,8 @@ namespace SimpleCMS.Data
         public DbSet<MenuItem> MenuItems => Set<MenuItem>();
         public DbSet<Article> Articles => Set<Article>();
         public DbSet<Files> Files => Set<Files>();
-
         public DbSet<Setting> Setting => Set<Setting>();
-
+        public DbSet<Specialtie> Specialties => Set<Specialtie>();
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -120,6 +119,24 @@ namespace SimpleCMS.Data
 
             // Seed user
             var email = "admin@simplecms.net";
+
+            var adminUserId = Guid.NewGuid().ToString();
+            //var user = new User
+            //{
+            //    //Id = adminUserId,
+            //    UserName = email,
+            //    NormalizedUserName = email.ToUpper(),
+            //    Email = email,
+            //    NormalizedEmail = email.ToUpper(),
+            //    EmailConfirmed = true,
+            //    LockoutEnabled = false,
+            //    PhoneNumber = "1234567890",
+            //    Name = "John Smith"
+            //};
+            //var passwordHasher = new PasswordHasher<User>();
+            //user.PasswordHash = passwordHasher.HashPassword(user, "!w@ntT0L0g!n");
+            //builder.Entity<User>().HasData(user);
+
             var user = new User
             {
                 //Id = adminUserId,

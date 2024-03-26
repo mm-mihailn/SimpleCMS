@@ -1,33 +1,62 @@
-﻿
-@model List<string>
-<navigationBarSchool>
-<div id="NavMenuContainer">
-    <div id="row">
-        <nav class="navigationBarSchool">
-           <ul id="menuList">
-              @foreach (var item in Model)
-              {
-
-              <li class="col-1 "><a href="#">@item</a></li>
-              }
-           </ul>
-        </nav>
-    </div>
-</div>
+﻿﻿@using SimpleCMS.Web.Models
+@model List<MenuItemsViewModel>
+<nav class="navbar">
+    @foreach (var menuItem in Model)
+    {
+        <ul class="nav-list">
+            <li class="dropdown">
+                <a id="firstElement" href="@menuItem.Link">@menuItem.Title</a>
+                @if (menuItem.SubMenuItems.Any())
+                {
+                    <ul id="firstElement" class="dropdownContent parentElement">
+                        @foreach (var child in menuItem.SubMenuItems)
+                        {
+                            <li>
+                                <a href="@child.Link">@child.Title</a>
+                                @if (child.SubMenuItems.Any())
+                                {
+                                    <ul id="secondElement" class="dropdownContent childrenElement">
+                                        @foreach (var secondChild in child.SubMenuItems)
+                                        {
+                                            <li><a href="@secondChild.Link">@secondChild.Title</a></li>
+                                        }
+                                    </ul>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        </ul>
+    }
+</nav>
 
 <div class="burgerMenu">
-     <div class="topnav">
+    <div class="topnav">
         <a href="#home" class="active"><img id="logo" src="pictures/logo.PNG"></a>
-           <div id="myLinks">
-        
-            @foreach (var item in Model)
+        <div id="myLinks">
+            @foreach (var burgerMenuItems in Model)
             {
-                <a class="menuItem" href="#">@item</a>
+                <a class="menuItem" href="#">@burgerMenuItems.Title</a>
+                @if (burgerMenuItems.SubMenuItems.Any())
+                {
+                    @foreach (var child in @burgerMenuItems.SubMenuItems)
+                    {
+                        <a class="childMenuItem" href="@child.Link">@child.Title</a>
+
+                        @if (child.SubMenuItems.Any())
+                        {
+                            @foreach (var secondChild in child.SubMenuItems)
+                            {
+                                <a menuItem href="@secondChild.Link">@secondChild.Title</a>
+                            }
+                        }
+                    }
+                }
             }
-           </div>
+        </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars">⚡</i>
-         </a>
-     </div>             
+            <i class="fa fa-bars">⚡</i>
+        </a>
+    </div>
 </div>
-</navigationBarSchool>

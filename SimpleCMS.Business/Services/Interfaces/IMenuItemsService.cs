@@ -18,5 +18,7 @@ namespace SimpleCMS.Business.Services.Interfaces
         Task<bool> IsMenuItemAParent(int id);
         Task DeleteAsync(MenuItem item);
         Task UpdateMenuItem(MenuItem item);
+        Task<ICollection<MenuItem>> GetChildrenByParentIdAsync(int parentId);
+
     }
 }
