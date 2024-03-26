@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimpleCMS.Data;
 
@@ -11,9 +12,11 @@ using SimpleCMS.Data;
 namespace SimpleCMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240305001259_SeedMenuItems")]
+    partial class SeedMenuItems
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,11 +69,7 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-
-                            Id = "65531771-af41-4bbe-bd5b-a561f096c948",
-
                             Id = "8c24c741-010d-4045-9868-1098ac1e5e05",
-
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -167,9 +166,8 @@ namespace SimpleCMS.Data.Migrations
                     b.HasData(
                         new
                         {
-
-                            UserId = "3bafae0e-9a03-4cbd-b8b9-6aacf7531f40",
-                            RoleId = "65531771-af41-4bbe-bd5b-a561f096c948"
+                            UserId = "b31b87f1-496e-4b93-b631-33a3a6531b45",
+                            RoleId = "8c24c741-010d-4045-9868-1098ac1e5e05"
                         });
                 });
 
@@ -381,27 +379,6 @@ namespace SimpleCMS.Data.Migrations
                     b.ToTable("Settings", (string)null);
                 });
 
-            modelBuilder.Entity("SimpleCMS.Data.Models.Specialtie", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Specialties");
-                });
-
             modelBuilder.Entity("SimpleCMS.Data.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -470,7 +447,6 @@ namespace SimpleCMS.Data.Migrations
 
                     b.ToTable("Users", (string)null);
 
-
                     b.HasData(
                         new
                         {
@@ -490,7 +466,6 @@ namespace SimpleCMS.Data.Migrations
                             TwoFactorEnabled = false,
                             UserName = "admin@simplecms.net"
                         });
-
                 });
 
             modelBuilder.Entity("ArticlesFiles", b =>
