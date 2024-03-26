@@ -12,7 +12,13 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Teachers![0].Degree)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Teachers![0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teachers![0].SecondName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Teachers![0].Position)
@@ -29,7 +35,13 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Degree)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SecondName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Position)

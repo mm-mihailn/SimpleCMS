@@ -9,7 +9,9 @@ namespace SimpleCMS.Data.Models
     public class Teacher
     {
         public int Id { get; set; }
+        public string Degree { get; set; }
         public string Name { get; set; }
+        public string SecondName { get; set; }
         public string Position { get; set; }
         public string Image { get; set; }
 
